@@ -1,15 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
-import './App.css'
-
+import logo from './assets/logo.jpg'
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import Hero from './components/Hero';
 function App() {
-  const [count, setCount] = useState(0)
-
+const [isToggle, setIsToggle] = useState(false)
   return (
     <>
-     <p className='text-4xl  bg-blue-300'>Tailwind Test</p>
+      <div className={isToggle ? "bg-black h-screen" : "bg-white"}>
+      <Navbar />
+      <HomePage />
+      </div>
     </>
-  )
+  );
 }
 
 export default App

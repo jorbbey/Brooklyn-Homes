@@ -4,11 +4,13 @@ import { CiMail } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
 const ContactForm = () => {
   return (
-    <section className="flex justify-between items-start my-20">
+    <section className="flex justify-between items-start mt-60">
       <div className="w-[45%] mx-5">
-        <h1 className="mb-24 text-5xl">Request for more information</h1>
+        <h1 className="mb-24 text-5xl ">Request for more information</h1>
 
-        <h4 className="my-5 font-semibold">Ready to take the first step?</h4>
+        <h4 className="my-5 font-semibold text-[#bc963f]">
+          Ready to take the first step?
+        </h4>
         <p className="my-5">
           We would like to be of help, please keep your questions coming.
         </p>
@@ -52,12 +54,12 @@ const ContactForm = () => {
         />
         <textarea
           className=" my-5 p-8 border-1 border-gray-500 w-full"
-          placeholder='Message'
+          placeholder="Message"
         ></textarea>
 
         <button className="bg-[#bc963f] p-4 my-5 flex items-center text-xs cursor-pointer">
           SEND MESSAGE
-          <FaArrowRightLong className='mx-2' />
+          <FaArrowRightLong className="mx-2" />
         </button>
       </form>
     </section>

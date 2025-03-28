@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from '../components/Hero';
 import Services from '../components/services';
 import secondImage from "../assets/estate2.jpg";
+import ContactForm from '../components/ContactForm';
 const HomePage = () => {
   return (
     <div className="">
@@ -36,6 +37,7 @@ const HomePage = () => {
           </div>
         </section>
 <Services />
+<ContactForm />
       </main>
     </div>
   );

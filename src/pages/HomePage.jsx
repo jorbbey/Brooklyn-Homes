@@ -1,21 +1,22 @@
 import React from 'react'
 import Hero from '../components/Hero';
-import secondImage from "../assets/estate-1.jpg";
+import Services from '../components/services';
+import secondImage from "../assets/estate2.jpg";
 const HomePage = () => {
   return (
     <div className="">
       <Hero />
-      <main className="  text-black my-28 w-[97%] m-auto">
+      <main className="  text-white my-28 w-[97%] m-auto">
         <section>
-          <div className="my-10 w-[40%] ">
+          <div className="my-10 w-[50%] ">
             <h1 className="text-5xl leading-15">
               Brooklyn Homes, a modern real estate, building and construction
               company
             </h1>
           </div>
           <div className="flex justify-between items-center">
-            <div className="w-1/2 h-[75vh] overflow-hidden ">
-              <img src={secondImage} alt="image" className="w-[100%]" />
+            <div className="w-1/2 h-[80vh] overflow-hidden">
+              <img src={secondImage} alt="image" className="w-[100%] -mt-72" />
             </div>
             <div className="w-[40%] mx-3">
               <h1 className='text-3xl my-10'>Who we are</h1>
@@ -34,6 +35,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+<Services />
       </main>
     </div>
   );

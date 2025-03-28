@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../assets/logo2.jpg"
+import logo from "../assets/logo3.png"
 const Navbar = () => {
   const menuItems = [
     { text: "Home", link: "/" },
@@ -10,21 +10,21 @@ const Navbar = () => {
   ];
   return (
     <header className="flex justify-between items-center">
-      <i className='mx-2 my-2'>
+      <i className="mx-5 my-4">
         <img src={logo} alt="logo" className="w-[125px]" />
       </i>
 
       <nav className="flex justify-around items-center">
         {menuItems.map((item) => (
-          <li className="list-none mx-6 hover:text-amber-900 cursor-pointer">
+          <li className="list-none mx-6 text-white hover:text-[#bc963f] cursor-pointer">
             {item.text}
           </li>
         ))}
       </nav>
 
-    
-        <button className='bg-black text-white p-4 mx-5'>Schedule Visit</button>
-    
+      <button className="bg-[#bc963f] text-white p-4 mx-5">
+        Schedule Visit
+      </button>
     </header>
   );
 }

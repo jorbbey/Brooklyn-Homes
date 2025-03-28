@@ -3,14 +3,14 @@ import { useState } from 'react'
 import logo from './assets/logo.jpg'
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
-import Hero from './components/Hero';
+import Footer from './components/Footer';
 function App() {
-const [isToggle, setIsToggle] = useState(false)
   return (
     <>
-      <div className={isToggle ? "bg-black h-screen" : "bg-white"}>
+      <div className='bg-black'>
       <Navbar />
       <HomePage />
+      <Footer />
       </div>
     </>
   );

@@ -4,18 +4,18 @@ import { CiMail } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
 const ContactForm = () => {
   return (
-    <section className="flex justify-between items-start mt-60">
-      <div className="w-[45%] mx-5">
+    <section className="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-60">
+      <div className="w-full md:w-[90%] lg:w-[45%] lg:mx-5">
         <h1 className="mb-24 text-5xl ">Request for more information</h1>
 
         <h4 className="my-5 font-semibold text-[#bc963f]">
-          Ready to take the first step?
+          Ready to invest or find your dream home?
         </h4>
         <p className="my-5">
-          We would like to be of help, please keep your questions coming.
+          Contact us today!
         </p>
-        <h1 className="mt-16 text-xl">Contact us via phone or email</h1>
-        <div className="flex justify-between items-center w-[70%] my-5">
+        <h1 className="mt-16 text-lg md:text-xl">Contact us via phone or email</h1>
+        <div className="flex justify-between items-center w-full md:w-[70%] my-5">
           <span className="flex justify-between items-center">
             <IoPhonePortraitOutline />
             <p className="mx-2">+234 567 8901 234</p>
@@ -30,7 +30,7 @@ const ContactForm = () => {
 
       <form
         action="#!"
-        className="w-1/2 flex flex-col items-start justify-evenly"
+        className="w-full md:w-[90%] lg:w-1/2 flex flex-col items-start justify-evenly my-10 lg:my-0"
       >
         <div className="flex justify-between items-center w-full">
           <input

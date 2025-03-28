@@ -14,9 +14,9 @@ const Navbar = () => {
         <img src={logo} alt="logo" className="w-[125px]" />
       </i>
 
-      <nav className="flex justify-around items-center">
+      <nav className="hidden md:flex justify-around items-center">
         {menuItems.map((item) => (
-          <li className="list-none mx-6 text-white hover:text-[#bc963f] cursor-pointer">
+          <li key={item.text} className="list-none mx-6 text-white hover:text-[#bc963f] cursor-pointer">
             {item.text}
           </li>
         ))}

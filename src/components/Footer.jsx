@@ -7,8 +7,8 @@ import { GoDash } from "react-icons/go";
 const Footer = () => {
   return (
     <footer className="bg-black">
-      <section className="flex justify-between items-start my-5">
-        <div className="w-[30%] border-r-1 border-[#bc963f] my-10 mx-5">
+      <section className="flex flex-col lg:flex-row justify-between items-start my-5">
+        <div className="w-[90%] lg:w-[30%] lg:border-r-1 border-[#bc963f] my-10 mx-5">
           <img src={logo} alt="brooklynhomes" className="w-[125px] my-5" />
           <p className="text-gray-400 w-[90%] m-auto my-5 text-sm leading-loose">
             At Brooklyn Homes, we specialize in property development, real
@@ -18,7 +18,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="w-[40%] my-10">
+        <div className="w-[90%] lg:w-[40%] my-10">
           <h1 className="m-auto w-[90%] my-5 text-2xl text-white font-semibold">
             Useful Links
           </h1>
@@ -40,11 +40,11 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="w-[30%] border-l-1 border-gray-300 my-10">
+        <div className="w-[90%] lg:w-[30%] lg:border-l-1 border-gray-300 my-10">
           <h1 className="m-auto w-[90%] my-5 text-2xl text-white font-semibold">
             Follow Us
           </h1>
-          <div className="m-auto w-[90%] my-4 text-white flex justify-start items-center mt-5 mb-48">
+          <div className="m-auto w-[90%] my-4 text-white flex justify-start items-center mt-5 lg:mb-48">
             <i className="bg-[#bc963f] p-3 rounded-full mx-2">
               <FaFacebook />
             </i>

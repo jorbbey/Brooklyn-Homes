@@ -49,18 +49,18 @@ const Services = () => {
   return (
     <section className="my-30">
       <h1 className="text-4xl my-20 mx-5">Services We Offer</h1>
-      <div className="flex justify-between items-center">
-        <main className="flex flex-wrap items-center justify-start w-[70%]">
+      <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
+        <main className="flex flex-wrap items-center justify-start w-full md:w-[90%] lg:w-[70%]">
           {services.map((item) => (
-            <div key={item.head} className="m-10 p-4 w-[35%]">
+            <div key={item.head} className="m-10 p-4 w-[90%] md:w-[35%]">
               <item.icon className="text-4xl text-[#bc963f] mx-4" />
-              <h1 className="text-xl my-5 w-34 text-gray-300">{item.head}</h1>
+              <h1 className="text-xl my-5 w-full md:w-34 text-gray-300">{item.head}</h1>
               <p className="my-3 text-sm text-gray-300">{item.desc}</p>
             </div>
           ))}
         </main>
 
-        <div className="w-[50%]">
+        <div className="w-[90%] lg:w-[50%]">
           <Slider {...settings}>
             <div>
               <img

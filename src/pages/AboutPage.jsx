@@ -55,30 +55,35 @@ const AboutPage = () => {
     <section className="text-white">
       <SubHero text="about us" />
 
-      <p className="my-10 m-auto w-1/2 text-[#bc963f] animate-bounce">
-        <span className="text-xl mx-1">Our Vision:</span> To be Abuja’s leading
-        real estate firm by 2030, known for quality and innovation.
+      <p className="my-10 m-auto w-[90%] lg:w-1/2 text-[#bc963f] animate-bounce">
+        <span className="text-lg lg:text-xl mx-1">Our Vision:</span> To be
+        Abuja’s leading real estate firm by 2030, known for quality and
+        innovation.
       </p>
 
-      <div className="flex justify-around items-start my-20">
-        <div className="w-[40%]">
+      <div className="flex flex-col lg:flex-row justify-around items-start my-20">
+        <div className="w-[90%] lg:w-[40%] m-auto">
           <img src={team} alt="broklynhomes-team" className="w-full" />
           <div className="my-5">
             <Slider {...settings}>
-              <p className="text-[#bc963f] text-xl mx-44">Mr. John Seth</p>
-              <p className="text-[#bc963f] text-xl mx-44">Mr. Anthony Onuoha</p>
-              <p className="text-[#bc963f] text-xl mx-44">
+              <p className="text-[#bc963f] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                Mr. John Seth
+              </p>
+              <p className="text-[#bc963f] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                Mr. Anthony Onuoha
+              </p>
+              <p className="text-[#bc963f] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
                 Mr. Chidubem Ogbuehi
               </p>
             </Slider>
           </div>
         </div>
-        <div className="w-[50%]">
-          <h1 className="text-4xl">
+        <div className="w-[90%] lg:w-[50%] m-auto">
+          <h1 className="text-2xl lg:text-4xl text-center lg:text-left">
             Who We Are – Building Tomorrow’s Homes Today
           </h1>
           <div className="">
-            <p className="text-lg leading-loose my-10 text-gray-300">
+            <p className="text-sm md:text-lg leading-loose my-5 lg:my-10 text-gray-300">
               Brooklyn Homes Limited was born in August 2023 with a bold vision:
               to transform the real estate landscape in Abuja, Nigeria.
               Headquartered in the heart of the Central Business District, we’ve
@@ -95,15 +100,18 @@ const AboutPage = () => {
               communities and empowering wealth through real estate.
             </p>
 
-            <div className="">
-              <p className="font-semibold text-xl">
+            <div className="my-10 lg:my-0">
+              <p className="font-semibold text-md md:text-lg lg:text-xl text-center lg:text-left">
                 At Brooklyn Homes Limited, our core objectives drives everything
                 we do:
               </p>
               <div className="flex justify-around items-center flex-wrap my-2">
                 {objectives.map((item) => (
-                  <li key={item.head} className=" p-2 w-60 my-2 list-none">
-                    <h4 className="flex justify-start item-center text-md text-[#bc963f]">
+                  <li
+                    key={item.head}
+                    className=" p-2 w-full md:w-68 lg:w-60 my-5 md:my-2 list-none text-center md:text-left cursor-pointer"
+                  >
+                    <h4 className="flex justify-center md:justify-start item-center text-md text-[#bc963f]">
                       <item.icon className="text-center mr-2 my-1 w-[10%]" />
                       {item.head}
                     </h4>
@@ -119,9 +127,9 @@ const AboutPage = () => {
       <div className="my-20">
         <h1 className="text-2xl mx-auto text-center my-10">What we offer</h1>
         <ul className="mx-5">
-          <li className="flex justify-between items-center my-10">
-            <p className="text-lg flex items-center justify-center mx-5">
-              <GoDash className="text-xl font-semibold mx-2" />
+          <li className="flex flex-col-reverse lg:flex-row justify-between items-center my-10">
+            <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
+              <GoDash className="hidden lg:block text-xl font-semibold mx-2" />
               <Typewritter
                 text="Tailored property solutions for homeowners and investors."
                 speed={80}
@@ -130,17 +138,17 @@ const AboutPage = () => {
             <img
               src={image3}
               alt="image1"
-              className="w-1/2 h-96 object-cover"
+              className="w-full lg:w-1/2 h-96 object-cover"
             />
           </li>
-          <li className="flex justify-between items-center my-10">
+          <li className="flex flex-col lg:flex-row justify-between items-center my-10">
             <img
               src={image2}
               alt="image2"
-              className="w-1/2 h-96 object-cover"
+              className="w-full lg:w-1/2 h-96 object-cover"
             />
-            <p className="text-lg flex items-center justify-center mx-5">
-              <GoDash className="text-xl font-semibold mx-2" />
+            <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
+              <GoDash className="hidden lg:block text-xl font-semibold mx-2" />
               <Typewritter
                 text="Cutting-edge designs that prioritize comfort, style, and
               sustainability."
@@ -148,9 +156,9 @@ const AboutPage = () => {
               />
             </p>
           </li>
-          <li className=" flex justify-between items-center my-10">
-            <p className="text-lg flex items-center justify-center mx-5">
-              <GoDash className="text-xl font-semibold mx-2" />
+          <li className="flex flex-col-reverse lg:flex-row justify-between items-center my-10">
+            <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
+              <GoDash className="hidden lg:block text-xl font-semibold mx-2"  />
               <Typewritter
                 text=" A client-first approach that ensures your goals are our priority."
                 speed={80}
@@ -159,7 +167,7 @@ const AboutPage = () => {
             <img
               src={image1}
               alt="image3"
-              className="w-1/2 h-96 object-cover"
+              className="w-full lg:w-1/2 h-96 object-cover"
             />
           </li>
         </ul>

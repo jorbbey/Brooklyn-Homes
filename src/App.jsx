@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* <Route path="*" element={<NotFound />} /> Handles 404 */}
         </Routes>
         <Footer />

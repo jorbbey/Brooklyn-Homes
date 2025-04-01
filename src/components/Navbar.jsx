@@ -20,11 +20,8 @@ const Navbar = () => {
 
       <nav className="hidden md:flex justify-around items-center">
         {menuItems.map((item) => (
-          <Link to={item.link}>
-            <li
-              key={item.text}
-              className="text-xs lg:text-sm list-none md:mx-0 lg:mx-6 text-white hover:text-[#bc963f] cursor-pointer w-20"
-            >
+          <Link to={item.link} key={item.text}>
+            <li className="text-xs lg:text-sm list-none md:mx-0 lg:mx-6 text-white hover:text-[#bc963f] cursor-pointer w-20">
               {item.text}
             </li>
           </Link>

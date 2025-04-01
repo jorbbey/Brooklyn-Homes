@@ -11,19 +11,19 @@ const Featured = () => {
 
         const settings = {
           arrows: false,
-          dots: false, // Show navigation dots
-          infinite: true, // Infinite loop scrolling
-          speed: 700, // Animation speed
-          slidesToShow: 2, // Number of slides visible at once
-          slidesToScroll: 1, // Number of slides to scroll per action
-          autoplay: true, // Auto slide change
-          autoplaySpeed: 5000, // Time before auto-slide
+          dots: false, 
+          infinite: true, 
+          speed: 700, 
+          slidesToShow: 2, 
+          slidesToScroll: 1, 
+          autoplay: true, 
+          autoplaySpeed: 5000, 
         };
   return (
     <section className="flex flex-col justify-center items-center">
       <h1>Featured Projects</h1>
 
-      <div className="w-[90%] lg:w-[90%] m-auto my-10 border-2 border-gray-300 rounded-lg">
+      <div className="w-full lg:w-[90%] m-auto my-10 border-2 border-gray-300 rounded-lg">
         <Slider {...settings}>
           <div>
             <img

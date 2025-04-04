@@ -51,7 +51,8 @@ const ContactPage = () => {
           ))}
         </div>
       </section>
-      <Map />
+
+      <Map lat={9.050231} lon={7.487945} text='Brooklyn Homes Office' />
 
       <div className="mt-28 w-[90%] md:w-[75%] lg:w-1/2 m-auto">
         <h1 className="text-4xl md:text-5xl text-center">

@@ -1,8 +1,8 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"; 
-const Map = () => {
-  const position = [9.050231, 7.487945]; // Your latitude and longitude
+const Map = ({lat, lon, text}) => {
+  const position = [lat, lon]; // Your latitude and longitude
   return (
     <MapContainer
       center={position}
@@ -14,7 +14,7 @@ const Map = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" // OpenStreetMap tiles
       />
       <Marker position={position}>
-        <Popup>Brooklyn Homes Office</Popup>{" "}
+        <Popup>{text}</Popup>{" "}
         {/* Add a popup to show when clicking the marker */}
       </Marker>
     </MapContainer>

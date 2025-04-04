@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import DurumiSite1 from './pages/Projects/DurumiSite1';
+import DurumiSite2 from './pages/Projects/DurumiSite2';
 function App() {
   return (
     <>
@@ -16,6 +18,8 @@ function App() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/durumisite1" element={<DurumiSite1 />} />
+          <Route path="/durumisite2" element={<DurumiSite2 />} />
           {/* <Route path="*" element={<NotFound />} /> Handles 404 */}
         </Routes>
         <Footer />

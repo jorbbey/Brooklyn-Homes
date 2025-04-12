@@ -5,11 +5,17 @@ import { LuTrees } from "react-icons/lu";
 import { MdSecurity } from "react-icons/md";
 import SubHero from "../../components/SubHero";
 import Map from '../../components/Map';
-import image1 from '../../assets/durumi-site2/durumi_site2_0.jpg'
-import image2 from "../../assets/durumi-site2/durumi_site2_1.jpg";
-import image3 from "../../assets/durumi-site2/durumi_site2_0.jpg";
-import image4 from "../../assets/durumi-site2/durumi_site2_3.jpg";
-import image5 from "../../assets/durumi-site2/durumi_site2_4.jpg";
+import image1 from '../../assets/durumi-site2/Durumi Site 2 A_1 - Photo.jpg';
+import image2 from "../../assets/durumi-site2/Durumi Site 2 A_2 - Photo.jpg";
+import image4 from "../../assets/durumi-site2/Durumi Site 2 A_4 - Photo.jpg";
+import image5 from "../../assets/durumi-site2/Durumi Site 2 A_5 - Photo.jpg";
+import image7 from "../../assets/durumi-site2/Durumi Site 2 A_7 - Photo.jpg";
+import image8 from "../../assets/durumi-site2/Durumi Site 2 A_8 - Photo.jpg";
+import image9 from "../../assets/durumi-site2/Durumi Site 2 A_9 - Photo.jpg";
+import image10 from "../../assets/durumi-site2/Durumi Site 2 A_10 - Photo.jpg";
+import image11 from "../../assets/durumi-site2/Durumi Site 2 A11.jpg";
+import image12 from "../../assets/durumi-site2/Durumi Site 2 A12.jpg";
+
 const DurumiSite2 = () => {
   const features = [
     {
@@ -30,7 +36,7 @@ const DurumiSite2 = () => {
     },
   ];
 
-  const images = [image1, image2, image3]
+  const images = [image1, image2, image4, image9, image7, image8, image5, image10, image11]
   return (
     <div className="text-white">
       <SubHero text="Durumi Site II - Versatile Living Options" />
@@ -86,7 +92,7 @@ const DurumiSite2 = () => {
                 src={image}
                 alt="durumi_site2"
                 key={image}
-                className="w-full md:w-[32%] my-5 md:my-0 hover:brightness-50"
+                className="w-full md:w-[32%] my-5 md:my-2 hover:brightness-50"
               />
             ))}
           </div>

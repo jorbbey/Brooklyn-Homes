@@ -8,7 +8,8 @@ import { FaTools } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { GoDash } from "react-icons/go";
 import heroImg from "../assets/living-room2.jpg";
-import team from "../assets/Team.jpg";
+import team1 from "../assets/realTeam1.jpg";
+import team2 from "../assets/realTeam2.jpg";
 import image1 from "../assets/slide3-2.jpg";
 import image2 from "../assets/family.jpg";
 import image3 from "../assets/building-construction.jpg";
@@ -63,7 +64,24 @@ const AboutPage = () => {
 
       <div className="flex flex-col lg:flex-row justify-around items-start my-20">
         <div className="w-[90%] lg:w-[40%] m-auto">
-          <img src={team} alt="broklynhomes-team" className="w-full" />
+          <div className="my-5">
+            <Slider {...settings}>
+              <div>
+                <img
+                  src={team1}
+                  alt="Slide 1"
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+              <div>
+                <img
+                  src={team2}
+                  alt="Slide 1"
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+            </Slider>
+          </div>
           <div className="my-5">
             <Slider {...settings}>
               <p className="text-[#bc963f] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
@@ -158,7 +176,7 @@ const AboutPage = () => {
           </li>
           <li className="flex flex-col-reverse lg:flex-row justify-between items-center my-10">
             <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
-              <GoDash className="hidden lg:block text-xl font-semibold mx-2"  />
+              <GoDash className="hidden lg:block text-xl font-semibold mx-2" />
               <Typewritter
                 text=" A client-first approach that ensures your goals are our priority."
                 speed={80}

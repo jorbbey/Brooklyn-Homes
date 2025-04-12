@@ -11,7 +11,7 @@ const Map = ({lat, lon, text}) => {
       style={{ height: "400px", width: "100%" }} 
     >
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" // OpenStreetMap tiles
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={position}>
         <Popup>{text}</Popup>{" "}

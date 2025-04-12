@@ -5,11 +5,10 @@ import { FaBed } from "react-icons/fa";
 import { FaCar } from "react-icons/fa";
 import SubHero from "../../components/SubHero";
 import Map from '../../components/Map';
-import image1 from '../../assets/durumi-site2/durumi_site2_0.jpg'
-import image2 from "../../assets/durumi-site2/durumi_site2_1.jpg";
-import image3 from "../../assets/durumi-site2/durumi_site2_0.jpg";
-import image4 from "../../assets/durumi-site2/durumi_site2_3.jpg";
-import image5 from "../../assets/durumi-site2/durumi_site2_4.jpg";
+import image1 from '../../assets/durumi-site1/DurumiSite1_1.jpg'
+import image2 from "../../assets/durumi-site1/DurumiSite1_2.jpg";
+import image3 from "../../assets/durumi-site1/DurumiSite1_3.jpg";
+
 import Typewritter from '../../components/Typewritter';
 const DurumiSite1 = () => {
   const features = [

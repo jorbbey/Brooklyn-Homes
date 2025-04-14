@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/logo3.png'
+import logo from '../assets/Logo_trans.png'
 import { FaFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
@@ -7,13 +7,13 @@ import { GoDash } from "react-icons/go";
 import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-    <footer className="bg-black">
+    <footer className="bg-[#333333]">
       <section className="flex flex-col md:flex-row justify-between items-start my-5">
         <div className="w-[90%] md:w-[50%] lg:w-[30%] border-b-1 md:border-b-0 md:border-r-1 border-[#bc963f] md:my-10 mx-5 text-center md:text-left">
           <img
             src={logo}
             alt="brooklynhomes"
-            className="w-[125px] my-5 m-auto lg:m-0"
+            className="w-[125px] my-5 m-auto lg:mx-26"
           />
           <p className="text-gray-400 w-[90%] m-auto my-5 text-sm leading-loose">
             At Brooklyn Homes, we specialize in property development, real
@@ -42,7 +42,7 @@ const Footer = () => {
               </li>
             </Link>
 
-            <Link to='/contact'>
+            <Link to="/contact">
               <li className="flex justify-start items-center">
                 <GoDash className="hidden md:block font-semibold text-[#bc963f] mx-2" />
                 Contact Us

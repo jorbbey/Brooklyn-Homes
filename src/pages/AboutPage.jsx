@@ -13,10 +13,10 @@ import team2 from "../assets/realTeam2.jpg";
 import image1 from "../assets/slide3-2.jpg";
 import image2 from "../assets/family.jpg";
 import image3 from "../assets/building-construction.jpg";
-import m1 from '../assets/fe1.jpg'
-import m2 from '../assets/fe2.jpg'
-import m3 from '../assets/fe3.jpg'
-import m4 from '../assets/fe4.jpg'
+import m1 from "../assets/durumi-site2/Durumi Site 2 A_1 - Photo.jpg";
+import m2 from "../assets/durumi-site2/Durumi Site 2 A_2 - Photo.jpg";
+import m3 from "../assets/durumi-site2/Durumi Site 2 A_4 - Photo.jpg";
+import m4 from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.jpg";
 import SubHero from "../components/SubHero";
 import Typewritter from "../components/Typewritter";
 const AboutPage = () => {
@@ -191,10 +191,10 @@ const AboutPage = () => {
         </ul>
       </div>
 
-      <div className="w-[90%] lg:w-[50%] m-auto my-20">
+      <div className="w-[90%] lg:w-[65%] m-auto my-20">
         <h3 className="my-10">
           <span className="text-xl mx-1">Milestone:</span> Completed our first
-          project, Durumi Site 1, within 18 months of inception.
+          project, Durumi Site 2, within 18 months of inception.
         </h3>
 
         <div>

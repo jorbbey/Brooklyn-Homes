@@ -9,6 +9,8 @@ import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import DurumiSite1 from './pages/Projects/DurumiSite1';
 import DurumiSite2 from './pages/Projects/DurumiSite2';
+import AdminEditor from './pages/AdminEditor'
+import SinglePost from './pages/SinglePost'
 function App() {
   return (
     <>
@@ -22,6 +24,8 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/durumisite1" element={<DurumiSite1 />} />
           <Route path="/durumisite2" element={<DurumiSite2 />} />
+          <Route path="/admin/editor" element={<AdminEditor />} />
+          <Route path="/blog/:slug" element={<SinglePost />} />
           {/* <Route path="*" element={<NotFound />} /> Handles 404 */}
         </Routes>
         <Footer />

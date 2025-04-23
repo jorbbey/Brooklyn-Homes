@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Map from '../components/Map'
 import SubHero from '../components/SubHero'
-import Modal from '../components/MOdal';
+import Modal from '../components/Modal';
 import { IoLocationOutline } from "react-icons/io5";
 import { BiPhoneCall } from "react-icons/bi";
 import { MdAttachEmail } from "react-icons/md";

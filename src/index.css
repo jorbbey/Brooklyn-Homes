@@ -1,0 +1,36 @@
+@import "tailwindcss";
+/* @font-face {
+    font-family: "SpecialGothicCondensedOne-Regular";
+    src: url('./assets/fonts/SpecialGothicCondensedOne-Regular.ttf') format('truetype');
+    font-weight: normal;    
+    font-style: normal;
+} */
+ /* .special-gothic-condensed-one-regular {
+     font-family: "Special Gothic Condensed One", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+ } */
+
+ /* .playfair {
+     font-family: "Playfair", serif;
+     font-optical-sizing: auto;
+     font-weight: 400;
+     font-style: normal;
+     font-variation-settings:
+         "wdth" 100;
+ } */
+
+ .poppins-regular {
+     font-family: "Poppins", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+ }
+
+ .test-scrollbar::-webkit-scrollbar {
+     display: none;
+ }
+
+ .test-scrollbar {
+     scrollbar-width: none;
+     -ms-overflow-style: none;
+ }

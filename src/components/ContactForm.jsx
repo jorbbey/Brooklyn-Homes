@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Modal from "./MOdal";
+import Modal from "./Modal";
 
 const ContactForm = () => {
   const [result, setResult] = useState("");

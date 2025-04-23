@@ -14,15 +14,15 @@ import Map from "../../components/Map";
 import image1 from "../../assets/durumi-site1/DurumiSite1_3.jpg";
 import image2 from "../../assets/durumi-site1/DurumiSite1_2.jpg";
 import image3 from "../../assets/durumi-site1/DurumiSite1_1.jpg";
-import construct1 from "../../assets/durumi-site1/construct1.jpg";
-import construct2 from "../../assets/durumi-site1/construct2.jpg";
-import construct3 from "../../assets/durumi-site1/construct3.jpg";
-import construct4 from "../../assets/durumi-site1/construct4.jpg";
-import construct5 from "../../assets/durumi-site1/construct5.jpg";
-import construct6 from "../../assets/durumi-site1/construct6.jpg";
-import construct7 from "../../assets/durumi-site1/construct7.jpg";
-import construct8 from "../../assets/durumi-site1/construct8.jpg";
-import construct9 from "../../assets/durumi-site1/construct9.jpg";
+// import construct1 from "../../assets/durumi-site1/construct1.jpg";
+// import construct2 from "../../assets/durumi-site1/construct2.jpg";
+// import construct3 from "../../assets/durumi-site1/construct3.jpg";
+// import construct4 from "../../assets/durumi-site1/construct4.jpg";
+// import construct5 from "../../assets/durumi-site1/construct5.jpg";
+// import construct6 from "../../assets/durumi-site1/construct6.jpg";
+// import construct7 from "../../assets/durumi-site1/construct7.jpg";
+// import construct8 from "../../assets/durumi-site1/construct8.jpg";
+// import construct9 from "../../assets/durumi-site1/construct9.jpg";
 
 import Typewritter from "../../components/Typewritter";
 
@@ -58,18 +58,18 @@ const DurumiSite1 = () => {
      autoplaySpeed: 5000,
    };
 
-  const before = [
-    construct1,
-    construct2,
-    construct3,
-    construct4,
-    construct5,
-    construct6,
-    ,
-    construct7,
-    construct8,
-    construct9,
-  ];
+  // const before = [
+  //   construct1,
+  //   construct2,
+  //   construct3,
+  //   construct4,
+  //   construct5,
+  //   construct6,
+  //   ,
+  //   construct7,
+  //   construct8,
+  //   construct9,
+  // ];
   const after = [image1, image2, image3];
 
   const handleClick = () => setScale(!scale);
@@ -142,9 +142,9 @@ const DurumiSite1 = () => {
             </p>
           </div>
 
-          <h1 className="text-xl font-semibold">Work in progress ...</h1>
+          {/* <h1 className="text-xl font-semibold">Work in progress ...</h1> */}
 
-          <div className="w-full lg:w-[95%] m-auto my-10 border-1 border-gray-300 rounded-lg">
+          {/* <div className="w-full lg:w-[95%] m-auto my-10 border-1 border-gray-300 rounded-lg">
             <Slider {...settings}>
               {before.map((image) => (
                 <div>
@@ -156,9 +156,9 @@ const DurumiSite1 = () => {
                 </div>
               ))}
             </Slider>
-          </div>
+          </div> */}
 
-          <h1 className="text-xl font-semibold mt-20">Proposed</h1>
+          <h1 className="text-xl font-semibold mt-20">Work in progress ...</h1>
 
           <div className="flex flex-col md:flex-row flex-wrap justify-around items-center cursor-pointer my-10">
             {after.map((image) => (

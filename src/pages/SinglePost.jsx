@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  collection,
-  query,
-  where,
-  getDocs,
-  doc,
-  updateDoc,
-} from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { SlCalender } from "react-icons/sl";
 import { CiUser } from "react-icons/ci";
 import SubHero from "../components/SubHero";
+import SEO from '../components/SEO'
 
 function SinglePost() {
   const { slug } = useParams();
@@ -50,6 +44,17 @@ function SinglePost() {
 
   return (
     <>
+      {/* SEO Component for dynamic page meta data */}
+      <SEO
+        title={`${post.title} | Brooklyn Homes Blog`}
+        description={
+          post.summary || "Read this insightful blog post on Brooklyn Homes."
+        }
+        keywords={`${post.title}, Brooklyn Homes blog, real estate blog, property tips, real estate insights, housing trends`}
+        image={post.image || "https://brooklynhomesltd.com/homepage_seo_img.webp"}
+        url={`https://brooklynhomesltd.com/blog/${slug}`}
+      />
+
       <SubHero text={post.title} />
       <div className="p-6 max-w-4xl mx-auto text-white">
         <div className="flex items-center justify-start">

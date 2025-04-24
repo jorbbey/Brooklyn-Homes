@@ -42,6 +42,7 @@ const Index = () => {
               src={image}
               alt={`Project Image ${index + 1}`}
               className="w-[30%] h-auto object-cover mb-4 cursor-pointer"
+              loading="lazy"
             />
           ))}
         </div>
@@ -66,6 +67,7 @@ const Index = () => {
               src={image}
               alt={`Project Image ${index + 1}`}
               className="w-[30%] h-auto object-cover mb-4 cursor-pointer"
+              loading="lazy"
             />
           ))}
         </div>
@@ -76,7 +78,7 @@ const Index = () => {
           View details →
         </h1>
       </Link>
-{/* 
+      {/* 
       <h1 className="text-2xl mx-5 mt-20">Interior view - Home Decor</h1>
       <div className="flex justify-center items-center overflow-auto w-full mt-10">
        <div className="flex justify-around items-center gap-4 w-[120%]">

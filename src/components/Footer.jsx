@@ -14,6 +14,7 @@ const Footer = () => {
             src={logo}
             alt="brooklynhomes"
             className="w-[125px] my-5 m-auto lg:mx-26"
+            loading="lazy"
           />
           <p className="text-gray-400 w-[90%] m-auto my-5 text-sm leading-loose">
             At Brooklyn Homes, we specialize in property development, real

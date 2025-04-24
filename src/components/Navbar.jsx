@@ -39,7 +39,12 @@ const Navbar = () => {
   return (
     <header className="flex justify-between items-center">
       <i className="mx-2 lg:mx-5 my-4">
-        <img src={logo} alt="logo" className="w-[100px] lg:w-[125px]" />
+        <img
+          src={logo}
+          alt="logo"
+          className="w-[100px] lg:w-[125px]"
+          loading="lazy"
+        />
       </i>
 
       <nav className="hidden md:flex justify-around items-center">
@@ -47,7 +52,6 @@ const Navbar = () => {
           <div
             key={item.text}
             ref={item.text === "Our Projects" ? projectsLinkRef : null}
-           
           >
             <Link
               to={item.link}
@@ -65,10 +69,14 @@ const Navbar = () => {
           className="bg-red-500 flex flex-col justify-around items-center p-4 text-white absolute"
           style={getPopupPosition()}
           ref={popupRef}
-           // Hide popup when leaving the popup
+          // Hide popup when leaving the popup
         >
-          <Link to='/durumisite1' className="p-2 hover:text-[#bc963f]">Durumi Site I</Link>
-          <Link to='durumisite2' className="p-2 hover:text-[#bc963f]">Durumi Site II</Link>
+          <Link to="/durumisite1" className="p-2 hover:text-[#bc963f]">
+            Durumi Site I
+          </Link>
+          <Link to="durumisite2" className="p-2 hover:text-[#bc963f]">
+            Durumi Site II
+          </Link>
         </div>
       )}
 

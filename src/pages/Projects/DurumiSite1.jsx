@@ -159,6 +159,7 @@ const DurumiSite1 = () => {
                 alt="durumi_site2"
                 key={image}
                 className="w-full md:w-[32%] my-5 md:my-0 hover:brightness-50"
+                loading="lazy"
               />
             ))}
           </div>

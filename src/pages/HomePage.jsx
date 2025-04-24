@@ -24,6 +24,7 @@ const HomePage = () => {
                   src={baseImg}
                   alt="durumisiteII_base_image"
                   className="w-full"
+                  loading="lazy"
                 />
               </div>
               <div className="w-[90%] lg:w-[45%] mx-3 mb-0">
@@ -31,10 +32,10 @@ const HomePage = () => {
                   Who we are
                 </h1>
                 <p className="text-md leading-8 my-5 md:my-3 lg:my-5">
-                  Step into a world of exceptional real estate possibilities. At 
-                  <span className="text-[#bc963f] mx-1">Brooklyn Homes</span>,  we
-                  don’t just build properties—we craft lifestyles. <br /> With a
-                  passion for excellence and innovation, we specialize in
+                  Step into a world of exceptional real estate possibilities. At
+                  <span className="text-[#bc963f] mx-1">Brooklyn Homes</span>,
+                  we don’t just build properties—we craft lifestyles. <br />{" "}
+                  With a passion for excellence and innovation, we specialize in
                   property development, real estate investment, facility
                   management, and investment advisory services. <br />
                   Our mission is to redefine the real estate experience by

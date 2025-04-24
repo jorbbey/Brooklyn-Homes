@@ -61,6 +61,7 @@ const Hero = () => {
               src={image}
               alt={image}
               className="w-full h-[75vh] md:h-[90vh] object-cover"
+              loading="lazy"
             />
           </div>
         ))}

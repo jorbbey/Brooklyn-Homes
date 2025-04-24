@@ -30,6 +30,7 @@ const Featured = () => {
               src={feature1}
               alt="Slide 1"
               className="w-full h-96 object-cover"
+              loading="lazy"
             />
           </div>
           <div>
@@ -37,6 +38,7 @@ const Featured = () => {
               src={feature2}
               alt="Slide 3"
               className="w-full h-96 object-cover"
+              loading="lazy"
             />
           </div>
           <div>
@@ -44,6 +46,7 @@ const Featured = () => {
               src={feature3}
               alt="Slide 3"
               className="w-full h-96 object-cover"
+              loading="lazy"
             />
           </div>
           <div>
@@ -51,6 +54,7 @@ const Featured = () => {
               src={feature5}
               alt="Slide 2"
               className="w-full h-96 object-cover"
+              loading="lazy"
             />
           </div>
           <div>
@@ -58,14 +62,15 @@ const Featured = () => {
               src={feature6}
               alt="Slide 2"
               className="w-full h-96 object-cover"
+              loading="lazy"
             />
           </div>
         </Slider>
       </div>
 
       <h4>
-        Discover Durumi Site 1 - Six stunning 3-bedroom flats designed for modern
-        living.
+        Discover Durumi Site 1 - Six stunning 3-bedroom flats designed for
+        modern living.
       </h4>
     </section>
   );

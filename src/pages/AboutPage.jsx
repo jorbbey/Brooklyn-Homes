@@ -81,7 +81,7 @@ const AboutPage = () => {
                 />
               </div>
             </Slider> */}
-            <img src={team0} alt="team" />
+            <img src={team0} alt="team" loading="lazy" />
           </div>
           <div className="my-5">
             <Slider {...settings}>
@@ -118,8 +118,7 @@ const AboutPage = () => {
               Today, we’re proud to offer a diverse portfolio of services, from
               developing contemporary residential units to providing expert
               facility management & investment advisory services . <br /> <br />
-               Led by
-              a trio of seasoned professionals—
+              Led by a trio of seasoned professionals—
               <span className="text-[#bc963f] mx-1">
                 Mr. John Seth, Mr. Anthony Onuoha, and Mr. Chidubem Ogbuehi
               </span>
@@ -167,6 +166,7 @@ const AboutPage = () => {
               src={image3}
               alt="image1"
               className="w-full lg:w-1/2 h-96 object-cover"
+              loading="lazy"
             />
           </li>
           <li className="flex flex-col lg:flex-row justify-between items-center my-10">
@@ -174,6 +174,7 @@ const AboutPage = () => {
               src={image2}
               alt="image2"
               className="w-full lg:w-1/2 h-96 object-cover"
+              loading="lazy"
             />
             <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
               <GoDash className="hidden lg:block text-xl font-semibold mx-2" />
@@ -196,6 +197,7 @@ const AboutPage = () => {
               src={image1}
               alt="image3"
               className="w-full lg:w-1/2 h-96 object-cover"
+              loading="lazy"
             />
           </li>
         </ul>
@@ -214,6 +216,7 @@ const AboutPage = () => {
                 src={m1}
                 alt="Slide 1"
                 className="w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div>
@@ -221,6 +224,7 @@ const AboutPage = () => {
                 src={m2}
                 alt="Slide 3"
                 className="w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div>
@@ -228,6 +232,7 @@ const AboutPage = () => {
                 src={m3}
                 alt="Slide 3"
                 className="w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
           </Slider>

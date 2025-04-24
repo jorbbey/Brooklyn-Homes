@@ -52,7 +52,10 @@ const Services = () => {
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
         <main className="flex flex-wrap items-center justify-between lg:justify-start w-full md:w-[90%] lg:w-[70%]">
           {services.map((item) => (
-            <div key={item.head} className="text-center m-10 p-4 w-[90%] md:w-[35%]">
+            <div
+              key={item.head}
+              className="text-center m-10 p-4 w-[90%] md:w-[35%]"
+            >
               <item.icon className="text-4xl text-[#bc963f] w-full" />
               <h1 className="text-xl my-5 w-full text-gray-300">{item.head}</h1>
               <p className="my-3 text-sm text-gray-300">{item.desc}</p>
@@ -67,6 +70,7 @@ const Services = () => {
                 src={slide1}
                 alt="Slide 1"
                 className="w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div>
@@ -74,6 +78,7 @@ const Services = () => {
                 src={slide2}
                 alt="Slide 3"
                 className="w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div>
@@ -81,6 +86,7 @@ const Services = () => {
                 src={slide3}
                 alt="Slide 3"
                 className="w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
             <div>
@@ -88,6 +94,7 @@ const Services = () => {
                 src={slide4}
                 alt="Slide 2"
                 className="w-full h-96 object-cover"
+                loading="lazy"
               />
             </div>
           </Slider>

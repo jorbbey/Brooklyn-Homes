@@ -68,6 +68,7 @@ function SinglePost() {
             src={post.image}
             alt={post.title}
             className="w-full h-auto mb-4 rounded"
+            loading="lazy"
           />
         )}
         <div

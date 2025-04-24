@@ -2,11 +2,11 @@ import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import feature1 from '../assets/durumi-site1/DurumiSite1_3.jpg'
-import feature2 from "../assets/durumi-site1/DurumiSite1_2.jpg";
-import feature3 from "../assets/durumi-site1/DurumiSite1_1.jpg";
-import feature5 from "../assets/durumi-site1/DurumiSite1_2.jpg";
-import feature6 from "../assets/durumi-site1/DurumiSite1_3.jpg";
+import feature1 from '../assets/durumi-site1/DurumiSite1_3.webp'
+import feature2 from "../assets/durumi-site1/DurumiSite1_2.webp";
+import feature3 from "../assets/durumi-site1/DurumiSite1_1.webp";
+import feature5 from "../assets/durumi-site1/DurumiSite1_2.webp";
+import feature6 from "../assets/durumi-site1/DurumiSite1_3.webp";
 const Featured = () => {
 
         const settings = {

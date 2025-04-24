@@ -11,18 +11,10 @@ import { FaHouseCircleCheck } from "react-icons/fa6";
 import { FaUserCheck } from "react-icons/fa";
 import SubHero from "../../components/SubHero";
 import Map from "../../components/Map";
-import image1 from "../../assets/durumi-site1/DurumiSite1_3.jpg";
-import image2 from "../../assets/durumi-site1/DurumiSite1_2.jpg";
-import image3 from "../../assets/durumi-site1/DurumiSite1_1.jpg";
-// import construct1 from "../../assets/durumi-site1/construct1.jpg";
-// import construct2 from "../../assets/durumi-site1/construct2.jpg";
-// import construct3 from "../../assets/durumi-site1/construct3.jpg";
-// import construct4 from "../../assets/durumi-site1/construct4.jpg";
-// import construct5 from "../../assets/durumi-site1/construct5.jpg";
-// import construct6 from "../../assets/durumi-site1/construct6.jpg";
-// import construct7 from "../../assets/durumi-site1/construct7.jpg";
-// import construct8 from "../../assets/durumi-site1/construct8.jpg";
-// import construct9 from "../../assets/durumi-site1/construct9.jpg";
+import image1 from "../../assets/durumi-site1/DurumiSite1_3.webp";
+import image2 from "../../assets/durumi-site1/DurumiSite1_2.webp";
+import image3 from "../../assets/durumi-site1/DurumiSite1_1.webp";
+
 
 import Typewritter from "../../components/Typewritter";
 

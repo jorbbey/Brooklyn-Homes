@@ -1,8 +1,8 @@
 import React from 'react'
 import Hero from '../components/Hero';
 import Services from '../components/services';
-import baseImg from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.jpg";
-import secondImage from "../assets/durumi-site1/DurumiSite1_2.jpg";
+import baseImg from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.webp";
+import secondImage from "../assets/durumi-site1/DurumiSite1_2.webp";
 import ContactForm from '../components/ContactForm';
 import Featured from '../components/Featured';
 const HomePage = () => {

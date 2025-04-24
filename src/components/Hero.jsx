@@ -2,19 +2,19 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from "../assets/durumi-site1/DurumiSite1_3.jpg";
-import image2 from "../assets/durumi-site1/DurumiSite1_2.jpg";
-import image3 from "../assets/durumi-site1/DurumiSite1_1.jpg";
-import image4 from "../assets/durumi-site2/Durumi Site 2 A_1 - Photo.jpg";
-import image5 from "../assets/durumi-site2/Durumi Site 2 A_2 - Photo.jpg";
-import image6 from "../assets/durumi-site2/Durumi Site 2 A_4 - Photo.jpg";``
-import image7 from "../assets/durumi-site2/Durumi Site 2 A_5 - Photo.jpg";
-import image8 from "../assets/durumi-site2/Durumi Site 2 A_7 - Photo.jpg";
-import image9 from "../assets/durumi-site2/Durumi Site 2 A_8 - Photo.jpg";
-import image10 from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.jpg";
-import image11 from "../assets/durumi-site2/Durumi Site 2 A_10 - Photo.jpg";
-import image12 from "../assets/durumi-site2/Durumi Site 2 A11.jpg";
-import image13 from "../assets/durumi-site2/Durumi Site 2 A12.jpg";
+import image1 from "../assets/durumi-site1/DurumiSite1_3.webp";
+import image2 from "../assets/durumi-site1/DurumiSite1_2.webp";
+import image3 from "../assets/durumi-site1/DurumiSite1_1.webp";
+import image4 from "../assets/durumi-site2/Durumi Site 2 A_1 - Photo.webp";
+import image5 from "../assets/durumi-site2/Durumi Site 2 A_2 - Photo.webp";
+import image6 from "../assets/durumi-site2/Durumi Site 2 A_4 - Photo.webp";``
+import image7 from "../assets/durumi-site2/Durumi Site 2 A_5 - Photo.webp";
+import image8 from "../assets/durumi-site2/Durumi Site 2 A_7 - Photo.webp";
+import image9 from "../assets/durumi-site2/Durumi Site 2 A_8 - Photo.webp";
+import image10 from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.webp";
+import image11 from "../assets/durumi-site2/Durumi Site 2 A_10 - Photo.webp";
+import image12 from "../assets/durumi-site2/Durumi Site 2 A11.webp";
+import image13 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
 
 const Hero = () => {
      const settings = {

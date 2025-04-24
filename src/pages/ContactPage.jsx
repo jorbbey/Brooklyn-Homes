@@ -7,6 +7,7 @@ import { BiPhoneCall } from "react-icons/bi";
 import { MdAttachEmail } from "react-icons/md";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { LuAsterisk } from "react-icons/lu";
+import SEO from '../components/SEO';
 const ContactPage = () => {
 const [result, setResult] = useState("");
 const [showModal, setShowModal] = useState(false);

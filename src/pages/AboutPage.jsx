@@ -19,6 +19,7 @@ import m2 from "../assets/durumi-site1/DurumiSite1_2.webp";
 import m3 from "../assets/durumi-site1/DurumiSite1_3.webp";
 import SubHero from "../components/SubHero";
 import Typewritter from "../components/Typewritter";
+import SEO from "../components/SEO";
 const AboutPage = () => {
   const settings = {
     arrows: false,

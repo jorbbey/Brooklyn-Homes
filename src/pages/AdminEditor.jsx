@@ -12,6 +12,7 @@ import { db } from "../firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { slugify } from "../utils/slugify";
 
+
 const storage = getStorage(); // Firebase Storage init
 
 export default function AdminEditor() {

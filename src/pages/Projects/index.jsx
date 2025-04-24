@@ -13,6 +13,7 @@ import DurumiSite2_1 from "../../assets/durumi-site2/Durumi Site 2 A_5 - Photo.w
 import DurumiSite2_sketch1 from "../../assets/durumi-site2/site2_sketch1.webp";
 import DurumiSite2_sketch2 from "../../assets/durumi-site2/site2_sketch2.webp";
 import DurumiSite2_sketch3 from "../../assets/durumi-site2/site2_sketch3.webp";
+import SEO from "../../components/SEO";
 const Index = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 

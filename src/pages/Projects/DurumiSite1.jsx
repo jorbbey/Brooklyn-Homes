@@ -14,6 +14,7 @@ import Map from "../../components/Map";
 import image1 from "../../assets/durumi-site1/DurumiSite1_3.webp";
 import image2 from "../../assets/durumi-site1/DurumiSite1_2.webp";
 import image3 from "../../assets/durumi-site1/DurumiSite1_1.webp";
+import SEO from "../../components/SEO";
 
 
 const DurumiSite1 = () => {

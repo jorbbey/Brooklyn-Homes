@@ -19,6 +19,7 @@ import image9 from "../../assets/durumi-site2/Durumi Site 2 A_9 - Photo.webp";
 import image10 from "../../assets/durumi-site2/Durumi Site 2 A_10 - Photo.webp";
 import image11 from "../../assets/durumi-site2/Durumi Site 2 A11.webp";
 import image12 from "../../assets/durumi-site2/Durumi Site 2 A12.webp";
+import SEO from "../../components/SEO";
 
 const DurumiSite2 = () => {
   const features = [

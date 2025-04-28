@@ -45,7 +45,7 @@ const Hero = () => {
      ];
   return (
     // <div className="relative text-white h-[70vh] lg:h-screen flex items-center justify-center lg:justify-start bg-[url('/Hero2.jpg')] bg-cover bg-center">
-    <div className="relative h-[75vh] md:h-[90vh] w-full">
+    <div className="relative h-[55vh] md:h-[70vh] lg:h-[90vh] w-full">
       {/* <video
           className="relative top-0 left-0 w-full h-full object-cover"
           autoPlay
@@ -60,7 +60,7 @@ const Hero = () => {
             <img
               src={image}
               alt={image}
-              className="w-full h-[75vh] md:h-[90vh] object-cover"
+              className="w-full h-[55vh] md:h-[70vh] lg:h-[90vh] object-cover"
               loading="lazy"
             />
           </div>
@@ -72,7 +72,7 @@ const Hero = () => {
       <div className="relative z-auto">
         <h1 className="absolute bottom-28 text-white text-sm md:text-lg lg:text-2xl uppercase mx-10 mt-24 md:mt-20 lg:mt-20 w-[80%] lg:w-[55%] leading-loose">
           Unlock Your Dream Home with <br />
-          <span className="text-4xl md:text-5xl lg:text-7xl font-semibold">
+          <span className="text-4xl md:text-6xl lg:text-7xl font-semibold">
             Brooklyn Homes Limited
           </span>
         </h1>

@@ -76,7 +76,7 @@ const Hero = () => {
             Brooklyn Homes Limited
           </span>
         </h1>
-        <h1 className="block lg:hidden text-sm md:text-lg w-[80%] mx-10">
+        <h1 className="hidden lg:block text-sm md:text-lg w-[80%] mx-5">
           Brooklyn Homes, a modern real estate, building and construction
           company
         </h1>

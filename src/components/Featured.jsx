@@ -37,7 +37,7 @@ const Featured = () => {
             <img
               src={feature2}
               alt="Slide 3"
-              className="w-full h-96 object-cover"
+              className="w-full h-96 object-cover mx-3"
               loading="lazy"
             />
           </div>
@@ -45,7 +45,7 @@ const Featured = () => {
             <img
               src={feature3}
               alt="Slide 3"
-              className="w-full h-96 object-cover"
+              className="w-full h-96 object-cover mx-6"
               loading="lazy"
             />
           </div>
@@ -53,7 +53,7 @@ const Featured = () => {
             <img
               src={feature5}
               alt="Slide 2"
-              className="w-full h-96 object-cover"
+              className="w-full h-96 object-cover mx-9"
               loading="lazy"
             />
           </div>

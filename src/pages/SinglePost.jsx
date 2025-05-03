@@ -81,7 +81,7 @@ function SinglePost() {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        <div className="mt-10">
+        <div className="mt-40">
           <h3 className="text-xl mb-2 mt-10">💬 Leave a Reply</h3>
           <textarea
             placeholder="Write your reply..."

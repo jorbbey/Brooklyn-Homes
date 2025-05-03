@@ -67,7 +67,7 @@ function SinglePost() {
             By {post.author}
           </p>
         </div>
-        <h1 className="text-3xl font-bold mt-10 mb-4">{post.title}</h1>
+        <h1 className="text-3xl font-bold my-10">{post.title}</h1>
         {post.image && (
           <img
             src={post.image}

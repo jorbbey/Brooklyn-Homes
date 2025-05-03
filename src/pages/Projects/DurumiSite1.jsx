@@ -9,13 +9,13 @@ import { FaBed } from "react-icons/fa";
 import { FaCar } from "react-icons/fa";
 import { FaHouseCircleCheck } from "react-icons/fa6";
 import { FaUserCheck } from "react-icons/fa";
+import { LuConstruction } from "react-icons/lu";
 import SubHero from "../../components/SubHero";
 import Map from "../../components/Map";
 import image1 from "../../assets/durumi-site1/DurumiSite1_3.webp";
 import image2 from "../../assets/durumi-site1/DurumiSite1_2.webp";
 import image3 from "../../assets/durumi-site1/DurumiSite1_1.webp";
 import SEO from "../../components/SEO";
-
 
 const DurumiSite1 = () => {
   const [scale, setScale] = useState(false);
@@ -38,16 +38,16 @@ const DurumiSite1 = () => {
     },
   ];
 
-   const settings = {
-     arrows: true,
-     dots: true,
-     infinite: true,
-     speed: 700,
-     slidesToShow: 2,
-     slidesToScroll: 1,
-     autoplay: false,
-     autoplaySpeed: 5000,
-   };
+  const settings = {
+    arrows: true,
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 5000,
+  };
   const after = [image1, image2, image3];
 
   const handleClick = () => setScale(!scale);
@@ -77,7 +77,7 @@ const DurumiSite1 = () => {
               <h1 className="text-2xl md:text-3xl my-5 text-center">
                 Features
               </h1>
-              <div className="flex justify-between items-center flex-wrap md:w-full lg:w-[90%] m-auto ">
+              <div className="flex justify-between items-center flex-wrap md:w-full lg:w-[90%] m-auto">
                 {features.map((item) => (
                   <div
                     key={item.text}
@@ -94,10 +94,10 @@ const DurumiSite1 = () => {
               <div className="my-3 border-b-1 border-gray-500 p-2">
                 <h3 className="text-2xl my-3">Status</h3>
                 <p className="flex items-center justify-start my-2 text-[#bc963f] ">
-                  Completed{" "}
-                  <FaHouseCircleCheck className="text-2xl text-[#bc963f] mx-5" />
+                  Under construction{" "}
+                  <LuConstruction className="text-2xl text-[#bc963f] mx-5" />
                 </p>
-                <p className="text-sm">available for sale as of March 2025</p>
+                <p className="text-sm">expected completion by Q4 2025.</p>
               </div>
               <div className="my-3 border-b-1 border-gray-500 p-2">
                 <h3 className="text-2xl my-3 flex items-center justify-start">
@@ -163,9 +163,9 @@ const DurumiSite1 = () => {
               ))}
             </div>
 
-            <p className="my-3 text-sm">
+            <p className="my-5 text-sm">
               <span className="font-semibold text-[#bc963f]">Status:</span>{" "}
-              Completed and available for sale as of March 2025.
+              Under construction, expected completion by Q4 2025.
             </p>
 
             <p className="my-3 text-sm">

@@ -51,7 +51,7 @@ const Index = () => {
                 key={index}
                 src={image}
                 alt={`Project Image ${index + 1}`}
-                className="w-[30%] h-auto object-cover mb-4 cursor-pointer"
+                className="w-[60%] md:w-[30%] h-auto object-cover mb-4 cursor-pointer"
                 loading="lazy"
               />
             ))}
@@ -76,7 +76,7 @@ const Index = () => {
                 key={index}
                 src={image}
                 alt={`Project Image ${index + 1}`}
-                className="w-[30%] h-auto object-cover mb-4 cursor-pointer"
+                className="w-[60%] md:w-[30%] h-auto object-cover mb-4 cursor-pointer"
                 loading="lazy"
               />
             ))}

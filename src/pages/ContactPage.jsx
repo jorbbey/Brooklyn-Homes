@@ -14,19 +14,19 @@ const [showModal, setShowModal] = useState(false);
 
     const contactInfo = [
       {
-        icon:  IoLocationOutline,
+        icon: IoLocationOutline,
         head: "Location",
         desc: "Brooklyn Homes Ltd, Plot 785, Herbert Macaulay way, Central Business District, Abuja",
       },
       {
-        icon:BiPhoneCall,
+        icon: BiPhoneCall,
         head: "Call us on",
         desc: "+234 705 6776 557",
       },
       {
         icon: MdAttachEmail,
         head: "Email us",
-        desc: "info@brooklynhomesltd.com",
+        desc: "brooklynrealtyltd@gmail.com",
       },
     ];
 

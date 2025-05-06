@@ -46,12 +46,20 @@ const ContactForm = () => {
         <div className="flex justify-between items-center w-full md:w-[70%] my-5">
           <span className="flex justify-between items-center">
             <IoPhonePortraitOutline />
-            <p className="mx-2 text-sm">+234 567 8901 234</p>
+            <p className="mx-2 text-sm">+234 705 677 6557</p>
+ 
           </span>
 
           <span className="flex justify-between items-center">
             <CiMail />
-            <p className="mx-2 text-sm">info@broklynhomes.com</p>
+            {/* <p className="mx-2 text-sm">info@broklynhomes.com</p> */}
+
+            <a
+              className="mx-2 text-sm"
+              href="mailto:brooklynrealtyltd@gmail.com"
+            >
+              brooklynrealtyltd@gmail.com
+            </a>
           </span>
         </div>
       </div>

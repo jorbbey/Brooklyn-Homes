@@ -42,7 +42,7 @@ const Services = () => {
       },
       {
         icon: FaHandshake,
-        head: "Investment Advisory",
+        head: "Investment Advisory Services",
         desc: "Guiding you to smart, future-proof decisions.",
       },
     ];

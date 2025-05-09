@@ -5,29 +5,47 @@ import { db } from "../firebase";
 import { SlCalender } from "react-icons/sl";
 import { CiUser } from "react-icons/ci";
 import SubHero from "../components/SubHero";
-import SEO from '../components/SEO'
+import SEO from "../components/SEO";
+import BlogSidebar from "../components/BlogSidebar";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 function SinglePost() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
+  const [allPosts, setAllPosts] = useState([]); // Store all posts
+  const [filteredPosts, setFilteredPosts] = useState([]); // Store filtered posts
   const [reply, setReply] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
 
   useEffect(() => {
-    const fetchPost = async () => {
+    const fetchPosts = async () => {
       const querySnapshot = await getDocs(collection(db, "posts"));
-      const foundPost = querySnapshot.docs
-        .map((doc) => ({ id: doc.id, ...doc.data() }))
-        .find((p) => p.slug === slug);
+      const postsData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setAllPosts(postsData);
+      setFilteredPosts(postsData); // Initially, all posts are shown
 
-      if (foundPost) setPost(foundPost);
+      // Find the specific post for this page
+      const foundPost = postsData.find((p) => p.slug === slug);
+      if (foundPost) {
+        setPost(foundPost);
+      } else {
+        setPost(false); // Set to false to indicate post not found after loading
+      }
     };
-    fetchPost();
+    fetchPosts();
   }, [slug]);
 
-  const handleReply = async () => {
-    if (!reply.trim()) return;
+  const handleReply = async (e) => {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !reply.trim()) return;
 
-    const updatedReplies = [...(post.replies || []), reply];
+    const newReply = { name, email, website, message: reply };
+    const updatedReplies = [...(post.replies || []), newReply];
     try {
       const postRef = doc(db, "posts", post.id);
       await updateDoc(postRef, {
@@ -35,80 +53,163 @@ function SinglePost() {
       });
       setPost((prev) => ({ ...prev, replies: updatedReplies }));
       setReply("");
+      setName("");
+      setEmail("");
+      setWebsite("");
     } catch (err) {
       console.error("Failed to update replies:", err);
     }
   };
 
-  if (!post) return <div className="p-6 text-white">Post not found.</div>;
+  if (post === null) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-orange-500 border-solid mb-4"></div>
+        <p className="text-lg">Loading post...</p>
+      </div>
+    );
+  }
+
+  if (post === false) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+        <p className="text-lg">Oops! This post couldn’t be found.</p>
+        <a href="/blog" className="mt-4 text-orange-500 hover:underline">
+          Back to Blog
+        </a>
+      </div>
+    );
+  }
 
   return (
     <>
-      {/* SEO Component for dynamic page meta data */}
       <SEO
         title={`${post.title} | Brooklyn Homes Blog`}
         description={
           post.summary || "Read this insightful blog post on Brooklyn Homes."
         }
         keywords={`${post.title}, Brooklyn Homes blog, real estate blog, property tips, real estate insights, housing trends`}
-        image={post.image || "https://brooklynhomesltd.com/homepage_seo_img.webp"}
+        image={
+          post.image || "https://brooklynhomesltd.com/homepage_seo_img.webp"
+        }
         url={`https://brooklynhomesltd.com/blog/${slug}`}
       />
 
       <SubHero text={post.title} />
-      <div className="p-6 max-w-4xl mx-auto text-white">
-        <div className="flex items-center justify-start">
-          <p className="flex items-center p-1 text-sm">
-            <SlCalender className="mr-3 text-sm font-semibold text-[#bc963f]" />
-            {post.date}
-          </p>
-          <p className="flex items-center p-1 mx-3 text-sm">
-            <CiUser className="mx-2 text-lg font-semibold text-[#bc963f]" />
-            By {post.author}
-          </p>
-        </div>
-        <h1 className="text-3xl font-bold my-10">{post.title}</h1>
-        {post.image && (
-          <img
-            src={post.image}
-            alt={post.title}
-            className="w-full h-auto mb-4 rounded"
-            loading="lazy"
-          />
-        )}
-        <div
-          className="prose prose-invert my-5"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-
-        <div className="mt-40">
-          <h3 className="text-xl mb-2 mt-10">💬 Leave a Reply</h3>
-          <textarea
-            placeholder="Write your reply..."
-            className="w-full p-2 border border-white rounded mb-2"
-            value={reply}
-            onChange={(e) => setReply(e.target.value)}
-          />
-          <button
-            onClick={handleReply}
-            className="bg-[#bc963f] text-white px-4 py-2 rounded my-5 cursor-pointer"
-          >
-            Submit Reply
-          </button>
-        </div>
-
-        {post.replies?.length > 0 && (
-          <div className="mt-6">
-            <h4 className="text-lg mb-2">Replies</h4>
-            <ul className="space-y-2">
-              {post.replies.map((r, idx) => (
-                <li key={idx} className="border p-2 rounded text-gray-300">
-                  {r}
-                </li>
-              ))}
-            </ul>
+      <div className="flex justify-between mx-auto">
+        <div className="flex-1 p-6 text-white">
+          <div className="flex items-center justify-start">
+            <p className="flex items-center p-1 text-sm">
+              <SlCalender className="mr-3 text-xs md:text-sm font-semibold text-[#bc963f]" />
+              {post.date}
+            </p>
+            <p className="flex items-center p-1 mx-3 text-sm">
+              <CiUser className="mx-2 text-sm md:text-lg font-semibold text-[#bc963f]" />
+              By {post.author}
+            </p>
           </div>
-        )}
+          <h1 className="text-xl md:text-3xl font-bold my-10">{post.title}</h1>
+          {post.image && (
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-auto mb-4 rounded"
+              loading="lazy"
+            />
+          )}
+          <div
+            className="prose prose-invert lg:prose-xl max-w-none my-10 [&>p]:text-white [&>h1]:text-white [&>h2]:text-white"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+
+          <h3 className="text-xl mb-2 mt-28">💬 Leave a Reply</h3>
+          <p>Your email address will not be published</p>
+
+          <form
+            className="w-full flex flex-col items-start justify-evenly my-10 lg:my-0"
+            onSubmit={handleReply}
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center w-full">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="my-5 p-2 border border-gray-500 w-full md:w-[30%]"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                className="my-5 p-2 border border-gray-500 w-full md:w-[30%]"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="text"
+                name="website"
+                placeholder="Your Website"
+                className="my-5 p-2 border border-gray-500 w-full md:w-[30%] focus:border-[#bc963f]"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+              />
+            </div>
+
+            <textarea
+              className="my-5 p-8 border border-gray-500 w-full"
+              placeholder="Comment"
+              name="message"
+              required
+              value={reply}
+              onChange={(e) => setReply(e.target.value)}
+            ></textarea>
+
+            <button
+              className="bg-[#bc963f] p-4 w-40 my-5 flex items-center cursor-pointer"
+              type="submit"
+            >
+              Post Reply
+              <FaArrowRightLong className="ml-2" />
+            </button>
+          </form>
+
+          {post.replies?.length > 0 && (
+            <div className="mt-12">
+              <h4 className="text-lg mb-2">Replies</h4>
+              <ul className="space-y-4">
+                {post.replies.map((r, idx) => (
+                  <li
+                    key={idx}
+                    className="bg-[#333333] p-2 rounded text-gray-300"
+                  >
+                    <p className="mt-1">{r.message}</p>
+
+                    <div className="mt-5 mb-2">
+                      {" "}
+                      <p className="font-semibold">{r.name}</p>
+                      {r.website && (
+                        <a
+                          href={
+                            r.website.startsWith("http")
+                              ? r.website
+                              : `http://${r.website}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-400 text-xs hover:underline"
+                        >
+                          {r.website}
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+        <BlogSidebar posts={allPosts} setFilteredPosts={setFilteredPosts} />
       </div>
     </>
   );

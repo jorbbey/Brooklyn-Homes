@@ -19,7 +19,7 @@ const HomePage = () => {
 
       <div className="">
         <Hero />
-        <main className="  text-white my-28 w-[97%] m-auto">
+        <main className="  text-white my-10 w-[97%] m-auto">
           <section>
             <div className="hidden lg:block my-10 w-[50%]">
               <h1 className="text-2xl lg:text-5xl leading-15">

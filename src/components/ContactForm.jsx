@@ -32,7 +32,7 @@ const ContactForm = () => {
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-60">
       <div className="w-[90%] lg:w-[45%] lg:mx-5">
-        <h1 className="mb-10 lg:mb-24 text-3xl md:text-5xl ">
+        <h1 className="mb-10 lg:mb-10 text-3xl md:text-5xl ">
           Request for more information
         </h1>
 

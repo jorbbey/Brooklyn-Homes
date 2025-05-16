@@ -4,10 +4,14 @@ import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { SlCalender } from "react-icons/sl";
 import { CiUser } from "react-icons/ci";
-import SubHero from "../components/SubHero";
 import SEO from "../components/SEO";
 import BlogSidebar from "../components/BlogSidebar";
+import BlogHero from "../components/blogHero";
 import { FaArrowRightLong } from "react-icons/fa6";
+import newRoadImage from "../../public/blog-posts/new-roads.jpg"; 
+import landOwnerImage from "../../public/blog-posts/land-owner.jpg";
+import smartHomeImage from "../../public/blog-posts/smarthomes.jpg";
+import walkableImage from "../../public/blog-posts/walkable-city.jpg";
 
 function SinglePost() {
   const { slug } = useParams();
@@ -81,6 +85,13 @@ function SinglePost() {
     );
   }
 
+ let postImage;
+ post.title.includes("New Road") ? postImage = newRoadImage :
+ post.title.includes("Ownership") ? postImage = landOwnerImage :
+ post.title.includes("Smart Home") ? postImage = smartHomeImage :
+  post.title.includes("Walkable") ? postImage = walkableImage : postImage = null;
+
+
   return (
     <>
       <SEO
@@ -95,7 +106,7 @@ function SinglePost() {
         url={`https://brooklynhomesltd.com/blog/${slug}`}
       />
 
-      <SubHero text={post.title} />
+      <BlogHero text={post.title} image={postImage} />
       <div className="flex justify-between mx-auto">
         <div className="flex-1 p-6 text-white">
           <div className="flex items-center justify-start">

@@ -113,7 +113,7 @@ const AboutPage = () => {
             </h1>
             <div className="">
               <p className="text-sm md:text-md leading-loose my-5 lg:my-10 text-gray-300">
-                <span className="text-[#bc963f] mx-1">
+                <span className="text-[#bc963f]">
                   Brooklyn Homes Limited
                 </span>{" "}
                 was born in August 2023 with a bold vision:{" "}

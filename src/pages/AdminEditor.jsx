@@ -12,8 +12,7 @@ import { db } from "../firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { slugify } from "../utils/slugify";
 
-
-const storage = getStorage(); // Firebase Storage init
+const storage = getStorage();
 
 export default function AdminEditor() {
   const [title, setTitle] = useState("");
@@ -23,7 +22,6 @@ export default function AdminEditor() {
   const [posts, setPosts] = useState([]);
   const [editorContent, setEditorContent] = useState("");
 
-  // Fetch posts
   useEffect(() => {
     const fetchPosts = async () => {
       const querySnapshot = await getDocs(collection(db, "posts"));
@@ -51,11 +49,8 @@ export default function AdminEditor() {
     }
 
     const contentHTML = editorContent;
-
-    // Try to extract the first image src (if any) from the contentHTML
-    const imageUrlMatch = contentHTML.match(/<img [^>]*src="([^"]+)"[^>]*>/);
+    const imageUrlMatch = contentHTML.match(/<img [^>]*src=\"([^\"]+)\"[^>]*>/);
     const imageSrc = imageUrlMatch ? imageUrlMatch[1] : null;
-    console.log("Extracted image URL:", imageSrc); // Debug log
 
     const newPost = {
       title,
@@ -69,18 +64,15 @@ export default function AdminEditor() {
         day: "numeric",
       }),
       replies: [],
-      image: imageSrc, // Will be null if no image is found
+      image: imageSrc,
     };
 
     try {
       if (editingId) {
-        const ref = doc(db, "posts", editingId);
-        await updateDoc(ref, newPost);
+        await updateDoc(doc(db, "posts", editingId), newPost);
       } else {
         await addDoc(collection(db, "posts"), newPost);
       }
-
-      // Refresh list
       const snapshot = await getDocs(collection(db, "posts"));
       const allPosts = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -108,63 +100,43 @@ export default function AdminEditor() {
     setPosts(posts.filter((p) => p.id !== id));
   };
 
-  // Reusable function to upload image to Firebase Storage
   const uploadImageToFirebase = async (file) => {
-    if (!file) return null;
-
-    // Create a storage reference with a unique name
     const fileName = `${Date.now()}_${file.name}`;
     const storageRef = ref(storage, `images/${fileName}`);
-
     try {
       const snapshot = await uploadBytes(storageRef, file);
-      const imageUrl = await getDownloadURL(snapshot.ref);
-      console.log("Image uploaded successfully, URL:", imageUrl); // Debug log
-      return imageUrl;
+      return await getDownloadURL(snapshot.ref);
     } catch (error) {
-      console.error("Error uploading image: ", error);
-      throw new Error("Image upload failed");
+      console.error("Image upload error:", error);
+      return null;
     }
   };
 
-  // Handle image upload for manual input
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
-    if (!file) return;
-
-    try {
-      const imageUrl = await uploadImageToFirebase(file);
-      if (imageUrl) {
-        setEditorContent((prevContent) => {
-          const updatedContent = `${prevContent}<img src="${imageUrl}" alt="Uploaded Image" />`;
-          console.log("Updated editor content with image:", updatedContent); // Debug log
-          return updatedContent;
-        });
-      }
-    } catch (error) {
-      console.error("Image upload error:", error);
-      alert("Failed to upload image.");
+    const imageUrl = await uploadImageToFirebase(file);
+    if (imageUrl) {
+      setEditorContent(
+        (prev) => `${prev}<img src=\"${imageUrl}\" alt=\"Uploaded Image\" />`
+      );
     }
   };
 
   return (
     <div className="p-6 max-w-4xl mx-auto text-white">
       <h1 className="text-2xl font-bold mb-4">📝 Blog Editor</h1>
-
       <input
         className="w-full p-2 border mb-3 rounded"
         placeholder="Post Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-
       <textarea
         className="w-full p-2 border mb-3 rounded"
         placeholder="Post Summary"
         value={summary}
         onChange={(e) => setSummary(e.target.value)}
       />
-
       <input
         className="w-full p-2 border mb-3 rounded"
         placeholder="Author Name"
@@ -172,17 +144,15 @@ export default function AdminEditor() {
         onChange={(e) => setAuthor(e.target.value)}
       />
 
-      <div className="flex flex-wrap gap-2 mb-2">
-        <label className="btn cursor-pointer">
-          📷 Image
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleImageUpload}
-            hidden
-          />
-        </label>
-      </div>
+      <label className="btn cursor-pointer mb-3 block">
+        📷 Upload Image
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageUpload}
+          hidden
+        />
+      </label>
 
       <Editor
         apiKey="xzeym30ltxk21e61m38lor51lvnq4ocxa2y0np4wwyddskeg"
@@ -196,37 +166,23 @@ export default function AdminEditor() {
             "insertdatetime media table paste code help wordcount",
           ],
           toolbar:
-            "undo redo | bold italic underline strikethrough | link image | bullist numlist | outdent indent | removeformat",
+            "undo redo | bold italic underline | link image | bullist numlist | removeformat",
           images_upload_handler: async (blobInfo, success, failure) => {
-            try {
-              const file = blobInfo.blob();
-              const imageUrl = await uploadImageToFirebase(file);
-              if (imageUrl) {
-                console.log("TinyMCE image upload success, URL:", imageUrl); // Debug log
-                success(imageUrl);
-              } else {
-                failure("Image upload failed");
-              }
-            } catch (error) {
-              console.error("TinyMCE image upload error:", error);
-              failure("Image upload failed: " + error.message);
-            }
+            const file = blobInfo.blob();
+            const url = await uploadImageToFirebase(file);
+            if (url) success(url);
+            else failure("Upload failed");
           },
         }}
-        onEditorChange={(newContent) => {
-          console.log("Editor content updated:", newContent); // Debug log
-          setEditorContent(newContent);
-        }}
+        onEditorChange={(newContent) => setEditorContent(newContent)}
       />
 
       <button
         onClick={handleSave}
-        className="bg-[#bc963f] text-white px-4 py-2 my-5 cursor-pointer rounded hover:bg-blue-700"
+        className="bg-[#bc963f] px-4 py-2 my-5 rounded hover:bg-yellow-600"
       >
         {editingId ? "Update" : "Save"} Post
       </button>
-
-      <hr className="my-6" />
 
       <h2 className="text-xl font-semibold mb-2">All Posts</h2>
       {posts.map((post) => (

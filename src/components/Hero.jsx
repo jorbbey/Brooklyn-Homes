@@ -67,7 +67,7 @@ const Hero = () => {
         ))}
       </Slider>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-75 z-0"></div>
+      <div className="absolute inset-0 bg-black opacity-70 z-0"></div>
       {/* Content */}
       <div className="relative z-auto">
         <h1 className="absolute bottom-12 md:bottom-28 text-white text-sm md:text-lg lg:text-2xl uppercase mx-10 mt-22 md:mt-20 lg:mt-20 w-[80%] lg:w-[55%] leading-loose">

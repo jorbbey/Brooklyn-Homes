@@ -59,7 +59,7 @@ const Index = () => {
         </div>
 
         <Link to="/durumisite1">
-          <h1 className="text-sm hover:underline text-[#bc963f] mb-20 mx-5">
+          <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold mb-20 mx-5">
             View details →
           </h1>
         </Link>
@@ -84,7 +84,7 @@ const Index = () => {
         </div>
 
         <Link to="/durumisite2">
-          <h1 className="text-sm hover:underline text-[#bc963f] mb-20 mx-5">
+          <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold mb-20 mx-5">
             View details →
           </h1>
         </Link>

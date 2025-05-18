@@ -19,7 +19,7 @@ const HomePage = () => {
 
       <div className="">
         <Hero />
-        <main className="  text-white my-10 w-[97%] m-auto">
+        <main className="  text-black my-10 w-[97%] m-auto">
           <section>
             <div className="hidden lg:block my-10 w-[50%]">
               <h1 className="text-2xl lg:text-5xl leading-15">
@@ -44,7 +44,7 @@ const HomePage = () => {
                   <p className="text-md leading-8 my-5 md:my-3 lg:my-5">
                     Step into a world of exceptional real estate possibilities.
                     At
-                    <span className="text-[#bc963f] mx-1">Brooklyn Homes</span>,
+                    <span className="text-[#cf9a1e] mx-1 font-bold">Brooklyn Homes</span>,
                     we don’t just build properties—we craft lifestyles. <br />{" "}
                     With a passion for excellence and innovation, we specialize
                     in property development, real estate investment, facility

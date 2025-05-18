@@ -123,7 +123,7 @@ export default function AdminEditor() {
   };
 
   return (
-    <div className="p-6 max-w-4xl mx-auto text-white">
+    <div className="p-6 max-w-4xl mx-auto text-black">
       <h1 className="text-2xl font-bold mb-4">📝 Blog Editor</h1>
       <input
         className="w-full p-2 border mb-3 rounded"
@@ -179,7 +179,7 @@ export default function AdminEditor() {
 
       <button
         onClick={handleSave}
-        className="bg-[#bc963f] px-4 py-2 my-5 rounded hover:bg-yellow-600"
+        className="bg-[#cf9a1e] px-4 py-2 my-5 rounded hover:bg-yellow-600"
       >
         {editingId ? "Update" : "Save"} Post
       </button>
@@ -192,13 +192,13 @@ export default function AdminEditor() {
           <div className="mt-2 flex gap-2">
             <button
               onClick={() => handleEdit(post)}
-              className="bg-yellow-500 text-white px-2 py-1 rounded"
+              className="bg-yellow-500 text-black px-2 py-1 rounded"
             >
               Edit
             </button>
             <button
               onClick={() => handleDelete(post.id)}
-              className="bg-red-600 text-white px-2 py-1 rounded"
+              className="bg-red-600 text-black px-2 py-1 rounded"
             >
               Delete
             </button>

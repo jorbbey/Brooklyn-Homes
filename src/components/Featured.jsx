@@ -11,7 +11,7 @@ const Featured = () => {
 
         const settings = {
           arrows: false,
-          dots: false, 
+          dots: true, 
           infinite: true, 
           speed: 700, 
           slidesToShow: 1, 
@@ -20,16 +20,16 @@ const Featured = () => {
           autoplaySpeed: 5000, 
         };
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section className="flex flex-col justify-center items-center font-semibold">
       <h1>Featured Projects</h1>
 
-      <div className="w-full lg:w-[90%] m-auto my-10 border-2 border-gray-300 rounded-lg">
+      <div className="w-full lg:w-[90%] m-auto my-10 border-2 border-gray-700 rounded-lg">
         <Slider {...settings}>
           <div>
             <img
               src={feature1}
               alt="Slide 1"
-              className="w-full h-96 object-cover"
+              className="w-full object-cover"
               loading="lazy"
             />
           </div>
@@ -37,7 +37,7 @@ const Featured = () => {
             <img
               src={feature2}
               alt="Slide 3"
-              className="w-full h-96 object-cover mx-3"
+              className="w-full object-cover"
               loading="lazy"
             />
           </div>
@@ -45,7 +45,7 @@ const Featured = () => {
             <img
               src={feature3}
               alt="Slide 3"
-              className="w-full h-96 object-cover mx-6"
+              className="w-full object-cover"
               loading="lazy"
             />
           </div>
@@ -53,7 +53,7 @@ const Featured = () => {
             <img
               src={feature5}
               alt="Slide 2"
-              className="w-full h-96 object-cover mx-9"
+              className="w-full object-cover"
               loading="lazy"
             />
           </div>
@@ -61,7 +61,7 @@ const Featured = () => {
             <img
               src={feature6}
               alt="Slide 2"
-              className="w-full h-96 object-cover"
+              className="w-full object-cover"
               loading="lazy"
             />
           </div>

@@ -67,7 +67,7 @@ function SinglePost() {
 
   if (post === null) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-black">
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-orange-500 border-solid mb-4"></div>
         <p className="text-lg">Loading post...</p>
       </div>
@@ -76,7 +76,7 @@ function SinglePost() {
 
   if (post === false) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-black">
         <p className="text-lg">Oops! This post couldn’t be found.</p>
         <a href="/blog" className="mt-4 text-orange-500 hover:underline">
           Back to Blog
@@ -108,14 +108,14 @@ function SinglePost() {
 
       <BlogHero text={post.title} image={postImage} />
       <div className="flex justify-between mx-auto">
-        <div className="flex-1 p-6 text-white">
+        <div className="flex-1 p-6 text-black">
           <div className="flex items-center justify-start">
             <p className="flex items-center p-1 text-sm">
-              <SlCalender className="mr-3 text-xs md:text-sm font-semibold text-[#bc963f]" />
+              <SlCalender className="mr-3 text-xs md:text-sm font-semibold text-[#cf9a1e]" />
               {post.date}
             </p>
             <p className="flex items-center p-1 mx-3 text-sm">
-              <CiUser className="mx-2 text-sm md:text-lg font-semibold text-[#bc963f]" />
+              <CiUser className="mx-2 text-sm md:text-lg font-semibold text-[#cf9a1e]" />
               By {post.author}
             </p>
           </div>
@@ -129,7 +129,7 @@ function SinglePost() {
             />
           )}
           <div
-            className="prose prose-invert lg:prose-xl max-w-none my-10 [&>p]:text-white [&>h1]:text-white [&>h2]:text-white"
+            className="prose prose-invert lg:prose-xl max-w-none my-10 [&>p]:text-black [&>h1]:text-black [&>h2]:text-black"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
@@ -161,7 +161,7 @@ function SinglePost() {
                 type="text"
                 name="website"
                 placeholder="Your Website"
-                className="my-5 p-2 border border-gray-500 w-full md:w-[30%] focus:border-[#bc963f]"
+                className="my-5 p-2 border border-gray-500 w-full md:w-[30%] focus:border-[#cf9a1e]"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
               />
@@ -177,7 +177,7 @@ function SinglePost() {
             ></textarea>
 
             <button
-              className="bg-[#bc963f] p-4 w-40 my-5 flex items-center cursor-pointer"
+              className="bg-[#cf9a1e] p-4 w-40 my-5 flex items-center cursor-pointer"
               type="submit"
             >
               Post Reply

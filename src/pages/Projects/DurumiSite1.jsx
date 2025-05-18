@@ -61,67 +61,70 @@ const DurumiSite1 = () => {
         url="https://brooklynhomesltd.com/durumisite1"
       />
 
-      <div className="text-white">
+      <div className="text-black">
         <SubHero text="Durumi Site I - Residential Bliss" />
         <Link to="/durumisite2">
-          <h1 className="text-sm hover:underline text-[#bc963f] my-10 mx-10">
+          <h1 className="text-md hover:underline font-semibold text-[#cf9a1e] my-10 mx-10">
             View Site II →
           </h1>
         </Link>
-        <div className="my-20 w-[95%] m-auto">
+        <div className="my-20 w-full m-auto">
           <h1 className="text-3xl my-10">Durumi Site I - Residential Bliss</h1>
           <Map lat={9.026589} lon={7.468901} text="Durumi Site 1" />
 
-          <div className=" mt-10 md:mt-16 lg:my-36 flex flex-col lg:flex-row justify-between items-start">
-            <div className="lg:w-[65%] border-b lg:border-r-1 lg:border-b-0 border-[#bc963f]">
-              <h1 className="text-2xl md:text-3xl my-5 text-center">
-                Features
-              </h1>
-              <div className="flex justify-between items-center flex-wrap md:w-full lg:w-[90%] m-auto">
-                {features.map((item) => (
-                  <div
-                    key={item.text}
-                    className="flex flex-col md:flex-row justify-start items-center p-2 w-[50%] md:w-[45%] lg:w-[40%] mb-10 cursor-pointer text-xs"
-                  >
-                    <item.icon className="bg-white rounded-full text-5xl md:text-6xl p-3 mx-2 my-4 md:my-0 font-semibold text-black" />
-                    <p className="mx-3 text-md md:text-lg">{item.text}</p>
-                  </div>
-                ))}
+          <div className="bg-gray-100 w-full p-10 mt-10 md:mt-16 lg:my-36">
+            <div className="w-[95%] m-auto my-5 flex flex-col lg:flex-row justify-between items-start">
+              <div className="lg:w-[65%] border-b lg:border-r-1 lg:border-b-0 border-[#cf9a1e]">
+                <h1 className="text-2xl md:text-3xl my-5 text-center">
+                  Features
+                </h1>
+                <div className="flex justify-between items-center flex-wrap md:w-full lg:w-[90%] m-auto">
+                  {features.map((item) => (
+                    <div
+                      key={item.text}
+                      className="flex flex-col md:flex-row justify-start items-center p-2 w-[50%] md:w-[45%] lg:w-[40%] mb-10 cursor-pointer text-xs"
+                    >
+                      <item.icon className="text-5xl mx-2 my-4 md:my-0 font-semibold text-black" />
+                      <p className="mx-3 text-md md:text-lg">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <div className="w-full lg:w-[33%]">
-              <div className="my-3 border-b-1 border-gray-500 p-2">
-                <h3 className="text-2xl my-3">Status</h3>
-                <p className="flex items-center justify-start my-2 text-[#bc963f] ">
-                  Under construction{" "}
-                  <LuConstruction className="text-2xl text-[#bc963f] mx-5" />
-                </p>
-                <p className="text-sm">expected completion by Q4 2025.</p>
-              </div>
-              <div className="my-3 border-b-1 border-gray-500 p-2">
-                <h3 className="text-2xl my-3 flex items-center justify-start">
-                  Ideal For :{" "}
-                  <FaUserCheck className="text-2xl text-[#bc963f] mx-5" />
-                </h3>
-                <p className="text-sm">
-                  Families seeking comfort and convenience in a prime location.
-                </p>
+              <div className="w-full lg:w-[33%]">
+                <div className="my-3 border-b-1 border-gray-500 p-2">
+                  <h3 className="text-2xl my-3">Status</h3>
+                  <p className="flex items-center justify-start my-2 text-[#cf9a1e] ">
+                    Under construction{" "}
+                    <LuConstruction className="text-2xl text-[#cf9a1e] mx-5" />
+                  </p>
+                  <p className="text-sm">expected completion by Q4 2025.</p>
+                </div>
+                <div className="my-3 border-b-1 border-gray-500 p-2">
+                  <h3 className="text-2xl my-3 flex items-center justify-start">
+                    Ideal For :{" "}
+                    <FaUserCheck className="text-2xl text-[#cf9a1e] mx-5" />
+                  </h3>
+                  <p className="text-sm">
+                    Families seeking comfort and convenience in a prime
+                    location.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <section className="my-10 lg:my-40">
+          <section className=" w-[95%] m-auto my-10 lg:my-40">
             <div className="flex flex-col lg:flex-row justify-around items-start my-5 lg:my-20">
-              <h1 className="w-full lg:w-[35%] text-3xl lg:text-5xl text-[#bc963f] my-10 lg:my-0">
+              <h1 className="w-full lg:w-[35%] text-3xl lg:text-5xl text-[#cf9a1e] my-10 lg:my-0">
                 Durumi Site I
               </h1>
-              <p className="w-full lg:w-[60%] text-gray-300">
-                <span className="font-semibold text-[#bc963f]">
+              <p className="w-full lg:w-[60%] text-gray-950">
+                <span className="font-semibold text-[#cf9a1e]">
                   Durumi Site I
                 </span>{" "}
                 by{" "}
-                <span className="font-semibold text-[#bc963f]">
+                <span className="font-semibold text-[#cf9a1e]">
                   Brooklyn Homes
                 </span>{" "}
                 presents six units of elegantly designed 3-bedroom flats in the
@@ -164,12 +167,12 @@ const DurumiSite1 = () => {
             </div>
 
             <p className="my-5 text-sm">
-              <span className="font-semibold text-[#bc963f]">Status:</span>{" "}
+              <span className="font-semibold text-[#cf9a1e]">Status:</span>{" "}
               Under construction, expected completion by Q4 2025.
             </p>
 
             <p className="my-3 text-sm">
-              <span className="font-semibold text-[#bc963f]">Ideal For:</span>{" "}
+              <span className="font-semibold text-[#cf9a1e]">Ideal For:</span>{" "}
               Families seeking comfort and convenience in a prime location.
             </p>
           </section>

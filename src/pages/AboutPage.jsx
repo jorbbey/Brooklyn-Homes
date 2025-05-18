@@ -63,14 +63,16 @@ const AboutPage = () => {
         image="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/about"
       />
-      <section className="text-white">
+      <section className="text-black">
         <SubHero text="about us" />
 
-        <p className="my-10 m-auto w-[90%] lg:w-1/2 text-[#bc963f] animate-bounce">
-          <span className="text-lg lg:text-xl mx-1">Our Vision:</span> To be
-          Abuja’s leading real estate firm by 2030, known for quality and
-          innovation.
-        </p>
+        <div className="bg-gray-100 my-10 p-2">
+          <p className=" m-auto w-[90%] lg:w-3/4 text-center text-[#cf9a1e] font-semibold animate-bounce">
+            <span className="text-lg lg:text-xl mx-1">Our Vision:</span> To be
+            Abuja’s leading real estate firm by 2030, known for quality and
+            innovation.
+          </p>
+        </div>
 
         <div className="flex flex-col lg:flex-row justify-around items-start my-20">
           <div className="w-[90%] lg:w-[40%] m-auto">
@@ -95,13 +97,13 @@ const AboutPage = () => {
             </div>
             <div className="my-5">
               <Slider {...settings}>
-                <p className="text-[#bc963f] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                <p className="text-[#cf9a1e] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
                   Mr. John Seth
                 </p>
-                <p className="text-[#bc963f] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                <p className="text-[#cf9a1e] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
                   Mr. Anthony Onuoha
                 </p>
-                <p className="text-[#bc963f] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                <p className="text-[#cf9a1e] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
                   Mr. Chidubem Ogbuehi
                 </p>
               </Slider>
@@ -112,12 +114,10 @@ const AboutPage = () => {
               Who We Are – Building Tomorrow’s Homes Today
             </h1>
             <div className="">
-              <p className="text-sm md:text-md leading-loose my-5 lg:my-10 text-gray-300">
-                <span className="text-[#bc963f]">
-                  Brooklyn Homes Limited
-                </span>{" "}
+              <p className="text-sm md:text-md leading-loose my-5 lg:my-10 text-gray-950">
+                <span className="text-[#cf9a1e] font-bold">Brooklyn Homes Limited</span>{" "}
                 was born in August 2023 with a bold vision:{" "}
-                <span className="font-semibold mx-1">
+                <span className="font-bold mx-1">
                   to transform the real estate landscape in Abuja, Nigeria.
                 </span>{" "}
                 <br /> <br /> Situated at the Central Business District, we’ve
@@ -130,7 +130,7 @@ const AboutPage = () => {
                 providing expert facility management & investment advisory
                 services . <br /> <br />
                 Led by a trio of seasoned professionals—
-                <span className="text-[#bc963f] mx-1">
+                <span className="text-[#cf9a1e] mx-1 font-semibold">
                   Mr. John Seth, Mr. Anthony Onuoha, and Mr. Chidubem Ogbuehi
                 </span>
                 —our team brings decades of collective experience to every
@@ -149,11 +149,11 @@ const AboutPage = () => {
                       key={item.head}
                       className=" p-2 w-full md:w-68 lg:w-60 my-5 md:my-2 list-none text-center md:text-left cursor-pointer"
                     >
-                      <h4 className="flex justify-center md:justify-start item-center text-md text-[#bc963f]">
+                      <h4 className="flex justify-center md:justify-start item-center font-semibold text-md text-[#cf9a1e]">
                         <item.icon className="text-center mr-2 my-1 w-[10%]" />
                         {item.head}
                       </h4>
-                      <p className="my-2 text-sm text-gray-300">{item.desc}</p>
+                      <p className="my-2 text-sm text-gray-950">{item.desc}</p>
                     </li>
                   ))}
                 </div>

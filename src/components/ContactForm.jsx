@@ -36,7 +36,7 @@ const ContactForm = () => {
           Request for more information
         </h1>
 
-        <h4 className="my-5 font-semibold text-[#bc963f]">
+        <h4 className="my-5 font-semibold text-[#cf9a1e]">
           Ready to invest or find your dream home?
         </h4>
         <p className="my-5">Contact us today!</p>
@@ -79,7 +79,7 @@ const ContactForm = () => {
             type="number"
             name="number"
             placeholder="Phone Number"
-            className="my-5 p-2 border-1 border-gray-500 w-full md:w-[48%] focus:border-[#bc963f]"
+            className="my-5 p-2 border-1 border-gray-500 w-full md:w-[48%] focus:border-[#cf9a1e]"
           />
         </div>
         <input
@@ -96,7 +96,7 @@ const ContactForm = () => {
         ></textarea>
 
         <button
-          className="bg-[#bc963f] p-4 my-5 flex items-center text-xs cursor-pointer"
+          className="bg-[#cf9a1e] p-4 my-5 flex items-center text-xs cursor-pointer"
           type="submit"
         >
           SEND MESSAGE

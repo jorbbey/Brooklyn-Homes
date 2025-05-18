@@ -18,6 +18,7 @@ import image13 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
 
 const Hero = () => {
      const settings = {
+      fade: true,
        arrows: false,
        dots: false,
        infinite: true,
@@ -44,8 +45,8 @@ const Hero = () => {
        image3,
      ];
   return (
-    // <div className="relative text-white h-[70vh] lg:h-screen flex items-center justify-center lg:justify-start bg-[url('/Hero2.jpg')] bg-cover bg-center">
-    <div className="relative h-[50vh] md:h-[70vh] lg:h-[90vh] w-full">
+    // <div className="relative text-black h-[70vh] lg:h-screen flex items-center justify-center lg:justify-start bg-[url('/Hero2.jpg')] bg-cover bg-center">
+    <div className="relative h-[50vh] md:h-[70vh] lg:h-[100vh] w-full">
       {/* <video
           className="relative top-0 left-0 w-full h-full object-cover"
           autoPlay
@@ -60,19 +61,19 @@ const Hero = () => {
             <img
               src={image}
               alt={image}
-              className="w-full h-[50vh] md:h-[70vh] lg:h-[90vh] object-cover"
+              className="w-full h-[50vh] md:h-[70vh] lg:h-[100vh] object-cover"
               loading="lazy"
             />
           </div>
         ))}
       </Slider>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-70 z-0"></div>
+      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
       {/* Content */}
       <div className="relative z-auto">
-        <h1 className="absolute bottom-12 md:bottom-28 text-white text-sm md:text-lg lg:text-2xl uppercase mx-10 mt-22 md:mt-20 lg:mt-20 w-[80%] lg:w-[55%] leading-loose">
+        <h1 className="absolute bottom-12 md:bottom-28 text-white text-sm md:text-lg lg:text-3xl uppercase mx-10 mt-22 md:mt-20 lg:mt-20 w-[80%] lg:w-[55%] leading-loose font-semibold">
           Unlock Your Dream Home with <br />
-          <span className="text-4xl md:text-6xl lg:text-7xl font-semibold">
+          <span className="text-4xl md:text-6xl lg:text-8xl font-semibold">
             Brooklyn Homes Limited
           </span>
           <span className="block lg:hidden capitalize mt-5">
@@ -80,10 +81,7 @@ const Hero = () => {
             company
           </span>
         </h1>
-        <h1 className="hidden lg:block text-sm md:text-lg w-[80%] mx-5">
-          Brooklyn Homes, a modern real estate, building and construction
-          company
-        </h1>
+       
       </div>
     </div>
   );

@@ -14,13 +14,13 @@ const Services = () => {
 
     const settings = {
       arrows: false,
-      dots: false, // Show navigation dots
-      infinite: true, // Infinite loop scrolling
-      speed: 500, // Animation speed
-      slidesToShow: 1, // Number of slides visible at once
-      slidesToScroll: 1, // Number of slides to scroll per action
-      autoplay: true, // Auto slide change
-      autoplaySpeed: 3000, // Time before auto-slide
+      dots: false, 
+      infinite: true, 
+      speed: 500, 
+      slidesToShow: 1, 
+      slidesToScroll: 1, 
+      autoplay: true,
+      autoplaySpeed: 3000, 
     };
 
 
@@ -56,9 +56,9 @@ const Services = () => {
               key={item.head}
               className="text-center m-10 p-4 w-[90%] md:w-[35%]"
             >
-              <item.icon className="text-4xl text-[#bc963f] w-full" />
-              <h1 className="text-xl my-5 w-full text-gray-300">{item.head}</h1>
-              <p className="my-3 text-sm text-gray-300">{item.desc}</p>
+              <item.icon className="text-4xl text-[#cf9a1e] w-full" />
+              <h1 className="text-xl my-5 w-full text-gray-950">{item.head}</h1>
+              <p className="my-3 text-sm text-gray-950">{item.desc}</p>
             </div>
           ))}
         </main>

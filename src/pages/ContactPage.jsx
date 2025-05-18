@@ -63,14 +63,14 @@ const [showModal, setShowModal] = useState(false);
         iimage="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/contact"
       />
-      <div className="text-white">
+      <div className="text-black">
         <SubHero text="contact us" />
         <section>
           <div className="mt-28 w-[90%] md:w-[75%] lg:w-1/2 m-auto">
-            <h1 className="text-4xl md:text-5xl text-[#bc963f] text-center">
+            <h1 className="text-4xl md:text-5xl text-[#cf9a1e] fomt-bold text-center">
               How to find us
             </h1>
-            <p className="text-center text-gray-300 my-5">
+            <p className="text-center text-gray-950 my-5">
               You can visit us at the address below, call us or send us an email
             </p>
           </div>
@@ -78,13 +78,13 @@ const [showModal, setShowModal] = useState(false);
             {contactInfo.map((item) => (
               <div
                 key={item.head}
-                className="flex flex-col items-start justify-center lg:justify-start w-full lg:w-[30%] border-b-2 border-r-0 lg:border-b-0 lg:border-r-2 border-gray-300 h-28 my-2 md:my-0"
+                className="flex flex-col items-start justify-center lg:justify-start w-full lg:w-[30%] border-b-2 border-r-0 lg:border-b-0 lg:border-r-2 border-gray-500 h-28 my-2 md:my-0"
               >
                 <span className="flex">
                   <item.icon className="mx-2 text-2xl md:text-3xl" />
                   <h3 className="text-md md:text-lg mx-2">{item.head}</h3>
                 </span>
-                <p className="text-gray-300 mx-14 text-sm my-2">{item.desc}</p>
+                <p className="text-gray-950 mx-14 text-sm my-2">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -96,10 +96,10 @@ const [showModal, setShowModal] = useState(false);
           <h1 className="text-4xl md:text-5xl text-center">
             Have any questions?
           </h1>
-          <p className="text-center my-5 text-[#bc963f]">
+          <p className="text-center my-5 text-[#cf9a1e] font-semibold">
             Ready to invest or find your dream home?
           </p>
-          <p className="text-center text-gray-300 my-5 text-sm md:text-md">
+          <p className="text-center text-gray-950 my-5 text-sm md:text-md">
             We would like to be of help, please keep your questions coming.
           </p>
         </div>
@@ -143,7 +143,7 @@ const [showModal, setShowModal] = useState(false);
               type="number"
               name="number"
               placeholder="Phone Number"
-              className="my-5 p-2 border-1 border-gray-500  focus:border-[#bc963f] text-sm"
+              className="my-5 p-2 border-1 border-gray-500  focus:border-[#cf9a1e] text-sm"
               required
             />
           </span>
@@ -161,7 +161,7 @@ const [showModal, setShowModal] = useState(false);
 
           <button
             type="submit"
-            className="bg-[#bc963f] p-4 my-5 flex items-center text-xs cursor-pointer"
+            className="bg-[#cf9a1e] p-4 my-5 flex items-center text-xs text-white cursor-pointer"
           >
             SEND MESSAGE
             <FaArrowRightLong className="mx-2" />

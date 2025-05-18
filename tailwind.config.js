@@ -7,7 +7,8 @@ export default {
         "hero-image": "url('/src/assets/estate-1.jpg')",
       },
       colors: {
-        primary: "#bc963f",
+        'primary': "#bc963f",
+         'primary-gold': '#cf9a1e'
       },
       fontFamily: {
         "gothic-condensed": ["SpecialGothicCondensedOne-Regular", "sans-serif"],

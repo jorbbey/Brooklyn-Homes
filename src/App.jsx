@@ -15,7 +15,7 @@ import SinglePost from './pages/SinglePost'
 function App() {
   return (
     <>
-      <div className=" bg-black">
+      <div className=" bg-white">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />

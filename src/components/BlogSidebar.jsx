@@ -34,9 +34,9 @@ const BlogSidebar = ({ posts, setFilteredPosts }) => {
   };
 
   return (
-    <div className="hidden lg:block w-[30%] p-6 bg-black text-black ">
+    <div className="hidden lg:block w-[30%] p-6 bg-gray-100 text-black ">
       {/* Archives Section */}
-      <div className="mb-8 bg-[#333333]">
+      <div className="mb-8 bg-white">
         <h3 className="text-lg md:text-xl lg:text-3xl p-4 border-l-1 border-[#cf9a1e]">
           Archives
         </h3>
@@ -50,7 +50,7 @@ const BlogSidebar = ({ posts, setFilteredPosts }) => {
       </div>
 
       {/* Category Section */}
-      <div className="mb-8 bg-[#333333]">
+      <div className="mb-8 bg-white">
         <h3 className="text-lg md:text-xl lg:text-3xl p-4 border-l-1 border-[#cf9a1e]">
           Category
         </h3>
@@ -65,7 +65,7 @@ const BlogSidebar = ({ posts, setFilteredPosts }) => {
       </div>
 
       {/* Search Section */}
-      <div className="bg-[#333333]">
+      <div className="bg-white">
         <h3 className="text-lg md:text-xl lg:text-3xl p-4 border-l-1 border-[#cf9a1e]">
           Search
         </h3>

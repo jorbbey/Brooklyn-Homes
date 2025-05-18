@@ -75,7 +75,7 @@ const AboutPage = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row justify-around items-start my-20">
-          <div className="w-[90%] lg:w-[40%] m-auto">
+          <div className="w-[95%] lg:w-[40%] m-auto">
             <div className="my-5">
               {/* <Slider {...settings}>
               <div>
@@ -226,7 +226,7 @@ const AboutPage = () => {
                 <img
                   src={m1}
                   alt="Slide 1"
-                  className="w-full h-96 object-cover"
+                  className="w-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -234,7 +234,7 @@ const AboutPage = () => {
                 <img
                   src={m2}
                   alt="Slide 3"
-                  className="w-full h-96 object-cover"
+                  className="w-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -242,7 +242,7 @@ const AboutPage = () => {
                 <img
                   src={m3}
                   alt="Slide 3"
-                  className="w-full h-96 object-cover"
+                  className="w-full object-cover"
                   loading="lazy"
                 />
               </div>

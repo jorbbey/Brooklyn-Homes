@@ -29,7 +29,7 @@ const HomePage = () => {
             </div>
             <div className="">
               <div className="flex flex-col lg:flex-row justify-between items-center">
-                <div className="w-[90%] lg:w-1/2">
+                <div className="w-full lg:w-1/2">
                   <img
                     src={baseImg}
                     alt="durumisiteII_base_image"
@@ -37,7 +37,7 @@ const HomePage = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="w-[90%] lg:w-[45%] mx-3 mb-0">
+                <div className="w-[95%] lg:w-[45%] mx-3 mb-0">
                   <h1 className="text-xl md:text-2xl my-5 text-center md:text-left">
                     Who we are
                   </h1>

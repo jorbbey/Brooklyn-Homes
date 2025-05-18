@@ -70,7 +70,7 @@ const BlogPage = () => {
             {posts.map((post) => (
               <div
                 key={post.id}
-                className="mb-6 border-b border-[#333333] p-4 shadow-xl text-black"
+                className="mb-6 border-b border-gray-400 p-4 shadow-xl text-black"
               >
                 <div className="flex items-center justify-start">
                   <p className="flex items-center p-1 text-sm">
@@ -83,10 +83,10 @@ const BlogPage = () => {
                   </p>
                 </div>
                 <h2 className="text-xl my-2 font-semibold">{post.title}</h2>
-                <p className="my-3 text-gray-300">{post.summary}</p>
+                <p className="my-3 text-gray-950">{post.summary}</p>
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="text-[#cf9a1e] mt-2 inline-block"
+                  className="text-[#cf9a1e] mt-2 inline-block font-semibold"
                 >
                   Read more →
                 </Link>

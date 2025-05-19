@@ -47,10 +47,10 @@ const Services = () => {
       },
     ];
   return (
-    <section className="my-30">
+    <section className="my-10 md:my-30">
       <h1 className="text-3xl lg:text-4xl my-20 mx-5">Services We Offer</h1>
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center">
-        <main className="flex flex-wrap items-center justify-between lg:justify-start bg-red-400 w-full md:w-[90%] lg:w-[70%]">
+        <main className="flex flex-wrap items-center justify-between lg:justify-start w-full md:w-[90%] lg:w-[70%]">
           {services.map((item) => (
             <div
               key={item.head}

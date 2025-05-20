@@ -32,23 +32,28 @@ const ContactForm = () => {
   return (
     <section className="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-28 lg:mt-60">
       <div className="w-[95%] lg:w-[45%] lg:mx-5">
-        <h1 className="mb-10 lg:mb-10 text-3xl md:text-5xl ">
+        <h1 className="mb-5 text-3xl md:text-5xl ">
           Request for more information
         </h1>
 
-        <h4 className="my-5 font-semibold text-[#cf9a1e]">
+        <h4 className="mb-5 lg:my-5 font-semibold text-[#cf9a1e]">
           Ready to invest or find your dream home?
         </h4>
-        <p className="my-5">Contact us today!</p>
-        <h1 className="mt-16 text-md md:text-xl">
+        <p className="my-2">Contact us today!</p>
+        <h1 className="mt-5 lg:mt-16 text-lg md:text-xl">
           Contact us via phone or email
         </h1>
-        <div className="flex justify-between items-center w-full md:w-[70%] my-5">
-          <span className="flex justify-between items-center">
-            <IoPhonePortraitOutline />
-            <p className="mx-2 text-sm">+234 705 677 6557</p>
- 
-          </span>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full md:w-[70%] my-5">
+          <div className="my-2">
+            <span className="flex justify-between items-center">
+              <IoPhonePortraitOutline />
+              <p className="mx-2 text-sm">+234 705 677 6557</p>
+            </span>
+            <span className="flex justify-between items-center">
+              <IoPhonePortraitOutline />
+              <p className="mx-2 text-sm">+234 813 630 8083</p>
+            </span>
+          </div>
 
           <span className="flex justify-between items-center">
             <CiMail />
@@ -96,7 +101,7 @@ const ContactForm = () => {
         ></textarea>
 
         <button
-          className="bg-[#cf9a1e] p-4 my-5 flex items-center text-xs cursor-pointer"
+          className="bg-[#cf9a1e] p-4 my-5 flex items-center text-xs text-white font-bold cursor-pointer"
           type="submit"
         >
           SEND MESSAGE

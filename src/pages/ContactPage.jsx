@@ -22,7 +22,9 @@ const [showModal, setShowModal] = useState(false);
         icon: BiPhoneCall,
         head: "Call us on",
         desc: "+234 705 6776 557",
+        desc2: "+234 813 630 8083",
       },
+
       {
         icon: MdAttachEmail,
         head: "Email us",
@@ -85,6 +87,7 @@ const [showModal, setShowModal] = useState(false);
                   <h3 className="text-md md:text-lg mx-2">{item.head}</h3>
                 </span>
                 <p className="text-gray-950 mx-14 text-sm my-2">{item.desc}</p>
+                {item.desc2 && <p className="text-gray-950 mx-14 text-sm">{item.desc}</p>}
               </div>
             ))}
           </div>

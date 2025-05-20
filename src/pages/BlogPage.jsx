@@ -5,8 +5,12 @@ import { SlCalender } from "react-icons/sl";
 import { CiUser } from "react-icons/ci";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
-import SEO from "../components/SEO"; // Import the SEO component
+import SEO from "../components/SEO";
 import BlogSidebar from "../components/BlogSidebar";
+import newRoadImage from "../../public/blog-posts/new-roads2.jpg";
+import landOwnerImage from "../../public/blog-posts/land-owner.jpg";
+import smartHomeImage from "../../public/blog-posts/smarthomes.jpg";
+import walkableImage from "../../public/blog-posts/walkable-city.jpg";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
@@ -22,7 +26,7 @@ const BlogPage = () => {
         setPosts(fetchedPosts);
       } catch (error) {
         console.error("Error fetching posts:", error);
-        setPosts([]); // Reset to empty array on error
+        setPosts([]); 
       }
     };
 
@@ -35,7 +39,10 @@ const BlogPage = () => {
         <SubHero text="Brooklyn Homes Blog – Insights, Trends, and Tips" />
         <div className="flex flex-col items-center justify-start my-16 min-h-screen bg-white text-black">
           <p className="text-lg">Oops! No posts found.</p>
-          <Link to="/" className="mt-4 text-[#cf9a1e] font-semibold hover:underline">
+          <Link
+            to="/"
+            className="mt-4 text-[#cf9a1e] font-semibold hover:underline"
+          >
             Back to Homepage
           </Link>
         </div>
@@ -52,6 +59,25 @@ const BlogPage = () => {
     );
   }
 
+  const postsWithImages = posts.map((post) => {
+  let postImage;
+  if (post.title.includes("New Roads")) {
+    postImage = newRoadImage;
+  } else if (post.title.includes("Ownership")) {
+    postImage = landOwnerImage;
+  } else if (post.title.includes("Walkable")) {
+    postImage = walkableImage;
+  } else if (post.title.includes("Smart Home")) {
+    postImage = smartHomeImage;
+  } else {
+    postImage = null;
+  }
+  return {...post, postImage}
+  })
+  
+
+
+
   return (
     <>
       {/* SEO for Blog Page */}
@@ -67,11 +93,12 @@ const BlogPage = () => {
         <SubHero text="Brooklyn Homes Blog – Insights, Trends, and Tips" />
         <div className="flex justify-between mx-auto">
           <div className="p-6 max-w-4xl">
-            {posts.map((post) => (
+            {postsWithImages.map((post) => (
               <div
                 key={post.id}
-                className="mb-6 border-b border-gray-400 p-4 shadow-xl text-black"
+                className="mb-6 border-b border-gray-400 p-4 shadow-2xl text-black"
               >
+               {post.postImage && <img src={post.postImage} alt={post.title} className="my-2" />}
                 <div className="flex items-center justify-start">
                   <p className="flex items-center p-1 text-sm">
                     <SlCalender className="mr-3 text-sm font-semibold text-[#cf9a1e]" />

@@ -67,7 +67,7 @@ const AboutPage = () => {
         <SubHero text="about us" />
 
         <div className="bg-gray-100 my-10 p-2">
-          <p className=" m-auto w-[90%] lg:w-3/4 text-center text-[#cf9a1e] font-semibold animate-bounce">
+          <p className=" m-auto w-[90%] lg:w-3/4 text-center text-[#cf9a1e] font-bold animate-bounce">
             <span className="text-lg lg:text-xl mx-1">Our Vision:</span> To be
             Abuja’s leading real estate firm by 2030, known for quality and
             innovation.

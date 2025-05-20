@@ -134,7 +134,7 @@ function SinglePost() {
           />
 
           <h3 className="text-xl mb-2 mt-28">💬 Leave a Reply</h3>
-          <p>Your email address will not be published</p>
+          <p className="text-xs">Your email address will not be published</p>
 
           <form
             className="w-full flex flex-col items-start justify-evenly my-10 lg:my-0"
@@ -177,7 +177,7 @@ function SinglePost() {
             ></textarea>
 
             <button
-              className="bg-[#cf9a1e] p-4 w-40 my-5 flex items-center cursor-pointer"
+              className="bg-[#cf9a1e] p-4 w-40 my-5 flex items-center cursor-pointer text-white font-semibold"
               type="submit"
             >
               Post Reply

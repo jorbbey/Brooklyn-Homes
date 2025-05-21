@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,13 +6,14 @@ import { FaBuilding } from "react-icons/fa";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
+import { FaUserTie } from "react-icons/fa6";
 import { GoDash } from "react-icons/go";
-// import heroImg from "../assets/living-room2.webp ";
-// import team0 from "../assets/Team.jpg";
-import team0 from "../assets/dummy-team.jpg";
-// import team1 from "../assets/realTeam1.webp ";
-// import team2 from "../assets/realTeam2.webp ";
-import image1 from "../assets/slide3-2.jpg";
+import trioTeam from "../assets/Brooklyn-Homes-Team/trio1.webp";
+import trioTeam2 from "../assets/Brooklyn-Homes-Team/tio3.webp";
+import johnSeth from "../assets/Brooklyn-Homes-Team/john-seth.webp";
+import anthony from "../assets/Brooklyn-Homes-Team/anthony.webp";
+// import image1 from "../assets/slide3-2.jpg";
+import image1 from "../assets/Brooklyn-Homes-Team/dou1.webp";
 import image2 from "../assets/family.jpg";
 import image3 from "../assets/building-construction.jpg";
 import m1 from "../assets/durumi-site1/DurumiSite1_1.webp";
@@ -22,15 +23,16 @@ import SubHero from "../components/SubHero";
 import Typewritter from "../components/Typewritter";
 import SEO from "../components/SEO";
 const AboutPage = () => {
+  const [selectedExec, setSelectedExec] = useState(null);
   const settings = {
     arrows: false,
-    dots: false, // Show navigation dots
-    infinite: true, // Infinite loop scrolling
-    speed: 500, // Animation speed
-    slidesToShow: 1, // Number of slides visible at once
-    slidesToScroll: 1, // Number of slides to scroll per action
-    autoplay: true, // Auto slide change
-    autoplaySpeed: 3000, // Time before auto-slide
+    dots: false,
+    infinite: true, 
+    speed: 500, 
+    slidesToShow: 1, 
+    slidesToScroll: 1, 
+    autoplay: true,
+    autoplaySpeed: 3000, 
   };
   const objectives = [
     {
@@ -52,6 +54,27 @@ const AboutPage = () => {
       icon: FaBuilding,
       head: "Community Growth",
       desc: "We connect people with homes that enhance neighborhoods and lives.",
+    },
+  ];
+
+  const executives = [
+    {
+      name: "John Seth",
+      title: "Executive Director of Projects",
+      image: johnSeth,
+      desc: "John Seth serves as the Executive Director of Projects at Brooklyn Homes Limited. His role is central to the company's construction and site operations, where he leads strategic initiatives to boost the timely delivery of projects across different sites in accordance with company standards. With over 10 years as a Logistics and Supply Chain expert John has managed regional and global clients and has over 10 years as a real estate consultant across different parts of Nigeria.",
+    },
+    {
+      name: "Anthony Onuoha",
+      title: "Executive Director of Sales",
+      image: anthony,
+      desc: "  Anthony Chinedu Onuoha is the Executive Director of Sales. His role is central to the company’s sales operations, where he leads strategic initiatives to boost performance, mentor sales professionals, and enhance client engagement. Anthony’s broad skill set spans facility management, education, digital engagement, and team leadership. He has successfully managed mid-scale real estate projects and championed team building efforts that have contributed to business growth and innovation. Anthony Chinedu Onuoha is the Executive Director of Sales at Brooklyn Homes Limited. With over five years of experience in the real estate industry, Anthony has built a career defined by versatility and a results driven mindset. His professional journey includes time as a Facility Management Consultant and a Language Analyst, giving him a unique perspective that merges operational efficiency with a deep understanding of team dynamics and client relations. His role is central to the company’s sales operations, where he leads strategic initiatives to boost performance, mentor sales professionals, and enhance client engagement.",
+    },
+    {
+      name: "Chidubem Ogbuehi",
+      title: "Executive Director of Admin/Operations",
+      image: johnSeth,
+      desc: "  Chidubem Ogbuehi is the Executive Director of Admin/Operations at Brooklyn Homes Limited.  Chidubem holds a BSc in Mechanical Engineering from the Federal University of Technology Owerri and an MSc in International Energy Studies with a specialization in Energy and the Environment from the University of Dundee. His academic background has provided a solid foundation in engineering principles, energy systems, and environmental sustainability. As the Executive Director of Admin/Operations at Brooklyn Homes Limited, Chidubem oversees the day-to-day administrative and operational activities of the company. He is responsible for managing office operations, supervising administrative staff, and ensuring the smooth execution of company projects. Chidubem Ogbuehi is the Director of Operations/Admin in Brooklyn Homes Limited. As the Director of Operations/Admin, Chidubem oversees the day-to-day administrative and operational activities of Brooklyn Homes Limited. This includes managing office operations, supervising administrative staff, and ensuring the smooth execution of company projects.",
     },
   ];
   return (
@@ -93,7 +116,11 @@ const AboutPage = () => {
                 />
               </div>
             </Slider> */}
-              <img src={team0} alt="team" loading="lazy" />
+              <img
+                src={trioTeam}
+                alt="brooklynhomes trio team"
+                loading="lazy"
+              />
             </div>
             <div className="my-5">
               <Slider {...settings}>
@@ -115,7 +142,9 @@ const AboutPage = () => {
             </h1>
             <div className="">
               <p className="text-sm md:text-md leading-loose my-5 lg:my-10 text-gray-950">
-                <span className="text-[#cf9a1e] font-bold">Brooklyn Homes Limited</span>{" "}
+                <span className="text-[#cf9a1e] font-bold">
+                  Brooklyn Homes Limited
+                </span>{" "}
                 was born in August 2023 with a bold vision:{" "}
                 <span className="font-bold mx-1">
                   to transform the real estate landscape in Abuja, Nigeria.
@@ -160,6 +189,69 @@ const AboutPage = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="w-[98%] m-auto py-10">
+          <h1 className="text-3xl font-semibold text-center mb-6 text-black">
+            Meet our Executives
+          </h1>
+
+          {/* Horizontally scrollable container */}
+          <div className="flex justify-around overflow-x-auto gap-6 scrollbar-thin scrollbar-thumb-yellow-300 scrollbar-track-purple-300">
+            {executives.map((exec, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[90%] sm:w-72 md:w-80 lg:w-[30%] my-5 rounded-lg p-4 cursor-pointer hover:shadow-2xl transition-shadow duration-300 bg-white shadow-md"
+                onClick={() => setSelectedExec(exec)}
+              >
+                <img
+                  src={exec.image}
+                  alt={exec.name}
+                  className="w-full rounded"
+                />
+                <div className="mt-5">
+                  <h2 className="font-bold text-[#cf9a1e] text-xl">
+                    {exec.name}
+                  </h2>
+                  <p className="text-sm text-gray-800 my-2 line-clamp-3">
+                    {exec.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Modal for full info */}
+          {selectedExec && (
+            <div className="fixed inset-0 bg-black/75 flex justify-center items-center z-50 px-4 overflow-y-auto">
+              <div className="flex flex-col lg:flex-row justify-around items-start bg-white rounded-xl w-full my-20 p-2 lg:p-6 relative overflow-y-auto ">
+                <button
+                  className="absolute top-2 right-4 text-2xl font-bold text-gray-700 hover:text-black cursor-pointer"
+                  onClick={() => setSelectedExec(null)}
+                >
+                  ×
+                </button>
+                <img
+                  src={selectedExec.image}
+                  alt={selectedExec.name}
+                  className="w-full lg:w-[30%] rounded"
+                />
+                <div className="my-10 lg:my-0 lg:w-[65%] leading-loose">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-[#cf9a1e] my-4">
+                    {selectedExec.name}
+                  </h2>
+                  <span className="flex items-center text-sm md:text-md font-semibold text-[#cf9a1e] my-2">
+                    <FaUserTie />
+                    <p className="text-[#cf9a1e] text-xs font-bold mx-2">
+                      {selectedExec.title}
+                    </p>
+                  </span>
+
+                  <p className="text-gray-700 mt-10">{selectedExec.desc}</p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="my-20">

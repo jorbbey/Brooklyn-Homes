@@ -8,7 +8,7 @@ import { FaTools } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import slide1 from '../assets/building-construction.jpg'
 import slide2 from '../assets/slide2-2.webp'
-import slide3 from '../assets/slide3-3.jpg'
+import slide3 from '../assets/Brooklyn-Homes-Team/dou1.webp'
 import slide4 from '../assets/slide4-2.avif'
 const Services = () => {
 

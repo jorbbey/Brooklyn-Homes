@@ -4,7 +4,6 @@ import SubHero from "../../components/SubHero";
 // import firstVid from "../../assets/vid2.mp4";
 // import secondVid from "../../assets/vid3.mp4";
 // import thirdVid from "../../assets/hero_vid.mp4";
-import living_room from '../../assets/livingroom4.jpeg'
 import DurumiSite1_1 from "../../assets/durumi-site1/DurumiSite1_1.webp";
 import DurumiSite1_sketch2 from "../../assets/durumi-site1/site1_sketch2.webp";
 import DurumiSite1_sketch1 from "../../assets/durumi-site1/site1_sketch1.webp";

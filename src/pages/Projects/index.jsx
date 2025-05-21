@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SubHero from "../../components/SubHero";
-// import firstVid from "../../assets/vid2.mp4";
-// import secondVid from "../../assets/vid3.mp4";
-// import thirdVid from "../../assets/hero_vid.mp4";
+import firstVid from "../../assets/vid2.mp4";
+import secondVid from "../../assets/vid3.mp4";
+import thirdVid from "../../assets/hero_vid.mp4";
 import DurumiSite1_1 from "../../assets/durumi-site1/DurumiSite1_1.webp";
 import DurumiSite1_sketch2 from "../../assets/durumi-site1/site1_sketch2.webp";
 import DurumiSite1_sketch1 from "../../assets/durumi-site1/site1_sketch1.webp";
@@ -87,8 +87,8 @@ const Index = () => {
             View details →
           </h1>
         </Link>
-        {/* 
-      <h1 className="text-2xl mx-5 mt-20">Interior view - Home Decor</h1>
+        
+      <h1 className="text-2xl mx-5 mt-20 text-black font-semibold">Interior view - Home Decor</h1>
       <div className="flex justify-center items-center overflow-auto w-full mt-10">
        <div className="flex justify-around items-center gap-4 w-[120%]">
           {[thirdVid, secondVid, firstVid].map(
@@ -98,7 +98,7 @@ const Index = () => {
                 autoPlay
                 loop
                 muted
-                className="h-72 md:h-96 object-cover w-[60%] cursor-pointer hover:opacity-50"
+                className="h-64 md:h-96 object-cover w-[90%] lg:w-[60%] cursor-pointer hover:opacity-50"
                 onClick={() => handleVideoClick(vid)}
               >
                 <source src={vid} type="video/mp4" />
@@ -106,7 +106,7 @@ const Index = () => {
             )
           )}
         </div> 
-      </div> */}
+      </div>
 
         {/* Modal */}
         {selectedVideo && (

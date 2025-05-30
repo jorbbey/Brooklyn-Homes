@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { BackgroundContext } from "../../components/BackgroundContext";
 import SubHero from "../../components/SubHero";
 import firstVid from "../../assets/vid2.mp4";
 import secondVid from "../../assets/vid3.mp4";
@@ -13,6 +14,8 @@ import DurumiSite2_sketch1 from "../../assets/durumi-site2/site2_sketch1.webp";
 import DurumiSite2_sketch2 from "../../assets/durumi-site2/site2_sketch2.webp";
 import DurumiSite2_sketch3 from "../../assets/durumi-site2/site2_sketch3.webp";
 import SEO from "../../components/SEO";
+
+
 const Index = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -24,6 +27,8 @@ const Index = () => {
     setSelectedVideo(null);
   };
 
+  const {isDark} = useContext(BackgroundContext)
+
   return (
     <>
       <SEO
@@ -34,7 +39,7 @@ const Index = () => {
         url="https://brooklynhomesltd.com/projects"
       />
 
-      <div className="text-white relative">
+      <div className={isDark ? "text-white bg-black relative" : "text-black bg-white relative"}>
         <SubHero text="Our Projects – Where Dreams Meet Reality" />
 
         <h1 className="text-2xl mt-20 mb-5 mx-5">Upcoming projects ...</h1>
@@ -87,12 +92,13 @@ const Index = () => {
             View details →
           </h1>
         </Link>
-        
-      <h1 className="text-2xl mx-5 mt-20 text-black font-semibold">Interior view - Home Decor</h1>
-      <div className="flex justify-center items-center overflow-auto w-full mt-10">
-       <div className="flex justify-around items-center gap-4 w-[120%]">
-          {[thirdVid, secondVid, firstVid].map(
-            (vid, index) => (
+
+        <h1 className="text-2xl mx-5 mt-20 font-semibold">
+          Interior view - Home Decor
+        </h1>
+        <div className="flex justify-center items-center overflow-auto w-full mt-10">
+          <div className="flex justify-around items-center gap-4 w-[120%]">
+            {[thirdVid, secondVid, firstVid].map((vid, index) => (
               <video
                 key={index}
                 autoPlay
@@ -103,10 +109,9 @@ const Index = () => {
               >
                 <source src={vid} type="video/mp4" />
               </video>
-            )
-          )}
-        </div> 
-      </div>
+            ))}
+          </div>
+        </div>
 
         {/* Modal */}
         {selectedVideo && (

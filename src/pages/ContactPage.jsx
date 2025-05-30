@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import { BackgroundContext } from '../components/BackgroundContext';
 import Map from '../components/Map'
 import SubHero from '../components/SubHero'
 import Modal from '../components/Modal';
@@ -11,6 +12,8 @@ import SEO from '../components/SEO';
 const ContactPage = () => {
 const [result, setResult] = useState("");
 const [showModal, setShowModal] = useState(false);
+
+const {isDark} = useContext(BackgroundContext)
 
     const contactInfo = [
       {
@@ -65,14 +68,14 @@ const [showModal, setShowModal] = useState(false);
         iimage="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/contact"
       />
-      <div className="text-black">
+      <div className={isDark ? "text-white bg-black" : "text-black bg-white"}>
         <SubHero text="contact us" />
         <section>
           <div className="mt-28 w-[90%] md:w-[75%] lg:w-1/2 m-auto">
             <h1 className="text-4xl md:text-5xl text-[#cf9a1e] fomt-bold text-center">
               How to find us
             </h1>
-            <p className="text-center text-gray-950 my-5">
+            <p className="text-center my-5">
               You can visit us at the address below, call us or send us an email
             </p>
           </div>
@@ -86,8 +89,8 @@ const [showModal, setShowModal] = useState(false);
                   <item.icon className="mx-2 text-2xl md:text-3xl" />
                   <h3 className="text-md md:text-lg mx-2">{item.head}</h3>
                 </span>
-                <p className="text-gray-950 mx-14 text-sm my-2">{item.desc}</p>
-                {item.desc2 && <p className="text-gray-950 mx-14 text-sm">{item.desc}</p>}
+                <p className="mx-14 text-sm my-2">{item.desc}</p>
+                {item.desc2 && <p className="mx-14 text-sm">{item.desc}</p>}
               </div>
             ))}
           </div>
@@ -102,13 +105,13 @@ const [showModal, setShowModal] = useState(false);
           <p className="text-center my-5 text-[#cf9a1e] font-semibold">
             Ready to invest or find your dream home?
           </p>
-          <p className="text-center text-gray-950 my-5 text-sm md:text-md">
+          <p className="text-center my-5 text-sm md:text-md">
             We would like to be of help, please keep your questions coming.
           </p>
         </div>
         <form
           onSubmit={handleSubmit}
-          className="w-[90%] lg:w-3/4 m-auto flex flex-col items-start justify-evenly my-16"
+          className="w-[90%] lg:w-3/4 m-auto flex flex-col items-start justify-evenly mt-16"
         >
           <div className="flex flex-col md:flex-row justify-between items-center w-full">
             <span className="flex flex-col w-full md:w-[48%]">

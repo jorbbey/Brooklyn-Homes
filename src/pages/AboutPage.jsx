@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { BackgroundContext } from "../components/BackgroundContext";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,11 +9,19 @@ import { FaTools } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { FaUserTie } from "react-icons/fa6";
 import { GoDash } from "react-icons/go";
+import { FaArrowRightLong } from "react-icons/fa6"; 
+import { HiOutlineHomeModern } from "react-icons/hi2";
+import { PiBuildingApartment } from "react-icons/pi";
+import { MdOutlineRealEstateAgent } from "react-icons/md";
+import { GiCrane } from "react-icons/gi";
+import { BsHouseCheck } from "react-icons/bs";
+import { PiCraneTowerBold } from "react-icons/pi";
 import trioTeam from "../assets/Brooklyn-Homes-Team/trio1.webp";
 import trioTeam2 from "../assets/Brooklyn-Homes-Team/tio3.webp";
 import johnSeth from "../assets/Brooklyn-Homes-Team/john-seth.webp";
 import anthony from "../assets/Brooklyn-Homes-Team/anthony.webp";
-// import image1 from "../assets/slide3-2.jpg";
+import dou from "../assets/Brooklyn-Homes-Team/dou2.webp";
+// import background from '../assets/background2.webp'
 import image1 from "../assets/Brooklyn-Homes-Team/dou1.webp";
 import image2 from "../assets/family.jpg";
 import image3 from "../assets/building-construction.jpg";
@@ -22,6 +31,7 @@ import m3 from "../assets/durumi-site1/DurumiSite1_3.webp";
 import SubHero from "../components/SubHero";
 import Typewritter from "../components/Typewritter";
 import SEO from "../components/SEO";
+import Counter from "../components/Counter";
 const AboutPage = () => {
   const [selectedExec, setSelectedExec] = useState(null);
   const settings = {
@@ -35,48 +45,83 @@ const AboutPage = () => {
     autoplaySpeed: 3000, 
   };
   const objectives = [
+    // {
+    //   icon: FaHandshake,
+    //   head: "Helping Clients Win",
+    //   desc: "We simplify buying, selling, and investing with a seamless, stress-free process.",
+    // },
+    // {
+    //   icon: FaMoneyBillWave,
+    //   head: "Luxury & Investment Excellence",
+    //   desc: "We deliver premium properties and high-yield opportunities.",
+    // },
+    // {
+    //   icon: FaTools,
+    //   head: "Integrity & Trust",
+    //   desc: "We build lasting relationships grounded in honesty and professionalism.",
+    // },
+    // {
+    //   icon: FaBuilding,
+    //   head: "Community Growth",
+    //   desc: "We connect people with homes that enhance neighborhoods and lives.",
+    // },
     {
       icon: FaHandshake,
-      head: "Helping Clients Win",
-      desc: "We simplify buying, selling, and investing with a seamless, stress-free process.",
+      head: "Team Spirit",
+      desc: "We connect people with homes that enhance neighborhoods and lives.",
     },
     {
       icon: FaMoneyBillWave,
-      head: "Luxury & Investment Excellence",
-      desc: "We deliver premium properties and high-yield opportunities.",
-    },
-    {
-      icon: FaTools,
-      head: "Integrity & Trust",
-      desc: "We build lasting relationships grounded in honesty and professionalism.",
+      head: "Client-Centric",
+      desc: "We connect people with homes that enhance neighborhoods and lives.",
     },
     {
       icon: FaBuilding,
-      head: "Community Growth",
+      head: "Excellence",
+      desc: "We connect people with homes that enhance neighborhoods and lives.",
+    },
+    {
+      icon: FaHandshake,
+      head: "integrity",
+      desc: "We connect people with homes that enhance neighborhoods and lives.",
+    },
+    {
+      icon: FaTools,
+      head: "Innovation",
+      desc: "We connect people with homes that enhance neighborhoods and lives.",
+    },
+    {
+      icon: FaHandshake,
+      head: "Passion",
       desc: "We connect people with homes that enhance neighborhoods and lives.",
     },
   ];
 
-  const executives = [
+  const status = [
     {
-      name: "John Seth",
-      title: "Executive Director of Projects",
-      image: johnSeth,
-      desc: "John Seth serves as the Executive Director of Projects at Brooklyn Homes Limited. His role is central to the company's construction and site operations, where he leads strategic initiatives to boost the timely delivery of projects across different sites in accordance with company standards. With over 10 years as a Logistics and Supply Chain expert John has managed regional and global clients and has over 10 years as a real estate consultant across different parts of Nigeria.",
+      icon: HiOutlineHomeModern,
+      num: 1,
+      text: "Completed projects",
     },
     {
-      name: "Anthony Onuoha",
-      title: "Executive Director of Sales",
-      image: anthony,
-      desc: "  Anthony Chinedu Onuoha is the Executive Director of Sales. His role is central to the company’s sales operations, where he leads strategic initiatives to boost performance, mentor sales professionals, and enhance client engagement. Anthony’s broad skill set spans facility management, education, digital engagement, and team leadership. He has successfully managed mid-scale real estate projects and championed team building efforts that have contributed to business growth and innovation. Anthony Chinedu Onuoha is the Executive Director of Sales at Brooklyn Homes Limited. With over five years of experience in the real estate industry, Anthony has built a career defined by versatility and a results driven mindset. His professional journey includes time as a Facility Management Consultant and a Language Analyst, giving him a unique perspective that merges operational efficiency with a deep understanding of team dynamics and client relations. His role is central to the company’s sales operations, where he leads strategic initiatives to boost performance, mentor sales professionals, and enhance client engagement.",
+      icon: PiBuildingApartment,
+      num: 1,
+      text: "Green building under construction",
     },
     {
-      name: "Chidubem Ogbuehi",
-      title: "Executive Director of Admin/Operations",
-      image: johnSeth,
-      desc: "  Chidubem Ogbuehi is the Executive Director of Admin/Operations at Brooklyn Homes Limited.  Chidubem holds a BSc in Mechanical Engineering from the Federal University of Technology Owerri and an MSc in International Energy Studies with a specialization in Energy and the Environment from the University of Dundee. His academic background has provided a solid foundation in engineering principles, energy systems, and environmental sustainability. As the Executive Director of Admin/Operations at Brooklyn Homes Limited, Chidubem oversees the day-to-day administrative and operational activities of the company. He is responsible for managing office operations, supervising administrative staff, and ensuring the smooth execution of company projects. Chidubem Ogbuehi is the Director of Operations/Admin in Brooklyn Homes Limited. As the Director of Operations/Admin, Chidubem oversees the day-to-day administrative and operational activities of Brooklyn Homes Limited. This includes managing office operations, supervising administrative staff, and ensuring the smooth execution of company projects.",
+      icon: PiCraneTowerBold,
+      num: 2,
+      text: "Projects underway",
+    },
+    {
+      icon: MdOutlineRealEstateAgent,
+      num: 2,
+      text: "Years of experience",
     },
   ];
+
+  const {isDark} = useContext(BackgroundContext)
+
   return (
     <>
       <SEO
@@ -86,10 +131,12 @@ const AboutPage = () => {
         image="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/about"
       />
-      <section className="text-black">
+      <section
+        className={isDark ? "bg-black text-white" : "bg-white text-black"}
+      >
         <SubHero text="about us" />
 
-        <div className="bg-gray-100 my-10 p-2">
+        <div className={isDark ? "my-10 p-2" : "bg-gray-100 my-10 p-2"}>
           <p className=" m-auto w-[90%] lg:w-3/4 text-center text-[#cf9a1e] font-bold animate-bounce">
             <span className="text-lg lg:text-xl mx-1">Our Vision:</span> To be
             Abuja’s leading real estate firm by 2030, known for quality and
@@ -97,25 +144,53 @@ const AboutPage = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-around items-start my-20">
-          <div className="w-[95%] lg:w-[40%] m-auto">
-            <div className="my-5">
-              {/* <Slider {...settings}>
-              <div>
-                <img
-                  src={team1}
-                  alt="Slide 1"
-                  className="w-full h-96 object-cover"
-                />
+        {/* <p className="w-[95%] lg:w-[50%] text-2xl md:text-4xl lg:text-5xl mx-auto lg:mx-5 leading-normal">
+          To redefine the real estate experience by delivering premium
+          properties and unparalleled customer satisfaction.
+        </p> */}
+
+        {/* banner */}
+        <div className="flex justify-around items-center my-20 overflow-x-auto">
+          <div className="w-[200%] flex justify-around items-center gap-12">
+            {status.map((stat, index) => (
+              <div className="w-24 md:w-39 mx-4" key={index}>
+                <div className="relative">
+                  <Counter num={stat.num} text={stat.text} />
+                  <i className="flex justify-center items-center">
+                    <stat.icon
+                      className={
+                        isDark
+                          ? "text-6xl md:text-7xl lg:text-8xl text-[#333333]"
+                          : "text-6xl md:text-7xl lg:text-8xl text-gray-200"
+                      }
+                    />
+                  </i>
+                </div>
+                <p
+                  className={
+                    isDark
+                      ? "my-5 text-xs md:text-sm lg:text-lg text-[#6d6969]"
+                      : "my-5 text-xs md:text-sm lg:text-lg text-gray-900"
+                  }
+                >
+                  {stat.text}
+                </p>
               </div>
-              <div>
-                <img
-                  src={team2}
-                  alt="Slide 1"
-                  className="w-full h-96 object-cover"
-                />
-              </div>
-            </Slider> */}
+            ))}
+          </div>
+        </div>
+
+        <div
+          className={
+            isDark
+              ? "bg-black flex flex-col lg:flex-row justify-between items-start my-20"
+              : "bg-[url('background2.webp')] bg-gradient-to-tr bg-no-repeat bg-right-top bg-blend-multiply bg-gray-200/50 flex flex-col lg:flex-row justify-between items-start my-20"
+          }
+        >
+          <div className="w-[98%] lg:w-[45%] m-auto lg:m-0">
+            <div
+              className={isDark ? "mb-5 brightness-75" : "mb-5 brightness-100"}
+            >
               <img
                 src={trioTeam}
                 alt="brooklynhomes trio team"
@@ -136,12 +211,12 @@ const AboutPage = () => {
               </Slider>
             </div>
           </div>
-          <div className="w-[90%] lg:w-[50%] m-auto">
-            <h1 className="text-2xl lg:text-4xl text-center lg:text-left">
-              Who We Are – Building Tomorrow’s Homes Today
+          <div className="w-[90%] lg:w-[50%] m-auto lg:my-5 lg:mx-0">
+            <h1 className="text-xl text-center lg:text-left font-semibold mt-10 lg:mt-30">
+              Our <br /> <span className="text-5xl">Story</span>
             </h1>
             <div className="">
-              <p className="text-sm md:text-md leading-loose my-5 lg:my-10 text-gray-950">
+              <p className="text-sm md:text-md leading-loose my-5 lg:my-10">
                 <span className="text-[#cf9a1e] font-bold">
                   Brooklyn Homes Limited
                 </span>{" "}
@@ -166,92 +241,40 @@ const AboutPage = () => {
                 project. <br /> At Brooklyn Homes we don't just build
                 properties, we build trust, peace of mind and legacies.
               </p>
-
-              <div className="my-10 lg:my-0">
-                <p className="font-semibold text-md md:text-lg lg:text-xl text-center lg:text-left">
-                  At Brooklyn Homes Limited, our core objectives drives
-                  everything we do:
-                </p>
-                <div className="flex justify-around items-center flex-wrap my-2">
-                  {objectives.map((item) => (
-                    <li
-                      key={item.head}
-                      className=" p-2 w-full md:w-68 lg:w-60 my-5 md:my-2 list-none text-center md:text-left cursor-pointer"
-                    >
-                      <h4 className="flex justify-center md:justify-start item-center font-semibold text-md text-[#cf9a1e]">
-                        <item.icon className="text-center mr-2 my-1 w-[10%]" />
-                        {item.head}
-                      </h4>
-                      <p className="my-2 text-sm text-gray-950">{item.desc}</p>
-                    </li>
-                  ))}
-                </div>
-              </div>
             </div>
+            <button className="bg-[#cf9a1e] text-white text-md py-3 px-6 mt-6 text-xs flex items-center cursor-pointer uppercase">
+              Schedule Visit
+              <FaArrowRightLong className="ml-2" />
+            </button>
           </div>
         </div>
 
-        <div className="w-[98%] m-auto py-10">
-          <h1 className="text-3xl font-semibold text-center mb-6 text-black">
-            Meet our Executives
-          </h1>
-
-          {/* Horizontally scrollable container */}
-          <div className="flex justify-around overflow-x-auto gap-6 scrollbar-thin scrollbar-thumb-yellow-300 scrollbar-track-purple-300">
-            {executives.map((exec, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-[90%] sm:w-72 md:w-80 lg:w-[30%] my-5 rounded-lg p-4 cursor-pointer hover:shadow-2xl transition-shadow duration-300 bg-white shadow-md"
-                onClick={() => setSelectedExec(exec)}
-              >
-                <img
-                  src={exec.image}
-                  alt={exec.name}
-                  className="w-full rounded"
-                />
-                <div className="mt-5">
-                  <h2 className="font-bold text-[#cf9a1e] text-xl">
-                    {exec.name}
-                  </h2>
-                  <p className="text-sm text-gray-800 my-2 line-clamp-3">
-                    {exec.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Modal for full info */}
-          {selectedExec && (
-            <div className="fixed inset-0 bg-black/75 flex justify-center items-center z-50 px-4 overflow-y-auto">
-              <div className="flex flex-col lg:flex-row justify-around items-start bg-white rounded-xl w-full my-20 p-2 lg:p-6 relative overflow-y-auto ">
-                <button
-                  className="absolute top-2 right-4 text-2xl font-bold text-gray-700 hover:text-black cursor-pointer"
-                  onClick={() => setSelectedExec(null)}
+        <div className="bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/20 my-10 lg:my-0">
+          <h3 className="w-3/4 mx-10 pt-20 text-md md:text-lg lg:text-4xl text-center lg:text-left">
+            Our Core Values
+          </h3>
+          <div className="flex flex-col-reverse lg:flex-row justify-around items-start my-12">
+            <div className="flex flex-col md:flex-row flex-wrap justify-around items-center gap-4 lg:w-[50%] my-5">
+              {objectives.map((item) => (
+                <div
+                  key={item.head}
+                  className="p-2 w-full md:w-80 my-5 list-none text-center md:text-left cursor-pointer flex flex-col md:flex-row justify-center md:justify-between gap-4 items-center"
                 >
-                  ×
-                </button>
-                <img
-                  src={selectedExec.image}
-                  alt={selectedExec.name}
-                  className="w-full lg:w-[30%] rounded"
-                />
-                <div className="my-10 lg:my-0 lg:w-[65%] leading-loose">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-[#cf9a1e] my-4">
-                    {selectedExec.name}
-                  </h2>
-                  <span className="flex items-center text-sm md:text-md font-semibold text-[#cf9a1e] my-2">
-                    <FaUserTie />
-                    <p className="text-[#cf9a1e] text-xs font-bold mx-2">
-                      {selectedExec.title}
+                  <div className="bg-white flex justify-center items-center p-4 rounded-full w-20 h-20">
+                    <item.icon className="text-7xl text-gray-600" />
+                  </div>
+                  <h4 className="font-bold text-lg my-2 text-black capitalize">
+                    {item.head}
+                    <p className="my-2 text-xs text-gray-900 font-medium">
+                      {item.desc} {item.desc}
                     </p>
-                  </span>
-
-                  <p className="text-gray-700 mt-10">{selectedExec.desc}</p>
+                  </h4>
                 </div>
-              </div>
+              ))}
             </div>
-          )}
+
+            <img src={dou} alt="core values" className="lg:w-[45%]" />
+          </div>
         </div>
 
         <div className="my-20">
@@ -306,7 +329,7 @@ const AboutPage = () => {
           </ul>
         </div>
 
-        <div className="w-[90%] lg:w-[65%] m-auto my-20">
+        <div className="w-[90%] lg:w-[70%] m-auto my-20">
           <h3 className="my-10">
             <span className="text-xl mx-1">Milestone:</span> Complete our first
             project--Durumi Site 1--within 18 months of inception.
@@ -318,7 +341,7 @@ const AboutPage = () => {
                 <img
                   src={m1}
                   alt="Slide 1"
-                  className="w-full object-cover"
+                  className="w-full h-[80vh] object-cover"
                   loading="lazy"
                 />
               </div>
@@ -326,7 +349,7 @@ const AboutPage = () => {
                 <img
                   src={m2}
                   alt="Slide 3"
-                  className="w-full object-cover"
+                  className="w-full h-[80vh] object-cover"
                   loading="lazy"
                 />
               </div>
@@ -334,7 +357,7 @@ const AboutPage = () => {
                 <img
                   src={m3}
                   alt="Slide 3"
-                  className="w-full object-cover"
+                  className="w-full h-[80vh] object-cover"
                   loading="lazy"
                 />
               </div>

@@ -1,14 +1,19 @@
-import React, { useState, useRef } from "react";
-import logo from '../assets/logo2.jpg'
+import React, { useState, useRef, useContext } from "react";
+import whiteLogo from '../assets/logo2.jpg'
+import blackLogo from "../assets/logo3.png";
 import { FaArrowRightLong, FaBars } from "react-icons/fa6"; 
 import { FaTimes } from "react-icons/fa";
+import { MdLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { BackgroundContext } from "./BackgroundContext";
 
-const Navbar = () => {
+const Navbar = ({}) => {
   const [isOpen, setIsOpen] = useState(false); 
-  const [isProjectsOpen, setIsProjectsOpen] = useState(false); 
   const projectsLinkRef = useRef(null);
-  const popupRef = useRef(null);
+
+  
+   const {isDark, toggleBackground} = useContext(BackgroundContext);
 
   const menuItems = [
     { text: "Home", link: "/home" },
@@ -19,46 +24,64 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="flex justify-between items-center relative">
-      <i className="mx-2 lg:mx-2 my-4">
-        <img
-          src={logo}
-          alt="logo"
-          className="w-[100px] lg:w-[125px]"
-          loading="lazy"
-        />
-      </i>
+    <header
+      className={
+        isDark
+          ? "bg-black text-white flex justify-between items-center relative"
+          : "bg-white text-black flex justify-between items-center relative"
+      }
+    >
+      <Link to='/home'>
+        <i className="mx-2 lg:mx-2 my-4">
+          <img
+            src={!isDark ? whiteLogo : blackLogo}
+            alt="logo"
+            className="w-[100px] lg:w-[125px]"
+            loading="lazy"
+          />
+        </i>
+      </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-around items-center md:w-[50%] lg:w-[40%] ">
+      <nav className="hidden md:flex justify-around items-center md:w-[50%] lg:w-[50%]">
         {menuItems.map((item) => (
           <div
             key={item.text}
             ref={item.text === "Our Projects" ? projectsLinkRef : null}
+            className=""
           >
             <Link
               to={item.link}
-              className="text-xs lg:text-sm list-none md:mx-0 lg:mx-6 font-semibold text-black hover:text-[#cf9a1e] cursor-pointer w-20"
+              className="text-xs lg:text-xs list-none md:mx-0 lg:mx-6 font-bold hover:text-[#cf9a1e] cursor-pointer w-20 uppercase"
             >
-              {item.text}
+              {item.text} 
             </Link>
           </div>
         ))}
       </nav>
 
       {/* Desktop Button */}
-      <button className="hidden md:flex bg-[#cf9a1e] text-white text-xs lg:text-md font-semibold p-2 lg:p-4 mx-5 items-center cursor-pointer">
+      <button className="hidden md:flex bg-[#cf9a1e] text-white text-xs lg:text-md font-semibold p-2 lg:p-4 mx-5 items-center cursor-pointer uppercase">
         Schedule Visit
         <FaArrowRightLong className="mx-2" />
       </button>
+
+      {/* toggle background button */}
+
+      {/* <button
+        className="hidden md:block text-xl p-2 m-4"
+        onClick={toggleBackground}
+      >
+        {isDark ? <MdLightMode /> : <MdDarkMode />}
+      </button> */}
 
       {/* Mobile Hamburger Icon */}
       <div className="md:hidden mr-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-black text-2xl"
+          className={isDark ? "text-white text-2xl" : "text-black text-2xl"}
         >
-          {isOpen ? <FaTimes /> : <FaBars />}
+          {isOpen ? <FaTimes className="text-white" /> : <FaBars />}
         </button>
       </div>
 
@@ -75,9 +98,16 @@ const Navbar = () => {
               {item.text}
             </Link>
           ))}
-          <button className="bg-[#cf9a1e] text-white text-md py-3 px-6 mt-4 flex items-center">
+
+          <button className="bg-[#cf9a1e] text-white text-md py-3 px-6 mt-4 flex items-center uppercase">
             Schedule Visit
             <FaArrowRightLong className="ml-2" />
+          </button>
+
+          {/* toggle background button */}
+
+          <button className="text-xl p-2 m-4" onClick={toggleBackground}>
+            {isDark ? <MdLightMode /> : <MdDarkMode />}
           </button>
         </div>
       )}

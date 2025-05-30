@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { Routes, Route } from "react-router-dom";
 import logo from './assets/logo.jpg'
 import Navbar from './components/Navbar';
@@ -12,10 +12,14 @@ import DurumiSite2 from './pages/Projects/DurumiSite2';
 import Projects from './pages/Projects/index'
 import AdminEditor from './pages/AdminEditor'
 import SinglePost from './pages/SinglePost'
+import { BackgroundProvider, BackgroundContext } from './components/BackgroundContext';
 function App() {
+
   return (
+    
     <>
-      <div className=" bg-white">
+      <BackgroundProvider>
+      <div className="bg-transparent">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -32,6 +36,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
+      </BackgroundProvider>
     </>
   );
 }

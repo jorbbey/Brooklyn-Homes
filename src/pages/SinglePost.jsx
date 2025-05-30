@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useActionData, useParams } from "react-router-dom";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import { SlCalender } from "react-icons/sl";
 import { CiUser } from "react-icons/ci";
+import { BackgroundContext } from "../components/BackgroundContext";
 import SEO from "../components/SEO";
 import BlogSidebar from "../components/BlogSidebar";
 import BlogHero from "../components/BlogHero";
@@ -22,6 +23,8 @@ function SinglePost() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
+
+  const {isDark} = useContext(BackgroundContext)
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -67,8 +70,14 @@ function SinglePost() {
 
   if (post === null) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-black">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-orange-500 border-solid mb-4"></div>
+      <div
+        className={
+          isDark
+            ? "flex flex-col items-center justify-center min-h-screen bg-black text-white"
+            : "flex flex-col items-center justify-center min-h-screen bg-white text-black"
+        }
+      >
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#cf9a1e] border-solid mb-4"></div>
         <p className="text-lg">Loading post...</p>
       </div>
     );
@@ -76,9 +85,15 @@ function SinglePost() {
 
   if (post === false) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-black">
+      <div
+        className={
+          isDark
+            ? "flex flex-col items-center justify-center min-h-screen bg-black text-white"
+            : "flex flex-col items-center justify-center min-h-screen bg-white text-black"
+        }
+      >
         <p className="text-lg">Oops! This post couldn’t be found.</p>
-        <a href="/blog" className="mt-4 text-orange-500 hover:underline">
+        <a href="/blog" className="mt-4 text-[#cf9a1e] hover:underline">
           Back to Blog
         </a>
       </div>
@@ -107,8 +122,14 @@ function SinglePost() {
       />
 
       <BlogHero text={post.title} image={postImage} />
-      <div className="flex justify-between mx-auto">
-        <div className="flex-1 p-6 text-black">
+      <div
+        className={
+          isDark
+            ? "flex justify-between mx-auto bg-black text-white"
+            : "flex justify-between mx-auto bg-white text-black"
+        }
+      >
+        <div className="flex-1 p-6">
           <div className="flex items-center justify-start">
             <p className="flex items-center p-1 text-sm">
               <SlCalender className="mr-3 text-xs md:text-sm font-semibold text-[#cf9a1e]" />
@@ -129,7 +150,11 @@ function SinglePost() {
             />
           )}
           <div
-            className="prose prose-invert lg:prose-xl max-w-none my-10 [&>p]:text-black [&>h1]:text-black [&>h2]:text-black"
+            className={
+              isDark
+                ? "prose prose-invert lg:prose-xl max-w-none my-10 [&>p]:text-white [&>h1]:text-white [&>h2]:text-white"
+                : "prose prose-invert lg:prose-xl max-w-none my-10 [&>p]:text-black [&>h1]:text-black [&>h2]:text-black"
+            }
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

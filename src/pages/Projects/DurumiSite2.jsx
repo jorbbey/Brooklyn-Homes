@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useContext} from "react";
+import { BackgroundContext } from "../../components/BackgroundContext";
 import { Link } from "react-router-dom";
 import { FaCity } from "react-icons/fa";
 import { FaSolarPanel } from "react-icons/fa";
@@ -52,6 +53,8 @@ const DurumiSite2 = () => {
     image10,
     image11,
   ];
+
+  const {isDark} = useContext(BackgroundContext)
   return (
     <>
       <SEO
@@ -62,14 +65,14 @@ const DurumiSite2 = () => {
         url="https://brooklynhomesltd.com/durumisite2"
       />
 
-      <div className="text-black">
+      <div className={isDark ? "text-white bg-black" : "text-black bg-white"}>
         <SubHero text="Durumi Site II - Versatile Living Options" />
         <Link to="/durumisite1">
           <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold my-10 mx-10">
             View Site I →
           </h1>
         </Link>
-        <div className="my-20 w-full m-auto">
+        <div className="mt-20 w-full m-auto">
           <h1 className="text-3xl my-10">
             Durumi Site II - Versatile Living Options
           </h1>
@@ -116,13 +119,13 @@ const DurumiSite2 = () => {
               </div>
             </div>
           </div>
-          <section className=" w-[95%] m-auto my-10 lg:my-40">
+          <section className=" w-[95%] m-auto my-10 lg:mt-40">
             <div className="flex flex-col lg:flex-row justify-around items-start my-5 lg:my-20">
               <h1 className=" w-full lg:w-[35%] text-3xl lg:text-5xl text-[#cf9a1e] my-10 lg:my-0">
                 Durumi Site II
               </h1>
 
-              <p className="w-full lg:w-[60%] text-gray-950">
+              <p className="w-full lg:w-[60%]">
                 <span className="font-semibold text-[#cf9a1e]">
                   Durumi Site II
                 </span>{" "}

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Modal from "./Modal";
+import { BackgroundContext } from "./BackgroundContext";
 
 const ContactForm = () => {
+
+  const { isDark } = useContext(BackgroundContext);
+
   const [result, setResult] = useState("");
   const [showModal, setShowModal] = useState(false);
   const handleSubmit = async (event) => {
@@ -30,7 +34,13 @@ const ContactForm = () => {
     }
   };
   return (
-    <section className="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-28 lg:mt-60">
+    <section
+      className={
+        isDark
+          ? "bg-black text-white flex flex-col lg:flex-row justify-between items-center lg:items-start mt-28 lg:mt-60"
+          : "bg-white text-black flex flex-col lg:flex-row justify-between items-center lg:items-start mt-28 lg:mt-60"
+      }
+    >
       <div className="w-[95%] lg:w-[45%] lg:mx-5">
         <h1 className="mb-5 text-3xl md:text-5xl ">
           Request for more information
@@ -84,7 +94,7 @@ const ContactForm = () => {
             type="number"
             name="number"
             placeholder="Phone Number"
-            className="my-5 p-2 border-1 border-gray-500 w-full md:w-[48%] focus:border-[#cf9a1e]"
+            className="my-5 p-2 border-1 border-gray-500 w-full md:w-[48%]"
           />
         </div>
         <input

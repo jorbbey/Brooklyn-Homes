@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { BackgroundContext } from "../components/BackgroundContext";
 import SubHero from "../components/SubHero";
 import { Link } from "react-router-dom";
 import { SlCalender } from "react-icons/sl";
@@ -14,6 +15,8 @@ import walkableImage from "../../public/blog-posts/walkable-city.jpg";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
+
+  const {isDark} = useContext(BackgroundContext)
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -37,8 +40,14 @@ const BlogPage = () => {
     return (
       <>
         <SubHero text="Brooklyn Homes Blog – Insights, Trends, and Tips" />
-        <div className="flex flex-col items-center justify-start my-16 min-h-screen bg-white text-black">
-          <p className="text-lg">Oops! No posts found.</p>
+        <div
+          className={
+            isDark
+              ? "flex flex-col items-center justify-start min-h-screen bg-black text-white"
+              : "flex flex-col items-center justify-start  min-h-screen bg-white text-black"
+          }
+        >
+          <p className="text-lg mt-10">Oops! No posts found.</p>
           <Link
             to="/"
             className="mt-4 text-[#cf9a1e] font-semibold hover:underline"
@@ -52,7 +61,13 @@ const BlogPage = () => {
 
   if (posts.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white text-black">
+      <div
+        className={
+          isDark
+            ? "flex flex-col items-center justify-center min-h-screen bg-black text-white"
+            : "flex flex-col items-center justify-center min-h-screen bg-white text-black"
+        }
+      >
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#cf9a1e] border-solid mb-4"></div>
         <p className="text-lg">Loading posts...</p>
       </div>
@@ -89,14 +104,14 @@ const BlogPage = () => {
         url="https://brooklynhomesltd.com/blog"
       />
 
-      <div className="">
+      <div className={isDark ? "bg-black text-white" : "bg-white text-black"}>
         <SubHero text="Brooklyn Homes Blog – Insights, Trends, and Tips" />
         <div className="flex justify-between mx-auto">
           <div className="p-6 max-w-4xl">
             {postsWithImages.map((post) => (
               <div
                 key={post.id}
-                className="mb-6 border-b border-gray-400 p-4 shadow-2xl text-black"
+                className="mb-6 border-b border-gray-400 p-4 shadow-2xl"
               >
                {post.postImage && <img src={post.postImage} alt={post.title} className="my-2" />}
                 <div className="flex items-center justify-start">
@@ -110,7 +125,7 @@ const BlogPage = () => {
                   </p>
                 </div>
                 <h2 className="text-xl my-2 font-semibold">{post.title}</h2>
-                <p className="my-3 text-gray-950">{post.summary}</p>
+                <p className="my-3">{post.summary}</p>
                 <Link
                   to={`/blog/${post.slug}`}
                   className="text-[#cf9a1e] mt-2 inline-block font-semibold"

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { BackgroundContext } from "../../components/BackgroundContext";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -51,6 +52,8 @@ const DurumiSite1 = () => {
   const after = [image1, image2, image3];
 
   const handleClick = () => setScale(!scale);
+
+  const {isDark} = useContext(BackgroundContext)
   return (
     <>
       <SEO
@@ -61,18 +64,18 @@ const DurumiSite1 = () => {
         url="https://brooklynhomesltd.com/durumisite1"
       />
 
-      <div className="text-black">
+      <div className={isDark ? "text-white bg-black" : "text-black bg-white"}>
         <SubHero text="Durumi Site I - Residential Bliss" />
         <Link to="/durumisite2">
           <h1 className="text-md hover:underline font-semibold text-[#cf9a1e] my-10 mx-10">
             View Site II →
           </h1>
         </Link>
-        <div className="my-20 w-full m-auto">
+        <div className="mt-20 w-full m-auto">
           <h1 className="text-3xl my-10">Durumi Site I - Residential Bliss</h1>
           <Map lat={9.026589} lon={7.468901} text="Durumi Site 1" />
 
-          <div className="bg-gray-100 w-full p-10 mt-10 md:mt-16 lg:my-36">
+          <div className="text-black bg-gray-100 w-full p-10 mt-10 md:mt-16 lg:my-36">
             <div className="w-[95%] m-auto my-5 flex flex-col lg:flex-row justify-between items-start">
               <div className="lg:w-[65%] border-b lg:border-r-1 lg:border-b-0 border-[#cf9a1e]">
                 <h1 className="text-2xl md:text-3xl my-5 text-center">
@@ -84,7 +87,7 @@ const DurumiSite1 = () => {
                       key={item.text}
                       className="flex flex-col md:flex-row justify-start items-center p-2 w-[50%] md:w-[45%] lg:w-[40%] mb-10 cursor-pointer text-xs"
                     >
-                      <item.icon className="text-5xl mx-2 my-4 md:my-0 font-semibold text-black" />
+                      <item.icon className="text-5xl mx-2 my-4 md:my-0 font-semibold" />
                       <p className="mx-3 text-md md:text-lg">{item.text}</p>
                     </div>
                   ))}
@@ -114,12 +117,12 @@ const DurumiSite1 = () => {
             </div>
           </div>
 
-          <section className=" w-[95%] m-auto my-10 lg:my-40">
+          <section className=" w-[95%] m-auto my-10 lg:mt-40">
             <div className="flex flex-col lg:flex-row justify-around items-start my-5 lg:my-20">
               <h1 className="w-full lg:w-[35%] text-3xl lg:text-5xl text-[#cf9a1e] my-10 lg:my-0">
                 Durumi Site I
               </h1>
-              <p className="w-full lg:w-[60%] text-gray-950">
+              <p className="w-full lg:w-[60%]">
                 <span className="font-semibold text-[#cf9a1e]">
                   Durumi Site I
                 </span>{" "}

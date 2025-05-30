@@ -18,7 +18,6 @@ import image13 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
 
 const Hero = () => {
      const settings = {
-      fade: true,
        arrows: false,
        dots: false,
        infinite: true,

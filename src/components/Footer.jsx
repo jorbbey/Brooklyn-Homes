@@ -7,8 +7,8 @@ import { GoDash } from "react-icons/go";
 import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-    <footer className="bg-[#333333]">
-      <section className="flex flex-col md:flex-row justify-between items-start my-5">
+    <footer className="bg-[#333333] mt-20">
+      <section className="flex flex-col md:flex-row justify-between items-start">
         <div className="w-[90%] md:w-[50%] lg:w-[30%] border-b-1 md:border-b-0 md:border-r-1 border-[#cf9a1e] md:my-10 mx-5 text-center md:text-left">
           <img
             src={logo}

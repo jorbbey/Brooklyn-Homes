@@ -11,7 +11,7 @@ import BlogHero from "../components/BlogHero";
 import { FaArrowRightLong } from "react-icons/fa6";
 import newRoadImage from "../../public/blog-posts/new-roads2.jpg"; 
 import landOwnerImage from "../../public/blog-posts/land-owner.jpg";
-import smartHomeImage from "../../public/blog-posts/smarthomes.jpg";
+import smartHomeImage from "../../public/blog-posts/smarthome2.jpg";
 import walkableImage from "../../public/blog-posts/walkable-city.jpg";
 
 function SinglePost() {

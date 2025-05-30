@@ -11,7 +11,7 @@ import SlideIn from "../components/SlideIn";
 import BlogSidebar from "../components/BlogSidebar";
 import newRoadImage from "../../public/blog-posts/new-roads2.jpg";
 import landOwnerImage from "../../public/blog-posts/land-owner.jpg";
-import smartHomeImage from "../../public/blog-posts/smarthomes.jpg";
+import smartHomeImage from "../../public/blog-posts/smarthome2.jpg";
 import walkableImage from "../../public/blog-posts/walkable-city.jpg";
 
 const BlogPage = () => {

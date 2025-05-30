@@ -153,10 +153,7 @@ const BlogPage = () => {
               ))}
             </div>
           </SlideIn>
-
-          <SlideIn>
             <BlogSidebar />
-          </SlideIn>
         </div>
       </div>
     </>

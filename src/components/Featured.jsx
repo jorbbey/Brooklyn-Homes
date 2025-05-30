@@ -50,51 +50,11 @@ const Featured = () => {
               <img
                 src={image}
                 alt="slide"
-                className="w-full h-[80vh] object-cover"
+                className="w-full object-cover"
                 loading="lazy"
               />
             </div>
           ))}
-          {/* <div>
-            <img
-              src={feature1}
-              alt="Slide 1"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <img
-              src={feature2}
-              alt="Slide 3"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <img
-              src={feature3}
-              alt="Slide 3"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <img
-              src={feature5}
-              alt="Slide 2"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div> */}
-          {/* <div>
-            <img
-              src={feature6}
-              alt="Slide 2"
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </div> */}
         </Slider>
       </div>
 

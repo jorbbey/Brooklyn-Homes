@@ -106,9 +106,9 @@ const Navbar = ({}) => {
 
           {/* toggle background button */}
 
-          <button className="text-xl p-2 m-4" onClick={toggleBackground}>
+          {/* <button className="text-xl p-2 m-4" onClick={toggleBackground}>
             {isDark ? <MdLightMode /> : <MdDarkMode />}
-          </button>
+          </button> */}
         </div>
       )}
     </header>

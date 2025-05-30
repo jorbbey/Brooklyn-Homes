@@ -14,6 +14,7 @@ import DurumiSite2_sketch1 from "../../assets/durumi-site2/site2_sketch1.webp";
 import DurumiSite2_sketch2 from "../../assets/durumi-site2/site2_sketch2.webp";
 import DurumiSite2_sketch3 from "../../assets/durumi-site2/site2_sketch3.webp";
 import SEO from "../../components/SEO";
+import SlideIn from "../../components/SlideIn";
 
 
 const Index = () => {
@@ -39,79 +40,97 @@ const Index = () => {
         url="https://brooklynhomesltd.com/projects"
       />
 
-      <div className={isDark ? "text-white bg-black relative" : "text-black bg-white relative"}>
-        <SubHero text="Our Projects – Where Dreams Meet Reality" />
+      <div
+        className={
+          isDark
+            ? "text-white bg-black relative"
+            : "text-black bg-white relative"
+        }
+      >
+        <SlideIn>
+          <SubHero text="Our Projects – Where Dreams Meet Reality" />
+        </SlideIn>
 
         <h1 className="text-2xl mt-20 mb-5 mx-5">Upcoming projects ...</h1>
-        <div className="flex justify-center items-center overflow-auto test-scrollbar w-full">
-          <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
-            {[
-              DurumiSite1_sketch2,
-              DurumiSite1_sketch1,
-              DurumiSite1_sketch3,
-              DurumiSite1_1,
-            ].map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Project Image ${index + 1}`}
-                className="w-[60%] md:w-[30%] h-auto object-cover mb-4 cursor-pointer"
-                loading="lazy"
-              />
-            ))}
+        <SlideIn>
+          <div className="flex justify-center items-center overflow-auto test-scrollbar w-full">
+            <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
+              {[
+                DurumiSite1_sketch2,
+                DurumiSite1_sketch1,
+                DurumiSite1_sketch3,
+                DurumiSite1_1,
+              ].map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Project Image ${index + 1}`}
+                  className="w-[60%] md:w-[30%] h-auto object-cover mb-4 cursor-pointer"
+                  loading="lazy"
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        </SlideIn>
 
-        <Link to="/durumisite1">
-          <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold mb-20 mx-5">
-            View details →
-          </h1>
-        </Link>
+        <SlideIn>
+          <Link to="/durumisite1">
+            <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold mb-20 mx-5">
+              View details →
+            </h1>
+          </Link>
+        </SlideIn>
 
-        <div className="flex justify-center items-center overflow-auto test-scrollbar w-full mt-20">
-          <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
-            {[
-              DurumiSite2_sketch1,
-              DurumiSite2_sketch2,
-              DurumiSite2_sketch3,
-              DurumiSite2_1,
-            ].map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Project Image ${index + 1}`}
-                className="w-[60%] md:w-[30%] h-auto object-cover mb-4 cursor-pointer"
-                loading="lazy"
-              />
-            ))}
+        <SlideIn>
+          <div className="flex justify-center items-center overflow-auto test-scrollbar w-full mt-20">
+            <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
+              {[
+                DurumiSite2_sketch1,
+                DurumiSite2_sketch2,
+                DurumiSite2_sketch3,
+                DurumiSite2_1,
+              ].map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Project Image ${index + 1}`}
+                  className="w-[60%] md:w-[30%] h-auto object-cover mb-4 cursor-pointer"
+                  loading="lazy"
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        </SlideIn>
 
-        <Link to="/durumisite2">
-          <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold mb-20 mx-5">
-            View details →
-          </h1>
-        </Link>
+        <SlideIn>
+          <Link to="/durumisite2">
+            <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold mb-20 mx-5">
+              View details →
+            </h1>
+          </Link>
+        </SlideIn>
 
         <h1 className="text-2xl mx-5 mt-20 font-semibold">
           Interior view - Home Decor
         </h1>
-        <div className="flex justify-center items-center overflow-auto w-full mt-10">
-          <div className="flex justify-around items-center gap-4 w-[120%]">
-            {[thirdVid, secondVid, firstVid].map((vid, index) => (
-              <video
-                key={index}
-                autoPlay
-                loop
-                muted
-                className="h-64 md:h-96 object-cover w-[90%] lg:w-[60%] cursor-pointer hover:opacity-50"
-                onClick={() => handleVideoClick(vid)}
-              >
-                <source src={vid} type="video/mp4" />
-              </video>
-            ))}
+        <SlideIn>
+          <div className="flex justify-center items-center overflow-auto w-full mt-10">
+            <div className="flex justify-around items-center gap-4 w-[120%]">
+              {[thirdVid, secondVid, firstVid].map((vid, index) => (
+                <video
+                  key={index}
+                  autoPlay
+                  loop
+                  muted
+                  className="h-64 md:h-96 object-cover w-[90%] lg:w-[60%] cursor-pointer hover:opacity-50"
+                  onClick={() => handleVideoClick(vid)}
+                >
+                  <source src={vid} type="video/mp4" />
+                </video>
+              ))}
+            </div>
           </div>
-        </div>
+        </SlideIn>
 
         {/* Modal */}
         {selectedVideo && (

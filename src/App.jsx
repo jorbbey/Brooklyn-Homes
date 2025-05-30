@@ -16,26 +16,25 @@ import { BackgroundProvider, BackgroundContext } from './components/BackgroundCo
 function App() {
 
   return (
-    
     <>
       <BackgroundProvider>
-      <div className="bg-transparent">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/durumisite1" element={<DurumiSite1 />} />
-          <Route path="/durumisite2" element={<DurumiSite2 />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/admin/editor" element={<AdminEditor />} />
-          <Route path="/blog/:slug" element={<SinglePost />} />
-          {/* <Route path="*" element={<NotFound />} /> Handles 404 */}
-        </Routes>
-        <Footer />
-      </div>
+        <div className="bg-transparent">
+          <Navbar />
+          <Routes>
+              <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/durumisite1" element={<DurumiSite1 />} />
+            <Route path="/durumisite2" element={<DurumiSite2 />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/admin/editor" element={<AdminEditor />} />
+            <Route path="/blog/:slug" element={<SinglePost />} />
+            {/* <Route path="*" element={<NotFound />} /> Handles 404 */}
+          </Routes>
+          <Footer />
+        </div>
       </BackgroundProvider>
     </>
   );

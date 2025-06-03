@@ -200,7 +200,7 @@ const AboutPage = () => {
                   }
                 >
                   <img
-                    src={trioTeam}
+                    src={trioTeam2}
                     alt="brooklynhomes trio team"
                     loading="lazy"
                   />

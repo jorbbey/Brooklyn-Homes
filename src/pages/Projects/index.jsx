@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BackgroundContext } from "../../components/BackgroundContext";
 import SubHero from "../../components/SubHero";
-import firstVid from "../../assets/vid2.mp4";
-import secondVid from "../../assets/vid3.mp4";
-import thirdVid from "../../assets/hero_vid.mp4";
+import firstVid from "../../../public/videos/vid2.mp4";
+import secondVid from "../../../public/videos/vid3.mp4";
+import thirdVid from "../../../public/videos/hero_vid.mp4";
 import DurumiSite1_1 from "../../assets/durumi-site1/DurumiSite1_1.webp";
 import DurumiSite1_sketch2 from "../../assets/durumi-site1/site1_sketch2.webp";
 import DurumiSite1_sketch1 from "../../assets/durumi-site1/site1_sketch1.webp";
@@ -26,7 +26,7 @@ const Index = () => {
 
   const closeModal = () => {
     setSelectedVideo(null);
-  };
+  };''
 
   const {isDark} = useContext(BackgroundContext)
 

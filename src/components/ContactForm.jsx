@@ -88,20 +88,20 @@ const ContactForm = () => {
             type="text"
             name="name"
             placeholder="Your Name"
-            className="my-5 p-2 border-1 border-gray-500 w-full md:w-[48%]"
+            className="my-2 p-2 border-1 border-gray-500 w-full md:w-[48%]"
           />
           <input
             type="number"
             name="number"
             placeholder="Phone Number"
-            className="my-5 p-2 border-1 border-gray-500 w-full md:w-[48%]"
+            className="my-2 p-2 border-1 border-gray-500 w-full md:w-[48%]"
           />
         </div>
         <input
           type="email"
           name="email"
           placeholder="Email Address"
-          className=" my-5 p-2 border-1 border-gray-500 w-full"
+          className=" my-2 p-2 border-1 border-gray-500 w-full"
         />
         <textarea
           className=" my-5 p-8 border-1 border-gray-500 w-full"

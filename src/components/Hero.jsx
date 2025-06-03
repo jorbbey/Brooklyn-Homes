@@ -43,17 +43,22 @@ const Hero = () => {
        image2,
        image3,
      ];
+
+     const desc = [
+       {
+         head: "Durumi Site I",
+         text: "Our mission is to engage in issues that are of concern to individuals",
+         btnText: "Take a tour",
+       },
+       {
+         head: "Durumi Site II",
+         text: "Stategically located within the durumi central Abuja District",
+         btnText: "Explore Site II",
+       },
+     ];
   return (
     // <div className="relative text-black h-[70vh] lg:h-screen flex items-center justify-center lg:justify-start bg-[url('/Hero2.jpg')] bg-cover bg-center">
     <div className="relative h-[50vh] md:h-[70vh] lg:h-[100vh] w-full">
-      {/* <video
-          className="relative top-0 left-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-        >
-          <source src={hero_vid} type="video/mp4" />
-        </video> */}
       <Slider {...settings}>
         {images.map((image) => (
           <div className="relative">
@@ -80,7 +85,6 @@ const Hero = () => {
             company
           </span>
         </h1>
-       
       </div>
     </div>
   );

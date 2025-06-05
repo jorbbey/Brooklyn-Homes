@@ -1,28 +1,31 @@
-import React, {useContext} from 'react'
-import Hero from '../components/Hero';
-import Services from '../components/services';
+import React, { useContext } from "react";
+import Hero from "../components/Hero";
+import Services from "../components/services";
 import baseImg from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.webp";
 import secondImage from "../assets/durumi-site1/DurumiSite1_2.webp";
-import ContactForm from '../components/ContactForm';
-import Featured from '../components/Featured';
-import SEO from '../components/SEO';
-import Counter from '../components/Counter';
-import SlideIn from '../components/SlideIn';
-import { BackgroundContext } from '../components/BackgroundContext';
+import ContactForm from "../components/ContactForm";
+import Featured from "../components/Featured";
+import SEO from "../components/SEO";
+import Counter from "../components/Counter";
+import SlideIn from "../components/SlideIn";
+import { BackgroundContext } from "../components/BackgroundContext";
 import { IoBedOutline } from "react-icons/io5";
 import { GoProjectSymlink } from "react-icons/go";
+import Marquee from "react-fast-marquee";
+import { Typewriter } from "react-simple-typewriter";
+
 const HomePage = () => {
-  const {isDark} = useContext(BackgroundContext);
+  const { isDark } = useContext(BackgroundContext);
   const status = [
     {
       icon: GoProjectSymlink,
-      num: 3,
-      text: "Ongoing Projects",
+      num: 2,
+      text: "Projects",
     },
     {
       icon: IoBedOutline,
-      num: '06',
-      text: "Bedrooms",
+      num: "06",
+      text: "Flats",
     },
   ];
   return (
@@ -39,14 +42,34 @@ const HomePage = () => {
         <SlideIn>
           <Hero />
         </SlideIn>
-        <main className="my-10 w-[97%] m-auto">
+        <main className="mt-10 w-[97%] m-auto">
           <section>
-            <div className="hidden lg:block my-10 w-[50%]">
-              <h1 className="text-2xl lg:text-5xl leading-15">
-                Brooklyn Homes, a modern real estate, building and construction
-                company
+            {/* <Marquee speed={50} gradient={true} className="my-20">
+              <h1 className="text-2xl lg:text-2xl leading-15">
+                Our Vision: To redefine the real estate experience by delivering
+                premium properties and unparalleled customer satisfaction and to
+                be Abuja’s leading real estate firm by 2030, known for quality
+                and innovation.
               </h1>
-            </div>
+            </Marquee> */}
+
+            <h1 className="font-bold">
+              Our Vision:{" "}
+              <span style={{ color: "#cf9a1e", fontWeight: "bold" }}>
+                <Typewriter
+                  words={[
+                    "To redefine the real estate experience by delivering premium properties and unparalleled customer satisfaction",
+                    "To be Abuja’s leading real estate firm by 2030, known for quality and innovation.",
+                  ]}
+                  loop={true}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+            </h1>
             <SlideIn>
               <div className="">
                 <div className="flex flex-col lg:flex-row justify-between items-center">
@@ -62,7 +85,7 @@ const HomePage = () => {
                     <h1 className="text-xl md:text-2xl my-5 text-center md:text-left">
                       Who we are
                     </h1>
-                    <p className="text-md leading-8 my-5 md:my-3 lg:my-5 text-center md:text-left">
+                    <p className="text-md leading-8 my-5 md:my-3 lg:my-5 text-left">
                       At
                       <span className="text-[#cf9a1e] mx-1 font-bold">
                         Brooklyn Homes
@@ -112,7 +135,7 @@ const HomePage = () => {
               </div>
             </SlideIn>
           </section>
-          
+
           <SlideIn>
             <Services />
           </SlideIn>
@@ -128,6 +151,6 @@ const HomePage = () => {
       </div>
     </>
   );
-}
+};
 
-export default HomePage
+export default HomePage;

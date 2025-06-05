@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { CiSearch } from "react-icons/ci";
+import { BackgroundContext } from "../components/BackgroundContext";
 
 const BlogSidebar = ({ posts, setFilteredPosts }) => {
   const [searchQuery, setSearchQuery] = useState("");
+
+  const { isDark } = useContext(BackgroundContext);
 
   // Handle search functionality
   const handleSearch = (e) => {
@@ -34,9 +37,15 @@ const BlogSidebar = ({ posts, setFilteredPosts }) => {
   };
 
   return (
-    <div className="hidden lg:block w-[30%] p-6 bg-gray-100 text-black ">
+    <div
+      className={
+        isDark
+          ? "hidden lg:block w-[30%] p-6 bg-[#333333] text-white"
+          : "hidden lg:block w-[30%] p-6 bg-gray-100 text-black"
+      }
+    >
       {/* Archives Section */}
-      <div className="mb-8 bg-white">
+      <div className={isDark ? "mb-8 bg-[#474646]" : "mb-8 bg-white"}>
         <h3 className="text-lg md:text-xl lg:text-3xl p-4 border-l-1 border-[#cf9a1e]">
           Archives
         </h3>
@@ -50,7 +59,7 @@ const BlogSidebar = ({ posts, setFilteredPosts }) => {
       </div>
 
       {/* Category Section */}
-      <div className="mb-8 bg-white">
+      <div className={isDark ? "mb-8 bg-[#474646]" : "mb-8 bg-white"}>
         <h3 className="text-lg md:text-xl lg:text-3xl p-4 border-l-1 border-[#cf9a1e]">
           Category
         </h3>
@@ -65,7 +74,7 @@ const BlogSidebar = ({ posts, setFilteredPosts }) => {
       </div>
 
       {/* Search Section */}
-      <div className="bg-white">
+      <div className={isDark ? "bg-[#474646]" : "bg-white"}>
         <h3 className="text-lg md:text-xl lg:text-3xl p-4 border-l-1 border-[#cf9a1e]">
           Search
         </h3>

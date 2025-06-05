@@ -84,7 +84,7 @@ const DurumiSite2 = () => {
           </SlideIn>
 
           <SlideIn>
-            <div className="bg-[#333333] w-full p-10 mt-10 md:mt-16 lg:my-36 text-white">
+            <div className="bg-[#333333] w-full lg:p-10 mt-10 md:mt-16 lg:my-36 text-white">
               <div className="w-[95%] m-auto my-5 flex flex-col lg:flex-row justify-between items-start">
                 <div className="lg:w-[65%] border-b lg:border-r-1 lg:border-b-0 border-[#cf9a1e]">
                   <h1 className="text-2xl md:text-3xl my-5 text-center">
@@ -94,7 +94,7 @@ const DurumiSite2 = () => {
                     {features.map((item) => (
                       <div
                         key={item.text}
-                        className="flex flex-col md:flex-row justify-start items-center p-2 w-[50%] md:w-[45%] lg:w-[40%] mb-10 cursor-pointer text-xs"
+                        className="flex flex-col md:flex-row justify-start items-center lg:p-2 w-[50%] md:w-[45%] lg:w-[40%] mb-10 cursor-pointer text-xs"
                       >
                         <item.icon className=" text-5xl md:text-5xl mx-2 my-4 md:my-0 font-semibold text-gray-300" />
                         <p className="mx-3 text-md md:text-lg">{item.text}</p>
@@ -154,21 +154,17 @@ const DurumiSite2 = () => {
 
               <h1 className="text-xl font-semibold mt-40">Proposed</h1>
 
-            
-                <div className="flex flex-col md:flex-row flex-wrap justify-around items-center cursor-pointer my-10">
-                  {images.map((image) => (
-             
-                      <img
-                        src={image}
-                        alt="durumi_site2"
-                        key={image}
-                        className="w-full md:w-[32%] my-5 md:my-2 hover:brightness-50"
-                        loading="lazy"
-                      />
-                  
-                  ))}
-                </div>
-         
+              <div className="flex flex-col md:flex-row flex-wrap justify-around items-center cursor-pointer my-10">
+                {images.map((image) => (
+                  <img
+                    src={image}
+                    alt="durumi_site2"
+                    key={image}
+                    className="w-full md:w-[32%] my-5 md:my-2 hover:brightness-50"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
 
               <p className="my-5 text-sm">
                 <span className="font-semibold text-[#cf9a1e]">Status:</span>{" "}
@@ -181,6 +177,12 @@ const DurumiSite2 = () => {
               </p>
             </section>
           </SlideIn>
+
+          <Link to="/durumisite1" className="flex justify-end items-center">
+            <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold my-10 mx-10">
+              View Durumi Site I →
+            </h1>
+          </Link>
         </div>
       </div>
     </>

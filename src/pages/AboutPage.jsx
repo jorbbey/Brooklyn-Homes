@@ -1,20 +1,19 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { BackgroundContext } from "../components/BackgroundContext";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaBuilding } from "react-icons/fa";
-import { FaMoneyBillWave } from "react-icons/fa";
-import { FaTools } from "react-icons/fa";
-import { FaHandshake } from "react-icons/fa";
-import { FaUserTie } from "react-icons/fa6";
 import { GoDash } from "react-icons/go";
-import { FaArrowRightLong } from "react-icons/fa6"; 
+import { FaArrowRightLong } from "react-icons/fa6";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { PiBuildingApartment } from "react-icons/pi";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
-import { GiCrane } from "react-icons/gi";
-import { BsHouseCheck } from "react-icons/bs";
+import { FaUser } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa";
+import { FaMedal } from "react-icons/fa";
+import { GiJusticeStar } from "react-icons/gi";
+import { FaLightbulb } from "react-icons/fa";
+import { FaFire } from "react-icons/fa";
 import { PiCraneTowerBold } from "react-icons/pi";
 import trioTeam from "../assets/Brooklyn-Homes-Team/trio1.webp";
 import trioTeam2 from "../assets/Brooklyn-Homes-Team/tio3.webp";
@@ -27,6 +26,7 @@ import image3 from "../assets/building-construction.jpg";
 import m1 from "../assets/durumi-site1/DurumiSite1_1.webp";
 import m2 from "../assets/durumi-site1/DurumiSite1_2.webp";
 import m3 from "../assets/durumi-site1/DurumiSite1_3.webp";
+import m4 from "../assets/durumi-site1/DurumiSite1_4.webp";
 import SubHero from "../components/SubHero";
 import Typewritter from "../components/Typewritter";
 import SEO from "../components/SEO";
@@ -37,63 +37,43 @@ const AboutPage = () => {
   const settings = {
     arrows: false,
     dots: false,
-    infinite: true, 
-    speed: 500, 
-    slidesToShow: 1, 
-    slidesToScroll: 1, 
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, 
+    autoplaySpeed: 3000,
   };
   const objectives = [
-    // {
-    //   icon: FaHandshake,
-    //   head: "Helping Clients Win",
-    //   desc: "We simplify buying, selling, and investing with a seamless, stress-free process.",
-    // },
-    // {
-    //   icon: FaMoneyBillWave,
-    //   head: "Luxury & Investment Excellence",
-    //   desc: "We deliver premium properties and high-yield opportunities.",
-    // },
-    // {
-    //   icon: FaTools,
-    //   head: "Integrity & Trust",
-    //   desc: "We build lasting relationships grounded in honesty and professionalism.",
-    // },
-    // {
-    //   icon: FaBuilding,
-    //   head: "Community Growth",
-    //   desc: "We connect people with homes that enhance neighborhoods and lives.",
-    // },
     {
-      icon: FaHandshake,
+      icon: FaUser,
       head: "Team Spirit",
-      desc: "We connect people with homes that enhance neighborhoods and lives.",
+      desc: "Our success comes from teamwork, diversity, and shared energy. Our collective effort builds momentum and sustainable achievements.",
     },
     {
-      icon: FaMoneyBillWave,
+      icon: FaHandshake,
       head: "Client-Centric",
-      desc: "We connect people with homes that enhance neighborhoods and lives.",
+      desc: "Relationships with our clients are prioritized. Our goal is to exceed expectations and focus on client satisfaction.",
     },
     {
-      icon: FaBuilding,
+      icon: FaMedal,
       head: "Excellence",
-      desc: "We connect people with homes that enhance neighborhoods and lives.",
+      desc: "Commitment to high standards in products, behavior, and results. Our collaboration and consistency are key.",
     },
     {
-      icon: FaHandshake,
+      icon: GiJusticeStar,
       head: "integrity",
-      desc: "We connect people with homes that enhance neighborhoods and lives.",
+      desc: "Trust, honesty, and accountability are central. Our actions are guided by strong ethical standards.",
     },
     {
-      icon: FaTools,
+      icon: FaLightbulb,
       head: "Innovation",
-      desc: "We connect people with homes that enhance neighborhoods and lives.",
+      desc: "We embrace change and continuous improvement. Our creativity is used to deliver excellent, tailored solutions.",
     },
     {
-      icon: FaHandshake,
+      icon: FaFire,
       head: "Passion",
-      desc: "We connect people with homes that enhance neighborhoods and lives.",
+      desc: "We are driven by passion to inspire ideas, nurture creativity, and overcome challenges in the pursuit of growth.",
     },
   ];
 
@@ -120,7 +100,7 @@ const AboutPage = () => {
     },
   ];
 
-  const {isDark} = useContext(BackgroundContext)
+  const { isDark } = useContext(BackgroundContext);
 
   return (
     <>
@@ -261,27 +241,35 @@ const AboutPage = () => {
         </SlideIn>
 
         <SlideIn>
-          <div className="bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/20 my-10 lg:my-0">
-            <h3 className="w-3/4 mx-10 pt-20 text-md md:text-lg lg:text-4xl text-center lg:text-left">
+          <div
+            className={
+              isDark
+                ? "bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-600/50 my-10 lg:my-0"
+                : "bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/20 my-10 lg:my-0"
+            }
+          >
+            <h3 className="pt-20 text-3xl md:text-4xl lg:text-5xl text-center text-gray-950">
               Our Core Values
             </h3>
-            <div className="flex flex-col-reverse lg:flex-row justify-around items-start my-12">
+            <div className="flex flex-col-reverse lg:flex-row justify-around items-center my-20">
               <div className="flex flex-col md:flex-row flex-wrap justify-around items-center gap-4 lg:w-[50%] my-5">
                 {objectives.map((item) => (
                   <SlideIn>
                     <div
                       key={item.head}
-                      className="p-2 w-full md:w-80 my-5 list-none text-center md:text-left cursor-pointer flex flex-col md:flex-row justify-center md:justify-between gap-4 items-center"
+                      className="p-5 w-[90%] m-auto md:w-80 my-5 list-none text-center md:text-left cursor-pointer flex flex-col justify-between gap-4 items-center"
                     >
-                      <div className="bg-white flex justify-center items-center p-4 rounded-full w-20 h-20">
-                        <item.icon className="text-7xl text-gray-600" />
+                      <div className="flex justify-center md:justify-start items-center gap-2 w-full">
+                        <div className=" flex justify-center items-center rounded-full p-2">
+                          <item.icon className="text-2xl text-gray-600" />
+                        </div>
+                        <h4 className="font-bold text-lg my-2 text-black capitalize">
+                          {item.head}
+                        </h4>
                       </div>
-                      <h4 className="font-bold text-lg my-2 text-black capitalize">
-                        {item.head}
-                        <p className="my-2 text-xs text-gray-900 font-medium">
-                          {item.desc} {item.desc}
-                        </p>
-                      </h4>
+                      <p className="text-xs px-5 text-gray-900 font-medium">
+                        {item.desc}
+                      </p>
                     </div>
                   </SlideIn>
                 ))}
@@ -300,7 +288,7 @@ const AboutPage = () => {
             <ul className="mx-5">
               <SlideIn>
                 <li className="flex flex-col-reverse lg:flex-row justify-between items-center my-10">
-                  <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
+                  <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5 text-center font-bold bg-gradient-to-r from-[#cf9a1e] via-gray-500 to-[#cf9a1e] bg-clip-text text-transparent">
                     <GoDash className="hidden lg:block text-xl font-semibold mx-2" />
                     <Typewritter
                       text="Tailored property solutions for homeowners and investors."
@@ -323,7 +311,7 @@ const AboutPage = () => {
                     className="w-full lg:w-1/2 h-96 object-cover"
                     loading="lazy"
                   />
-                  <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
+                  <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5 text-center font-bold bg-gradient-to-r from-[#cf9a1e] via-gray-500 to-[#cf9a1e] bg-clip-text text-transparent">
                     <GoDash className="hidden lg:block text-xl font-semibold mx-2" />
                     <Typewritter
                       text="Cutting-edge designs that prioritize comfort, style, and
@@ -335,7 +323,7 @@ const AboutPage = () => {
               </SlideIn>
               <SlideIn>
                 <li className="flex flex-col-reverse lg:flex-row justify-between items-center my-10">
-                  <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5">
+                  <p className="text-md md:text-lg flex items-center justify-center lg:mx-5 my-5 text-center font-bold bg-gradient-to-r from-[#cf9a1e] via-gray-500 to-[#cf9a1e] bg-clip-text text-transparent">
                     <GoDash className="hidden lg:block text-xl font-semibold mx-2" />
                     <Typewritter
                       text=" A client-first approach that ensures your goals are our priority."
@@ -355,39 +343,21 @@ const AboutPage = () => {
         </SlideIn>
 
         <SlideIn>
-          <div className="w-[90%] lg:w-[70%] m-auto my-20">
-            <h3 className="my-10">
-              <span className="text-xl mx-1">Milestone:</span> Complete our
-              first project--Durumi Site 1--within 18 months of inception.
-            </h3>
-
-            <div>
-              <Slider {...settings}>
-                <div>
-                  <img
-                    src={m1}
-                    alt="Slide 1"
-                    className="w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={m2}
-                    alt="Slide 3"
-                    className="w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={m3}
-                    alt="Slide 3"
-                    className="w-full h- object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </Slider>
+          <h1 className="w-[90%] lg:w-1/2 my-3 m-auto text-gray-400 animate-bounce">
+            Milestone: Complete our first project - Durumi Site I - within the
+            first 18 months of inception
+          </h1>
+          <div className="flex justify-center items-center overflow-auto test-scrollbar w-full">
+            <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
+              {[m1, m2, m4, m3].map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Project Image ${index + 1}`}
+                  className="w-[60%] md:w-[30%] h-auto object-cover mb-4 cursor-pointer"
+                  loading="lazy"
+                />
+              ))}
             </div>
           </div>
         </SlideIn>

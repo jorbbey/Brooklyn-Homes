@@ -21,7 +21,7 @@ const {isDark} = useContext(BackgroundContext)
       {
         icon: IoLocationOutline,
         head: "Location",
-        desc: "Brooklyn Homes Ltd, Plot 785, Herbert Macaulay way, Central Business District, Abuja",
+        desc: "Brooklyn Homes Ltd, 2 Geidam Close, off Emeka Anyaoku Street, Area 8, Garki, Abuja",
       },
       {
         icon: BiPhoneCall,
@@ -96,7 +96,7 @@ const {isDark} = useContext(BackgroundContext)
                     <h3 className="text-md md:text-lg mx-2">{item.head}</h3>
                   </span>
                   <p className="mx-14 text-sm my-2">{item.desc}</p>
-                  {item.desc2 && <p className="mx-14 text-sm">{item.desc}</p>}
+                  {item.desc2 && <p className="mx-14 text-sm">{item.desc2}</p>}
                 </div>
               ))}
             </div>
@@ -104,7 +104,7 @@ const {isDark} = useContext(BackgroundContext)
         </section>
 
         <SlideIn>
-          <Map lat={9.050231} lon={7.487945} text="Brooklyn Homes Office" />
+          <Map lat={9.038634} lon={7.491221} text="Brooklyn Homes Office" />
         </SlideIn>
 
         <SlideIn>

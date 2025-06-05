@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BackgroundContext } from "../../components/BackgroundContext";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import SubHero from "../../components/SubHero";
 import firstVid from "../../../public/videos/vid2.mp4";
 import secondVid from "../../../public/videos/vid3.mp4";
@@ -51,8 +52,9 @@ const Index = () => {
           <SubHero text="Our Projects – Where Dreams Meet Reality" />
         </SlideIn>
 
-        <h1 className="text-2xl mt-20 mb-5 mx-5">Upcoming projects ...</h1>
+        <h1 className="text-2xl mt-20 mb-10 mx-5">Upcoming projects ...</h1>
         <SlideIn>
+          <h2 className="text-xl capitalize my-5 mx-3">Durumi Site I</h2>
           <div className="flex justify-center items-center overflow-auto test-scrollbar w-full">
             <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
               {[
@@ -82,7 +84,8 @@ const Index = () => {
         </SlideIn>
 
         <SlideIn>
-          <div className="flex justify-center items-center overflow-auto test-scrollbar w-full mt-20">
+          <h2 className="text-xl capitalize my-5 mx-3">Durumi Site II</h2>
+          <div className="flex justify-center items-center overflow-auto test-scrollbar w-full mt-5">
             <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
               {[
                 DurumiSite2_sketch1,
@@ -116,7 +119,11 @@ const Index = () => {
         <SlideIn>
           <div className="flex justify-center items-center overflow-auto w-full mt-10">
             <div className="flex justify-around items-center gap-4 w-[120%]">
-              {[thirdVid, secondVid, firstVid].map((vid, index) => (
+              {[
+                "/videos/hero_vid.mp4",
+                "/videos/vid3.mp4",
+                "/videos/vid2.mp4",
+              ].map((vid, index) => (
                 <video
                   key={index}
                   autoPlay

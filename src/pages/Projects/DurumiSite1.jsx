@@ -16,6 +16,7 @@ import Map from "../../components/Map";
 import image1 from "../../assets/durumi-site1/DurumiSite1_3.webp";
 import image2 from "../../assets/durumi-site1/DurumiSite1_2.webp";
 import image3 from "../../assets/durumi-site1/DurumiSite1_1.webp";
+import image4 from "../../assets/durumi-site1/DurumiSite1_4.webp";
 import SEO from "../../components/SEO";
 import SlideIn from "../../components/SlideIn";
 
@@ -50,11 +51,11 @@ const DurumiSite1 = () => {
     autoplay: false,
     autoplaySpeed: 5000,
   };
-  const after = [image1, image2, image3];
+  const after = [image1, image2, image3, image4, image2, image1];
 
   const handleClick = () => setScale(!scale);
 
-  const {isDark} = useContext(BackgroundContext)
+  const { isDark } = useContext(BackgroundContext);
   return (
     <>
       <SEO
@@ -83,7 +84,7 @@ const DurumiSite1 = () => {
           </SlideIn>
 
           <SlideIn>
-            <div className="text-black bg-gray-100 w-full p-10 mt-10 md:mt-16 lg:my-36">
+            <div className="text-white bg-[#333333] w-full lg:p-10 mt-10 md:mt-16 lg:my-36">
               <div className="w-[95%] m-auto my-5 flex flex-col lg:flex-row justify-between items-start">
                 <div className="lg:w-[65%] border-b lg:border-r-1 lg:border-b-0 border-[#cf9a1e]">
                   <h1 className="text-2xl md:text-3xl my-5 text-center">
@@ -173,7 +174,7 @@ const DurumiSite1 = () => {
                     src={image}
                     alt="durumi_site2"
                     key={image}
-                    className="w-full md:w-[32%] my-5 md:my-0 hover:brightness-50"
+                    className="w-full md:w-[32%] my-4 md:my-2 hover:brightness-50"
                     loading="lazy"
                   />
                 ))}
@@ -190,6 +191,12 @@ const DurumiSite1 = () => {
               </p>
             </section>
           </SlideIn>
+
+          <Link to="/durumisite2" className="flex justify-end items-center">
+            <h1 className="text-md hover:underline text-[#cf9a1e] font-semibold my-10 mx-10">
+              View Durumi Site II →
+            </h1>
+          </Link>
         </div>
       </div>
     </>

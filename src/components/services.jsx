@@ -58,14 +58,20 @@ const Services = () => {
       }
     >
       <h1 className="text-3xl lg:text-4xl my-20 mx-5">What We Offer</h1>
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-end bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/20">
+      <div
+        className={
+          isDark
+            ? "flex flex-col-reverse lg:flex-row justify-between items-end bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/80"
+            : "flex flex-col-reverse lg:flex-row justify-between items-end bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/20"
+        }
+      >
         <main className="flex flex-wrap items-center justify-between lg:justify-start w-full md:w-[90%] lg:w-[70%]">
           {services.map((item) => (
             <div
               key={item.head}
-              className="text-center m-10 p-4 w-[90%] md:w-[35%]"
+              className="text-center m-10 p-4 w-[90%] md:w-[35%] text-gray-950"
             >
-              <item.icon className="text-4xl text-[#cf9a1e] w-full" />
+              <item.icon className="text-4xl text-gray-600 w-full" />
               <h1 className="text-xl my-5 w-full">{item.head}</h1>
               <p className="my-3 text-sm">{item.desc}</p>
             </div>
@@ -78,7 +84,7 @@ const Services = () => {
               <img
                 src={slide1}
                 alt="Slide 1"
-                className="w-full h-[70vh] object-cover"
+                className="w-full h-[90vh] object-cover"
                 loading="lazy"
               />
             </div>
@@ -86,7 +92,7 @@ const Services = () => {
               <img
                 src={slide3}
                 alt="Slide 3"
-                className="w-full h-[70vh] object-cover"
+                className="w-full h-[90vh] object-cover"
                 loading="lazy"
               />
             </div>
@@ -94,7 +100,7 @@ const Services = () => {
               <img
                 src={slide4}
                 alt="Slide 2"
-                className="w-full h-[70vh] object-cover"
+                className="w-full h-[90vh] object-cover"
                 loading="lazy"
               />
             </div>

@@ -31,7 +31,7 @@ const Navbar = ({}) => {
           : "bg-white text-black flex justify-between items-center relative"
       }
     >
-      <Link to='/home'>
+      <Link to="/home" className="mx-5">
         <i className="mx-2 lg:mx-2 my-4">
           <img
             src={!isDark ? whiteLogo : blackLogo}
@@ -43,7 +43,7 @@ const Navbar = ({}) => {
       </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex justify-around items-center md:w-[50%] lg:w-[50%]">
+      <nav className="hidden md:flex justify-around items-center md:w-[45%] lg:w-[50%]">
         {menuItems.map((item) => (
           <div
             key={item.text}
@@ -54,26 +54,29 @@ const Navbar = ({}) => {
               to={item.link}
               className="text-xs lg:text-xs list-none md:mx-0 lg:mx-6 font-bold hover:text-[#cf9a1e] cursor-pointer w-20 uppercase"
             >
-              {item.text} 
+              {item.text}
             </Link>
           </div>
         ))}
       </nav>
 
-      {/* Desktop Button */}
-      <button className="hidden md:flex bg-[#cf9a1e] text-white text-xs lg:text-md font-semibold p-2 lg:p-4 mx-5 items-center cursor-pointer uppercase">
-        Schedule Visit
-        <FaArrowRightLong className="mx-2" />
-      </button>
+      <div className="flex flex-row-reverse justify-center items-center">
+        {/* toggle background button */}
+        <button
+          className="hidden md:block text-xl p-2 cursor-pointer"
+          onClick={toggleBackground}
+        >
+          {isDark ? <MdLightMode /> : <MdDarkMode />}
+        </button>
 
-      {/* toggle background button */}
-
-      {/* <button
-        className="hidden md:block text-xl p-2 m-4"
-        onClick={toggleBackground}
-      >
-        {isDark ? <MdLightMode /> : <MdDarkMode />}
-      </button> */}
+        {/* Desktop Button */}
+        <Link to="/contact" className="hidden md:block">
+          <button className="hidden md:flex bg-[#cf9a1e] text-white text-xs lg:text-md font-semibold p-2 lg:p-4 mx-2 items-center cursor-pointer uppercase">
+            Schedule Visit
+            <FaArrowRightLong className="mx-2" />
+          </button>
+        </Link>
+      </div>
 
       {/* Mobile Hamburger Icon */}
       <div className="md:hidden mr-4 z-50">
@@ -99,16 +102,18 @@ const Navbar = ({}) => {
             </Link>
           ))}
 
-          <button className="bg-[#cf9a1e] text-white text-md py-3 px-6 mt-4 flex items-center uppercase">
-            Schedule Visit
-            <FaArrowRightLong className="ml-2" />
-          </button>
+          <Link to="/contact">
+            <button className="bg-[#cf9a1e] text-white text-md py-3 px-6 mt-4 flex items-center uppercase">
+              Schedule Visit
+              <FaArrowRightLong className="ml-2" />
+            </button>
+          </Link>
 
           {/* toggle background button */}
 
-          {/* <button className="text-xl p-2 m-4" onClick={toggleBackground}>
+          <button className="text-xl p-2 m-4" onClick={toggleBackground}>
             {isDark ? <MdLightMode /> : <MdDarkMode />}
-          </button> */}
+          </button>
         </div>
       )}
     </header>

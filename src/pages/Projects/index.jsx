@@ -3,20 +3,16 @@ import { Link } from "react-router-dom";
 import { BackgroundContext } from "../../components/BackgroundContext";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import SubHero from "../../components/SubHero";
-import firstVid from "../../../public/videos/vid2.mp4";
-import secondVid from "../../../public/videos/vid3.mp4";
-import thirdVid from "../../../public/videos/hero_vid.mp4";
 import DurumiSite1_1 from "../../assets/durumi-site1/DurumiSite1_1.webp";
 import DurumiSite1_sketch2 from "../../assets/durumi-site1/site1_sketch2.webp";
 import DurumiSite1_sketch1 from "../../assets/durumi-site1/site1_sketch1.webp";
 import DurumiSite1_sketch3 from "../../assets/durumi-site1/site1_sketch3.webp";
-import DurumiSite2_1 from "../../assets/durumi-site2/Durumi Site 2 A_5 - Photo.webp"
+import DurumiSite2_1 from "../../assets/durumi-site2/Durumi Site 2 A_5 - Photo.webp";
 import DurumiSite2_sketch1 from "../../assets/durumi-site2/site2_sketch1.webp";
 import DurumiSite2_sketch2 from "../../assets/durumi-site2/site2_sketch2.webp";
 import DurumiSite2_sketch3 from "../../assets/durumi-site2/site2_sketch3.webp";
 import SEO from "../../components/SEO";
 import SlideIn from "../../components/SlideIn";
-
 
 const Index = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -27,9 +23,16 @@ const Index = () => {
 
   const closeModal = () => {
     setSelectedVideo(null);
-  };''
+  };
+  ("");
 
-  const {isDark} = useContext(BackgroundContext)
+  const { isDark } = useContext(BackgroundContext);
+
+  const videos = [
+    "https://firebasestorage.googleapis.com/v0/b/brooklynhomes-media.firebasestorage.app/o/hero_vid.mp4?alt=media&token=293f9e13-1b50-4153-9fe4-3fc398c17cd3",
+    "https://firebasestorage.googleapis.com/v0/b/brooklynhomes-media.firebasestorage.app/o/vid2.mp4?alt=media&token=04ebebf4-cf08-427e-ac36-2d1f884a2c01",
+    "https://firebasestorage.googleapis.com/v0/b/brooklynhomes-media.firebasestorage.app/o/vid3.mp4?alt=media&token=a2eaf6b5-c146-4a54-9d39-d6caed7d2d6a",
+  ];
 
   return (
     <>
@@ -119,12 +122,9 @@ const Index = () => {
         <SlideIn>
           <div className="flex justify-center items-center overflow-auto w-full mt-10">
             <div className="flex justify-around items-center gap-4 w-[120%]">
-              {[
-                "/videos/hero_vid.mp4",
-                "/videos/vid3.mp4",
-                "/videos/vid2.mp4",
-              ].map((vid, index) => (
+              {videos.map((vid, index) => (
                 <video
+                  preload="none"
                   key={index}
                   autoPlay
                   loop
@@ -133,6 +133,7 @@ const Index = () => {
                   onClick={() => handleVideoClick(vid)}
                 >
                   <source src={vid} type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
               ))}
             </div>

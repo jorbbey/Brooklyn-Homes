@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,8 +15,12 @@ import image10 from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.webp";
 import image11 from "../assets/durumi-site2/Durumi Site 2 A_10 - Photo.webp";
 import image12 from "../assets/durumi-site2/Durumi Site 2 A11.webp";
 import image13 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
+import { BackgroundContext } from "./BackgroundContext";
 
 const Hero = () => {
+
+      const { isDark } = useContext(BackgroundContext);
+
      const settings = {
        arrows: false,
        dots: false,
@@ -120,7 +124,13 @@ const Hero = () => {
               className="w-full h-[50vh] md:h-[70vh] lg:h-[100vh] object-cover"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-gray-700 to-black opacity-65 z-0"></div>
+            <div
+              className={
+                isDark
+                  ? "absolute inset-0 bg-gradient-to-tr from-gray-700 to-black opacity-65 z-0"
+                  : "absolute inset-0 bg-gradient-to-tr from-gray-700 to-black opacity-50 z-0"
+              }
+            ></div>
             <div className="absolute bottom-16 md:bottom-20 lg:bottom-40 text-white capitalize mx-5 lg:mx-10 mt-22 md:mt-20 lg:mt-20 w-[90%] md:w-[70%] lg:w-[55%] leading-loose font-semibold">
               <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
                 {item.text}

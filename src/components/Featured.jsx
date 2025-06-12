@@ -16,7 +16,7 @@ import feature11 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
 
 const Featured = () => {
   const settings = {
-    arrows: false,
+    arrows: true,
     dots: true,
     infinite: true,
     speed: 700,
@@ -50,7 +50,7 @@ const Featured = () => {
               <img
                 src={image}
                 alt="slide"
-                className="w-full object-cover"
+                className="w-full md:h-[70vh] lg:h-[75vh] object-cover"
                 loading="lazy"
               />
             </div>

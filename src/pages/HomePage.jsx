@@ -44,62 +44,61 @@ const HomePage = () => {
         </SlideIn>
         <main className="mt-10 w-[97%] m-auto">
           <section>
-            {/* <Marquee speed={50} gradient={true} className="my-20">
-              <h1 className="text-2xl lg:text-2xl leading-15">
-                Our Vision: To redefine the real estate experience by delivering
-                premium properties and unparalleled customer satisfaction and to
-                be Abuja’s leading real estate firm by 2030, known for quality
-                and innovation.
+            <SlideIn>
+              <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl w-full md:w-3/4 my-20">
+                Brooklyn Homes,
+                <span
+                  style={{ color: "#cf9a1e", fontWeight: "bold" }}
+                  className="mx-1"
+                >
+                  <Typewriter
+                    words={[
+                      "redefining the real estate experience by delivering premium properties and unparalleled customer satisfaction and to be Abuja’s leading real estate firm by 2030, known for quality and innovation.",
+                    ]}
+                    loop={true}
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={5000}
+                  />
+                </span>
               </h1>
-            </Marquee> */}
-
-            <h1 className="font-bold">
-              Our Vision:{" "}
-              <span style={{ color: "#cf9a1e", fontWeight: "bold" }}>
-                <Typewriter
-                  words={[
-                    "To redefine the real estate experience by delivering premium properties and unparalleled customer satisfaction",
-                    "To be Abuja’s leading real estate firm by 2030, known for quality and innovation.",
-                  ]}
-                  loop={true}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
-              </span>
-            </h1>
+            </SlideIn>
             <SlideIn>
               <div className="">
                 <div className="flex flex-col lg:flex-row justify-between items-center">
-                  <div className="w-full lg:w-[90%]">
+                  <div className="w-full lg:w-[50%]">
                     <img
                       src={baseImg}
                       alt="durumisiteII_base_image"
-                      className="w-full"
+                      className="w-full lg:h-[90vh] object-cover"
                       loading="lazy"
                     />
                   </div>
-                  <div className="w-full lg:w-[45%] mx-3 mb-0 p-5">
+                  <div className="w-full lg:w-[50%] mx-3 mb-0 p-5">
                     <h1 className="text-xl md:text-2xl my-5 text-center md:text-left">
                       Who we are
                     </h1>
                     <p className="text-md leading-8 my-5 md:my-3 lg:my-5 text-left">
-                      At
-                      <span className="text-[#cf9a1e] mx-1 font-bold">
-                        Brooklyn Homes
-                      </span>
-                      , we don’t just build properties, we craft lifestyles.
-                      With a passion for excellence and innovation, we
-                      specialize in property development, real estate
-                      investment, facility management, and investment advisory
-                      services. Our mission is to redefine the real estate
-                      experience by delivering premium properties and
-                      unparalleled customer satisfaction. Whether you’re seeking
-                      a luxurious home, a smart investment, or top-tier property
-                      management, we’re here to make it happen. Welcome to your
-                      future.
+                      Brooklyn Homes Limited is a forward-thinking real estate
+                      development and investment company based in Abuja,
+                      Nigeria. We specialize in building high-quality
+                      residential and commercial properties that combine modern
+                      design with long-term value. With a strong focus on
+                      professionalism, innovation, and integrity, we serve
+                      homeowners, investors, and partners looking for reliable
+                      real estate solutions. Whether it's project development,
+                      property sales, investment advisory, or facility
+                      management, we approach every project with precision and a
+                      deep understanding of the local market. Our goal is simple
+                      — to create real estate opportunities that deliver real
+                      returns, lasting satisfaction, and community impact.
+                      Backed by a team of skilled professionals and driven by a
+                      commitment to excellence, Brooklyn Homes continues to grow
+                      as a trusted name in Nigeria’s real estate landscape.
+                      We’re not just building structures — we’re building trust,
+                      wealth, and spaces people love to call home
                     </p>
                     <div className="flex justify-between items-center mt-16 lg:mt-10 w-[85%] lg:w-full m-auto">
                       {status.map((stat, index) => (

@@ -12,6 +12,7 @@ import DurumiSite2 from "./pages/Projects/DurumiSite2";
 import Projects from "./pages/Projects/index";
 import AdminEditor from "./pages/AdminEditor";
 import SinglePost from "./pages/SinglePost";
+import ScrollToTop from "./components/ScrollToTop";
 import {
   BackgroundProvider,
   BackgroundContext,
@@ -31,6 +32,7 @@ function App() {
   return (
     <div className={isDark ? "bg-black" : "bg-white"}>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />

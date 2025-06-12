@@ -15,6 +15,9 @@ import { GiJusticeStar } from "react-icons/gi";
 import { FaLightbulb } from "react-icons/fa";
 import { FaFire } from "react-icons/fa";
 import { PiCraneTowerBold } from "react-icons/pi";
+import { FaBriefcase } from "react-icons/fa6";
+import { FaLeaf } from "react-icons/fa6";
+import { IoMdTrendingUp } from "react-icons/io";
 import trioTeam from "../assets/Brooklyn-Homes-Team/trio1.webp";
 import trioTeam2 from "../assets/Brooklyn-Homes-Team/tio3.webp";
 import johnSeth from "../assets/Brooklyn-Homes-Team/john-seth.webp";
@@ -48,32 +51,42 @@ const AboutPage = () => {
     {
       icon: FaUser,
       head: "Team Spirit",
-      desc: "Our success comes from teamwork, diversity, and shared energy. Our collective effort builds momentum and sustainable achievements.",
+      desc: "Our strength lies in collaboration. We work seamlessly across teams, partners, and clients to achieve shared success",
     },
     {
       icon: FaHandshake,
       head: "Client-Centric",
-      desc: "Relationships with our clients are prioritized. Our goal is to exceed expectations and focus on client satisfaction.",
+      desc: "Your goals are our priority. We listen, we advise, and we tailor our services to meet your unique needs and expectations",
     },
     {
       icon: FaMedal,
       head: "Excellence",
-      desc: "Commitment to high standards in products, behavior, and results. Our collaboration and consistency are key.",
+      desc: "We deliver quality without compromise, from concept to completion. Every detail matters, and we treat each project as a reflection of our reputation.",
     },
     {
       icon: GiJusticeStar,
       head: "integrity",
-      desc: "Trust, honesty, and accountability are central. Our actions are guided by strong ethical standards.",
+      desc: "We uphold the highest standards of honesty and transparency in every project, deal, and client relationship—because trust is the foundation of everything we build.",
     },
     {
       icon: FaLightbulb,
       head: "Innovation",
-      desc: "We embrace change and continuous improvement. Our creativity is used to deliver excellent, tailored solutions.",
+      desc: "We embrace modern design, smart building methods, and fresh thinking to stay ahead in a fast changing real estate market.",
     },
     {
-      icon: FaFire,
-      head: "Passion",
-      desc: "We are driven by passion to inspire ideas, nurture creativity, and overcome challenges in the pursuit of growth.",
+      icon: FaBriefcase,
+      head: "Professionalism",
+      desc: "We operate with discipline, expertise, and respect—committed to timelines, communication, and delivering on our promises",
+    },
+    {
+      icon: FaLeaf,
+      head: "Sustainability",
+      desc: "We build with the future in mind—prioritizing energy efficiency, eco-friendly materials, and developments that benefit people and the planet",
+    },
+    {
+      icon: IoMdTrendingUp,
+      head: "Growth",
+      desc: "We’re always evolving—learning from each experience and improving our services to create more value for our clients, investors, and community",
     },
   ];
 
@@ -172,7 +185,7 @@ const AboutPage = () => {
                 : "bg-[url('background2.webp')] bg-gradient-to-tr bg-no-repeat bg-right-top bg-blend-multiply bg-gray-200/50 flex flex-col lg:flex-row justify-between items-start my-20"
             }
           >
-            <div className="w-[98%] lg:w-[45%] m-auto lg:m-0">
+            <div className="w-[98%] md:w-[60%] lg:w-[45%] m-auto my-10 lg:m-0">
               <SlideIn>
                 <div
                   className={
@@ -183,59 +196,63 @@ const AboutPage = () => {
                     src={trioTeam2}
                     alt="brooklynhomes trio team"
                     loading="lazy"
+                    className="w-full h-[50vh] md:h-[80vh] lg:h-[100vh] object-cover"
                   />
                 </div>
               </SlideIn>
-              <div className="my-5">
+              <div className="my-5 text-center">
                 <Slider {...settings}>
-                  <p className="text-[#cf9a1e] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                  <p className="text-[#cf9a1e] text-md md:text-xl">
                     Mr. John Seth
                   </p>
-                  <p className="text-[#cf9a1e] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                  <p className="text-[#cf9a1e] text-md md:text-xl">
                     Mr. Anthony Onuoha
                   </p>
-                  <p className="text-[#cf9a1e] text-md md:text-xl mx-28 md:mx-64 lg:mx-44">
+                  <p className="text-[#cf9a1e] text-md md:text-xl">
                     Mr. Chidubem Ogbuehi
                   </p>
                 </Slider>
               </div>
             </div>
 
-            <div className="w-[90%] lg:w-[50%] m-auto lg:my-5 lg:mx-0">
-              <h1 className="text-xl text-center lg:text-left font-semibold mt-10 lg:mt-30">
+            <div className=" w-[90%] lg:w-[50%] m-auto lg:my-5 lg:mx-0">
+              <h1 className="text-xl text-center lg:text-left font-semibold mt-10 lg:mt-2">
                 Our <br /> <span className="text-5xl">Story</span>
               </h1>
               <div className="">
-                <p className="text-sm md:text-md leading-loose my-5 lg:my-10">
-                  <span className="text-[#cf9a1e] font-bold">
-                    Brooklyn Homes Limited
-                  </span>{" "}
-                  was born in August 2023 with a bold vision:{" "}
-                  <span className="font-bold mx-1">
-                    to transform the real estate landscape in Abuja, Nigeria.
-                  </span>{" "}
-                  <br /> <br /> Situated at the Central Business District, we’ve
-                  quickly established ourselves as a trusted name in property
-                  development and investment. Our journey began with a small,
-                  dedicated team of experts who saw an opportunity to blend
-                  luxury, sustainability, and affordability in Nigeria’s capital
-                  city. Today, we’re proud to offer a diverse portfolio of
-                  services, from developing contemporary residential units to
-                  providing expert facility management & investment advisory
-                  services . <br /> <br />
-                  Led by a trio of seasoned professionals—
-                  <span className="text-[#cf9a1e] mx-1 font-semibold">
-                    Mr. John Seth, Mr. Anthony Onuoha, and Mr. Chidubem Ogbuehi
-                  </span>
-                  —our team brings decades of collective experience to every
-                  project. <br /> At Brooklyn Homes we don't just build
-                  properties, we build trust, peace of mind and legacies.
+                <p className="text-sm md:text-md leading-loose my-5">
+                  Brooklyn Homes Limited was founded with a clear vision — to
+                  bridge the gap between property ownership dreams and quality
+                  real estate delivery in Nigeria. What began as a small,
+                  purpose-driven venture has grown into a dynamic real estate
+                  development company committed to creating affordable, stylish,
+                  and enduring homes across Abuja and beyond. <br /> <br /> Our
+                  journey started with a desire to offer more than just
+                  buildings. We wanted to redefine what it means to invest in
+                  real estate by prioritizing client trust, construction
+                  integrity, and market insight. Over the years, we’ve developed
+                  a reputation for excellence by delivering successful
+                  residential and commercial projects, managing investments with
+                  transparency, and providing end-to-end property solutions.{" "}
+                  <br /> <br /> At our core, we believe that real estate should
+                  be accessible, profitable, and impactful. That’s why we’ve
+                  built a team of experienced professionals who are passionate
+                  about innovation, service, and sustainable growth. Every
+                  project we undertake is a step toward building not just
+                  properties, but communities — where families thrive, investors
+                  gain, and cities evolve. <br /> <br /> Brooklyn Homes
+                  continues to grow through meaningful relationships and a
+                  steadfast commitment to delivering value. Our story is still
+                  being written — and we invite you to be a part of it.
                 </p>
               </div>
-              <button className="bg-[#cf9a1e] text-white text-md py-3 px-6 mt-6 text-xs flex items-center cursor-pointer uppercase">
-                Schedule Visit
-                <FaArrowRightLong className="ml-2" />
-              </button>
+
+              <div className="flex items-center justify-end lg:justify-start">
+                <button className="bg-[#cf9a1e] text-white text-md py-4 px-6 mt-6 mb-6 lg:mt-3 lg:mb-0 text-xs flex items-center cursor-pointer uppercase">
+                  Schedule Visit
+                  <FaArrowRightLong className="ml-2" />
+                </button>
+              </div>
             </div>
           </div>
         </SlideIn>
@@ -274,8 +291,13 @@ const AboutPage = () => {
                   </SlideIn>
                 ))}
               </div>
-
-              <img src={dou} alt="core values" className="lg:w-[45%]" />
+              <div className="w-[98%] md:w-[90%] lg:w-[45%]">
+                <img
+                  src={dou}
+                  alt="core values"
+                  className="w-full h-[40vh] md:h-[80vh] lg:h-[100vh] object-cover"
+                />
+              </div>
             </div>
           </div>
         </SlideIn>

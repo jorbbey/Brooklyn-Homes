@@ -16,6 +16,7 @@ import image11 from "../assets/durumi-site2/Durumi Site 2 A_10 - Photo.webp";
 import image12 from "../assets/durumi-site2/Durumi Site 2 A11.webp";
 import image13 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
 import { BackgroundContext } from "./BackgroundContext";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
 
@@ -53,51 +54,61 @@ const Hero = () => {
          text: "Unlock your dream home with Brooklyn Homes",
          image: image4,
          btnText: "Durumi Site I",
+         link: "/durumisite1",
        },
        {
          text: "Modern Living in the Heart of Abuja",
          image: image5,
          btnText: "Durumi Site II",
+         link: "/durumisite2",
        },
        {
          text: "A Lifestyle Upgrade in every Square foot",
          image: image6,
          btnText: "Durumi Site I",
+         link: "/durumisite1",
        },
        {
          text: "Your next move starts here",
          image: image7,
          btnText: "Durumi Site II",
+         link: "/durumisite2",
        },
        {
          text: "A Lifestyle Upgrade in every Square foot",
          image: image8,
          btnText: "Durumi Site I",
+         link: "/durumisite1",
        },
        {
          text: "Secure, stylished, serviced",
          image: image9,
          btnText: "Durumi Site II",
+         link: "/durumisite2",
        },
        {
          text: "2025 Smartest Investments",
          image: image10,
          btnText: "Durumi Site I",
+         link: "/durumisite1",
        },
        {
          text: "Modern Living in the Heart of Abuja",
          image: image11,
          btnText: "Durumi Site II",
+         link: "/durumisite2",
        },
        {
          text: "A Lifestyle Upgrade in every Square foot",
          image: image12,
          btnText: "Durumi Site I",
+         link: "/durumisite1",
        },
        {
          text: "Secure, stylished, serviced",
          image: image13,
          btnText: "Durumi Site II",
+         link: "/durumisite2",
        },
      ];
 
@@ -117,7 +128,7 @@ const Hero = () => {
     <div className="relative h-[50vh] md:h-[70vh] lg:h-[100vh] w-full">
       <Slider {...settings}>
         {heroItems.map((item) => (
-          <div className="relative">
+          <div className="relative" key={item.text}>
             <img
               src={item.image}
               alt={item.text}
@@ -135,9 +146,11 @@ const Hero = () => {
               <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
                 {item.text}
               </p>
-              <button className="bg-[#cf9a1e] mt-10 text-xs lg:text-sm p-3 lg:p-5 w-40 uppercase cursor-pointer">
-                {item.btnText} →
-              </button>
+              <Link to={item.link}>
+                <button className="bg-[#cf9a1e] mt-10 text-xs lg:text-sm p-3 lg:p-5 w-40 uppercase cursor-pointer">
+                  {item.btnText} →
+                </button>
+              </Link>
             </div>
           </div>
         ))}

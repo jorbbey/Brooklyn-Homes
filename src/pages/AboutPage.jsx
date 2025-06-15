@@ -181,22 +181,24 @@ const AboutPage = () => {
           <div
             className={
               isDark
-                ? "bg-black flex flex-col lg:flex-row justify-between items-start my-20"
-                : "bg-[url('background2.webp')] bg-gradient-to-tr bg-no-repeat bg-right-top bg-blend-multiply bg-gray-200/50 flex flex-col lg:flex-row justify-between items-start my-20"
+                ? "bg-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full my-20"
+                : "bg-[url('background2.webp')] bg-gradient-to-tr bg-no-repeat bg-right-top bg-blend-multiply bg-gray-200/50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full my-20"
             }
           >
-            <div className="w-[98%] md:w-[60%] lg:w-[45%] m-auto my-10 lg:m-0">
+            <div className="w-[98%] md:w-[95%] m-auto my-10 lg:m-0">
               <SlideIn>
                 <div
                   className={
-                    isDark ? "mb-5 brightness-75" : "mb-5 brightness-100"
+                    isDark
+                      ? "mb-5 brightness-75 w-full"
+                      : "mb-5 brightness-100 w-full"
                   }
                 >
                   <img
                     src={trioTeam2}
                     alt="brooklynhomes trio team"
                     loading="lazy"
-                    className="w-full h-[50vh] md:h-[80vh] lg:h-[100vh] object-cover"
+                    className="w-full h-[50vh] md:h-[75vh] lg:h-[100vh] object-cover"
                   />
                 </div>
               </SlideIn>
@@ -215,8 +217,8 @@ const AboutPage = () => {
               </div>
             </div>
 
-            <div className=" w-[90%] lg:w-[50%] m-auto lg:my-5 lg:mx-0">
-              <h1 className="text-xl text-center lg:text-left font-semibold mt-10 lg:mt-2">
+            <div className=" w-[95%] md:w-[98%] m-auto md:my-5 lg:mx-0">
+              <h1 className="text-xl text-center md:text-left font-semibold mt-10 lg:mt-2">
                 Our <br /> <span className="text-5xl">Story</span>
               </h1>
               <div className="">
@@ -234,19 +236,42 @@ const AboutPage = () => {
                   a reputation for excellence by delivering successful
                   residential and commercial projects, managing investments with
                   transparency, and providing end-to-end property solutions.{" "}
-                  <br /> <br /> At our core, we believe that real estate should
-                  be accessible, profitable, and impactful. That’s why we’ve
-                  built a team of experienced professionals who are passionate
-                  about innovation, service, and sustainable growth. Every
-                  project we undertake is a step toward building not just
-                  properties, but communities — where families thrive, investors
-                  gain, and cities evolve. <br /> <br /> Brooklyn Homes
-                  continues to grow through meaningful relationships and a
-                  steadfast commitment to delivering value. Our story is still
-                  being written — and we invite you to be a part of it.
+                  <br /> <br />
+                  <span className="block md:hidden lg:block">
+                    At our core, we believe that real estate should be
+                    accessible, profitable, and impactful. That’s why we’ve
+                    built a team of experienced professionals who are passionate
+                    about innovation, service, and sustainable growth. Every
+                    project we undertake is a step toward building not just
+                    properties, but communities — where families thrive,
+                    investors gain, and cities evolve. <br /> <br /> Brooklyn
+                    Homes continues to grow through meaningful relationships and
+                    a steadfast commitment to delivering value. Our story is
+                    still being written — and we invite you to be a part of it.
+                  </span>
                 </p>
               </div>
 
+              <div className="flex md:hidden lg:flex items-center justify-end lg:justify-start">
+                <button className="bg-[#cf9a1e] text-white text-md py-4 px-6 mt-6 mb-6 lg:mt-3 lg:mb-0 text-xs flex items-center cursor-pointer uppercase">
+                  Schedule Visit
+                  <FaArrowRightLong className="ml-2" />
+                </button>
+              </div>
+            </div>
+            <div className="hidden md:block lg:hidden w-[98%] m-auto col-span-2 -mt-20">
+              <p className="text-sm md:text-md leading-loose my-5">
+                At our core, we believe that real estate should be accessible,
+                profitable, and impactful. That’s why we’ve built a team of
+                experienced professionals who are passionate about innovation,
+                service, and sustainable growth. Every project we undertake is a
+                step toward building not just properties, but communities —
+                where families thrive, investors gain, and cities evolve. <br />{" "}
+                <br /> Brooklyn Homes continues to grow through meaningful
+                relationships and a steadfast commitment to delivering value.
+                Our story is still being written — and we invite you to be a
+                part of it.
+              </p>
               <div className="flex items-center justify-end lg:justify-start">
                 <button className="bg-[#cf9a1e] text-white text-md py-4 px-6 mt-6 mb-6 lg:mt-3 lg:mb-0 text-xs flex items-center cursor-pointer uppercase">
                   Schedule Visit

@@ -146,7 +146,7 @@ const AboutPage = () => {
 
         {/* banner */}
         <SlideIn>
-          <div className="flex justify-around items-center my-20 overflow-x-auto">
+          <div className="flex justify-around items-center my-20 overflow-x-auto test-scrollbar">
             <div className="w-[200%] flex justify-around items-center gap-12">
               {status.map((stat, index) => (
                 <div className="w-24 md:w-39 mx-4" key={index}>

@@ -30,6 +30,8 @@ import m1 from "../assets/durumi-site1/DurumiSite1_1.webp";
 import m2 from "../assets/durumi-site1/DurumiSite1_2.webp";
 import m3 from "../assets/durumi-site1/DurumiSite1_3.webp";
 import m4 from "../assets/durumi-site1/DurumiSite1_4.webp";
+import tailoredProperty from "../assets/tailored-property1.jpg"
+import cuttingEdge from "../assets/cutting-edge.jpg"
 import SubHero from "../components/SubHero";
 import Typewritter from "../components/Typewritter";
 import SEO from "../components/SEO";
@@ -139,14 +141,9 @@ const AboutPage = () => {
           </p>
         </div>
 
-        {/* <p className="w-[95%] lg:w-[50%] text-2xl md:text-4xl lg:text-5xl mx-auto lg:mx-5 leading-normal">
-          To redefine the real estate experience by delivering premium
-          properties and unparalleled customer satisfaction.
-        </p> */}
-
         {/* banner */}
         <SlideIn>
-          <div className="flex justify-around items-center my-20 overflow-x-auto test-scrollbar">
+          <div className="flex justify-around items-center my-5 md:my-20 overflow-x-auto test-scrollbar">
             <div className="w-[200%] flex justify-around items-center gap-12">
               {status.map((stat, index) => (
                 <div className="w-24 md:w-39 mx-4" key={index}>
@@ -181,48 +178,52 @@ const AboutPage = () => {
           <div
             className={
               isDark
-                ? "bg-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full my-20"
-                : "bg-[url('background2.webp')] bg-gradient-to-tr bg-no-repeat bg-right-top bg-blend-multiply bg-gray-200/50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full my-20"
+                ? "bg-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-[95%] md:w-full lg:w-[95%] m-auto my-5 md:my-20"
+                : "bg-[url('background2.webp')] bg-gradient-to-tr bg-no-repeat bg-right-top bg-blend-multiply bg-gray-200/50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 w-full my-5 md:my-20"
             }
           >
-            <div className="w-[98%] md:w-[95%] m-auto my-10 lg:m-0">
+            <div className="w-[98%] md:w-[95%] m-auto my-5 md:my-10 lg:m-0">
               <SlideIn>
                 <div
                   className={
                     isDark
-                      ? "mb-5 brightness-75 w-full"
-                      : "mb-5 brightness-100 w-full"
+                      ? "mb-5 md:mb-1 lg:mb-5 brightness-75 w-full"
+                      : "mb-5 md:mb-1 lg:mb-5 brightness-100 w-full"
                   }
                 >
                   <img
                     src={trioTeam2}
                     alt="brooklynhomes trio team"
                     loading="lazy"
-                    className="w-full h-[50vh] md:h-[75vh] lg:h-[100vh] object-cover"
+                    className={
+                      isDark
+                        ? "w-full h-[50vh] md:h-[75vh] lg:h-[100vh] object-cover rounded-lg"
+                        : "w-full h-[50vh] md:h-[75vh] lg:h-[96.5vh] object-cover"
+                    }
                   />
                 </div>
               </SlideIn>
-              <div className="my-5 text-center">
+              <div className="my-5 md:my-2 lg:my-5 text-center">
                 <Slider {...settings}>
-                  <p className="text-[#cf9a1e] text-md md:text-xl">
+                  <p className="text-[#cf9a1e] text-sm lg:text-xl">
                     Mr. John Seth
                   </p>
-                  <p className="text-[#cf9a1e] text-md md:text-xl">
+                  <p className="text-[#cf9a1e] text-sm lg:text-xl">
                     Mr. Anthony Onuoha
                   </p>
-                  <p className="text-[#cf9a1e] text-md md:text-xl">
+                  <p className="text-[#cf9a1e] text-sm lg:text-xl">
                     Mr. Chidubem Ogbuehi
                   </p>
                 </Slider>
               </div>
             </div>
 
-            <div className=" w-[95%] md:w-[98%] m-auto md:my-5 lg:mx-0">
-              <h1 className="text-xl text-center md:text-left font-semibold mt-10 lg:mt-2">
+            <div className=" w-[95%] md:w-[98%] m-auto md:my-0">
+              <h1 className="text-xl text-center md:text-left font-semibold md:mt-10 lg:mt-0">
                 Our <br /> <span className="text-5xl">Story</span>
               </h1>
               <div className="">
-                <p className="text-sm md:text-md leading-loose my-5">
+                <p className="text-sm md:text-md leading-loose my-5 lg:my-5">
                   Brooklyn Homes Limited was founded with a clear vision — to
                   bridge the gap between property ownership dreams and quality
                   real estate delivery in Nigeria. What began as a small,
@@ -290,16 +291,16 @@ const AboutPage = () => {
                 : "bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/20 my-10 lg:my-0"
             }
           >
-            <h3 className="pt-20 text-3xl md:text-4xl lg:text-5xl text-center text-gray-950">
+            <h3 className="pt-10 text-3xl md:text-4xl lg:text-5xl text-center text-gray-950">
               Our Core Values
             </h3>
-            <div className="flex flex-col-reverse lg:flex-row justify-around items-center my-20">
+            <div className="flex flex-col-reverse lg:flex-row justify-around items-center my-10">
               <div className="flex flex-col md:flex-row flex-wrap justify-around items-center gap-4 lg:w-[50%] my-5">
                 {objectives.map((item) => (
                   <SlideIn>
                     <div
                       key={item.head}
-                      className="p-5 w-[90%] m-auto md:w-80 my-5 list-none text-center md:text-left cursor-pointer flex flex-col justify-between gap-4 items-center"
+                      className="p-5 w-[80%] m-auto md:w-80 my-5 list-none text-center md:text-left cursor-pointer flex flex-col justify-between gap-4 items-center"
                     >
                       <div className="flex justify-center md:justify-start items-center gap-2 w-full">
                         <div className=" flex justify-center items-center rounded-full p-2">
@@ -320,7 +321,7 @@ const AboutPage = () => {
                 <img
                   src={dou}
                   alt="core values"
-                  className="w-full h-[40vh] md:h-[80vh] lg:h-[100vh] object-cover"
+                  className="w-full h-[40vh] md:h-[80vh] lg:h-auto object-cover rounded-lg"
                 />
               </div>
             </div>
@@ -343,7 +344,7 @@ const AboutPage = () => {
                     />
                   </p>
                   <img
-                    src={image3}
+                    src={tailoredProperty}
                     alt="image1"
                     className="w-full lg:w-1/2 h-96 object-cover"
                     loading="lazy"
@@ -353,7 +354,7 @@ const AboutPage = () => {
               <SlideIn>
                 <li className="flex flex-col lg:flex-row justify-between items-center my-10">
                   <img
-                    src={image2}
+                    src={cuttingEdge}
                     alt="image2"
                     className="w-full lg:w-1/2 h-96 object-cover"
                     loading="lazy"
@@ -391,8 +392,8 @@ const AboutPage = () => {
 
         <SlideIn>
           <h1 className="w-[90%] lg:w-1/2 my-3 m-auto text-gray-400 animate-bounce">
-            Milestone: Complete our first project - Durumi Site I - within the
-            first 18 months of inception
+            Milestone: Complete our first project - Durumi Site I - within 18
+            months of inception
           </h1>
           <div className="flex justify-center items-center overflow-auto test-scrollbar w-full">
             <div className="flex justify-between items-center gap-4 my-2 w-[300%]">

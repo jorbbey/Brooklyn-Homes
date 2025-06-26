@@ -16,7 +16,7 @@ import feature11 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
 
 const Featured = () => {
   const settings = {
-    arrows: true,
+    arrows: false,
     dots: true,
     infinite: true,
     speed: 700,

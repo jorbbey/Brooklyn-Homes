@@ -72,11 +72,11 @@ const HomePage = () => {
                     <img
                       src={baseImg}
                       alt="durumisiteII_base_image"
-                      className="w-full lg:h-[90vh] object-cover"
+                      className="w-full lg:h-[65vh] object-cover"
                       loading="lazy"
                     />
                   </div>
-                  <div className="w-full lg:w-[50%] mx-3 mb-0 p-5">
+                  <div className="w-full lg:w-[50%] mx-3 mb-0 p-2 md:p-5">
                     <h1 className="text-xl md:text-2xl my-5 text-center md:text-left">
                       Who we are
                     </h1>
@@ -100,7 +100,7 @@ const HomePage = () => {
                       We’re not just building structures — we’re building trust,
                       wealth, and spaces people love to call home
                     </p>
-                    <div className="flex justify-between items-center mt-16 lg:mt-10 w-[85%] lg:w-full m-auto">
+                    {/* <div className="flex justify-around items-center mt-16 lg:mt-5 w-[85%] lg:w-full m-auto">
                       {status.map((stat, index) => (
                         <div className="w-24 md:w-39 mx-4" key={index}>
                           <div className="relative flex flex-col justify-around items-center md:items-start">
@@ -128,7 +128,7 @@ const HomePage = () => {
                           </p>
                         </div>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

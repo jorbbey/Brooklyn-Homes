@@ -116,44 +116,75 @@ const BlogPage = () => {
         <SlideIn>
           <SubHero text="Brooklyn Homes Blog – Insights, Trends, and Tips" />
         </SlideIn>
-        <div className="flex justify-between mx-auto">
+        <div className="flex items-center justify-between">
           <SlideIn>
-            <div className="p-6 max-w-4xl">
-              {postsWithImages.map((post) => (
-                <div
-                  key={post.id}
-                  className="mb-6 border-b border-gray-400 p-4 shadow-2xl"
-                >
-                  {post.postImage && (
-                    <img
-                      src={post.postImage}
-                      alt={post.title}
-                      className="my-2"
-                    />
-                  )}
-                  <div className="flex items-center justify-start">
-                    <p className="flex items-center p-1 text-sm">
-                      <SlCalender className="mr-3 text-sm font-semibold text-[#cf9a1e]" />
-                      {post.date}
-                    </p>
-                    <p className="flex items-center p-1 mx-3 text-sm">
-                      <CiUser className="mx-2 text-lg font-semibold text-[#cf9a1e]" />
-                      By {post.author}
-                    </p>
-                  </div>
-                  <h2 className="text-xl my-2 font-semibold">{post.title}</h2>
-                  <p className="my-3">{post.summary}</p>
-                  <Link
-                    to={`/blog/${post.slug}`}
-                    className="text-[#cf9a1e] mt-2 inline-block font-semibold"
+            <div className="px-4 py-8 max-w-7xl mx-auto">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+                {postsWithImages.map((post) => (
+                  <div
+                    key={post.id}
+                    className={`border rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 ${
+                      isDark
+                        ? "bg-neutral-900 text-white border-neutral-700"
+                        : "bg-white text-black border-gray-200"
+                    }`}
                   >
-                    Read more →
-                  </Link>
-                </div>
-              ))}
+                    {post.postImage && (
+                      <img
+                        src={post.postImage}
+                        alt={post.title}
+                        className="w-full h-48 object-cover"
+                      />
+                    )}
+
+                    <div className="p-5 flex flex-col flex-grow">
+                      {/* Post Meta */}
+                      <div
+                        className={`flex items-center text-xs mb-2 ${
+                          isDark ? "text-gray-400" : "text-gray-600"
+                        }`}
+                      >
+                        <span className="flex items-center">
+                          <SlCalender className="mr-1 text-[#cf9a1e]" />
+                          {post.date}
+                        </span>
+                        <span className="mx-2">•</span>
+                        <span className="flex items-center">
+                          <CiUser className="mr-1 text-[#cf9a1e]" />
+                          {post.author}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h2 className="text-lg font-semibold mb-2">
+                        {post.title}
+                      </h2>
+
+                      {/* Summary */}
+                      <p
+                        className={`text-sm mb-4 line-clamp-4 ${
+                          isDark ? "text-gray-300" : "text-gray-700"
+                        }`}
+                      >
+                        {post.summary}
+                      </p>
+
+                      {/* Read More */}
+                      <div className="mt-auto">
+                        <Link
+                          to={`/blog/${post.slug}`}
+                          className="text-[#cf9a1e] font-semibold hover:underline"
+                        >
+                          Read more →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </SlideIn>
-            <BlogSidebar />
+          {/* <BlogSidebar /> */}
         </div>
       </div>
     </>

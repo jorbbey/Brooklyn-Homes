@@ -55,8 +55,8 @@ const Index = () => {
           <SubHero text="Our Projects – Where Dreams Meet Reality" />
         </SlideIn>
 
-        <h1 className="text-2xl mt-20 mb-10 mx-5">Upcoming projects ...</h1>
         <SlideIn>
+          <h1 className="text-2xl mt-20 mb-10 mx-3">Ongoing projects ...</h1>
           <h2 className="text-xl capitalize my-5 mx-3">Durumi Site I</h2>
           <div className="flex justify-center items-center overflow-auto test-scrollbar w-full">
             <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
@@ -87,6 +87,7 @@ const Index = () => {
         </SlideIn>
 
         <SlideIn>
+          <h1 className="text-2xl mt-20 mb-10 mx-3">Upcoming projects ...</h1>
           <h2 className="text-xl capitalize my-5 mx-3">Durumi Site II</h2>
           <div className="flex justify-center items-center overflow-auto test-scrollbar w-full mt-5">
             <div className="flex justify-between items-center gap-4 my-2 w-[300%]">
@@ -121,7 +122,7 @@ const Index = () => {
         </h1>
         <SlideIn>
           <div className="flex justify-center items-center overflow-auto w-full mt-10">
-            <div className="flex justify-around items-center gap-4 w-[120%]">
+            <div className="flex justify-around items-center gap-4 w-[100%]">
               {videos.map((vid, index) => (
                 <video
                   preload="none"
@@ -129,7 +130,7 @@ const Index = () => {
                   autoPlay
                   loop
                   muted
-                  className="h-64 md:h-96 object-cover w-[90%] lg:w-[60%] cursor-pointer hover:opacity-50"
+                  className="h-32 md:h-64 lg:h-96 object-cover w-[100%] lg:w-[60%] cursor-pointer hover:opacity-50"
                   onClick={() => handleVideoClick(vid)}
                 >
                   <source src={vid} type="video/mp4" />

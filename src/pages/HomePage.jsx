@@ -85,13 +85,13 @@ const HomePage = () => {
                       development and investment company based in Abuja,
                       Nigeria. We specialize in building high-quality
                       residential and commercial properties that combine modern
-                      design with long-term value. With a strong focus on
+                      design with long-term value. <br /><br /> With a strong focus on
                       professionalism, innovation, and integrity, we serve
                       homeowners, investors, and partners looking for reliable
                       real estate solutions. Whether it's project development,
                       property sales, investment advisory, or facility
                       management, we approach every project with precision and a
-                      deep understanding of the local market. Our goal is simple
+                      deep understanding of the local market. <br /><br /> Our goal is simple
                       — to create real estate opportunities that deliver real
                       returns, lasting satisfaction, and community impact.
                       Backed by a team of skilled professionals and driven by a

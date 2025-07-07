@@ -79,7 +79,7 @@ const Services = () => {
       <div
         className={
           isDark
-            ? "flex flex-col-reverse lg:flex-row justify-between items-center lg:items-center bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/80"
+            ? "flex flex-col-reverse lg:flex-row justify-between items-center lg:items-center bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/100"
             : "flex flex-col-reverse lg:flex-row justify-between items-center lg:items-center bg-[url('/background1.webp')] bg-left-top bg-blend-multiply bg-gray-400/20"
         }
       >

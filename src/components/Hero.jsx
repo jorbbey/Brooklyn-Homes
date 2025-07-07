@@ -15,6 +15,9 @@ import image10 from "../assets/durumi-site2/Durumi Site 2 A_9 - Photo.webp";
 import image11 from "../assets/durumi-site2/Durumi Site 2 A_10 - Photo.webp";
 import image12 from "../assets/durumi-site2/Durumi Site 2 A11.webp";
 import image13 from "../assets/durumi-site2/Durumi Site 2 A12.webp";
+import whiteLogo from "../assets/logo2.jpg";
+import blackLogo from "../assets/logo3.png";
+import logo from "../assets/Logo_trans.png"
 import { BackgroundContext } from "./BackgroundContext";
 import { Link } from "react-router-dom";
 
@@ -125,24 +128,86 @@ const Hero = () => {
        },
      ];
   return (
+    // <div className="relative h-[50vh] md:h-[70vh] lg:h-[100vh] w-full">
+    //      <Link to="/home" className="mx-5">
+    //      <i className="mx-2 lg:mx-2 my-4">
+    //       <img
+    //         src={!isDark ? whiteLogo : blackLogo}
+    //         alt="logo"
+    //         className="w-[100px] lg:w-[125px]"
+    //         loading="lazy"
+    //       />
+    //     </i>
+    //   </Link>
+    //   <Slider {...settings}>
+    //     {heroItems.map((item) => (
+    //       <div className="relative" key={item.text}>
+    //         <img
+    //           src={item.image}
+    //           alt={item.text}
+    //           className="w-full h-[50vh] md:h-[70vh] lg:h-[100vh] object-cover"
+    //           loading="lazy"
+    //         />
+    //         <div
+    //           className={
+    //             isDark
+    //               ? "absolute inset-0 bg-gradient-to-tr from-gray-700 to-black opacity-65 z-0"
+    //               : "absolute inset-0 bg-gradient-to-tr from-gray-700 to-black opacity-50 z-0"
+    //           }
+    //         ></div>
+    //         <div className="absolute bottom-16 md:bottom-20 lg:bottom-40 text-white capitalize mx-5 lg:mx-10 mt-22 md:mt-20 lg:mt-20 w-[90%] md:w-[70%] lg:w-[55%] leading-loose font-semibold">
+    //           <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
+    //             {item.text}
+    //           </p>
+    //           <Link to={item.link}>
+    //             <button className="bg-[#cf9a1e] mt-10 text-xs lg:text-sm p-3 lg:p-5 w-40 uppercase cursor-pointer">
+    //               {item.btnText} →
+    //             </button>
+    //           </Link>
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </Slider>
+    // </div>
+
     <div className="relative h-[50vh] md:h-[70vh] lg:h-[100vh] w-full">
+      {/* LOGO positioned absolutely */}
+      <Link
+        to="/home"
+        className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20"
+      >
+        <img
+          // src={!isDark ? whiteLogo : blackLogo}
+          src={logo}
+          alt="logo"
+          className="w-[115px] md:w-[135px] lg:w-[175px]"
+          loading="lazy"
+        />
+      </Link>
+
+      {/* SLIDER */}
       <Slider {...settings}>
         {heroItems.map((item) => (
           <div className="relative" key={item.text}>
+            {/* Background Image */}
             <img
               src={item.image}
               alt={item.text}
               className="w-full h-[50vh] md:h-[70vh] lg:h-[100vh] object-cover"
               loading="lazy"
             />
+
+            {/* Gradient Overlay */}
             <div
-              className={
+              className={`absolute inset-0 ${
                 isDark
-                  ? "absolute inset-0 bg-gradient-to-tr from-gray-700 to-black opacity-65 z-0"
-                  : "absolute inset-0 bg-gradient-to-tr from-gray-700 to-black opacity-50 z-0"
-              }
+                  ? "bg-gradient-to-tr from-gray-700 to-black opacity-65"
+                  : "bg-gradient-to-tr from-gray-700 to-black opacity-50"
+              } z-0`}
             ></div>
-            <div className="absolute bottom-16 md:bottom-20 lg:bottom-40 text-white capitalize mx-5 lg:mx-10 mt-22 md:mt-20 lg:mt-20 w-[90%] md:w-[70%] lg:w-[55%] leading-loose font-semibold">
+
+            {/* Text & Button */}
+            <div className="absolute bottom-16 md:bottom-20 lg:bottom-40 text-white capitalize mx-5 lg:mx-10 w-[90%] md:w-[70%] lg:w-[55%] leading-loose font-semibold z-10">
               <p className="text-4xl md:text-5xl lg:text-6xl font-semibold">
                 {item.text}
               </p>
@@ -155,21 +220,6 @@ const Hero = () => {
           </div>
         ))}
       </Slider>
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-black opacity-65 z-0"></div> */}
-      {/* Content */}
-      {/* <div className="relative z-auto">
-        <h1 className="absolute bottom-12 md:bottom-28 text-white text-sm md:text-lg lg:text-3xl uppercase mx-10 mt-22 md:mt-20 lg:mt-20 w-[80%] lg:w-[55%] leading-loose font-semibold">
-          Unlock Your Dream Home with <br />
-          <span className="text-4xl md:text-6xl lg:text-8xl font-semibold">
-            Brooklyn Homes Limited
-          </span>
-          <span className="block lg:hidden capitalize mt-5">
-            Brooklyn Homes, a modern real estate, building and construction
-            company
-          </span>
-        </h1>
-      </div> */}
     </div>
   );
 };

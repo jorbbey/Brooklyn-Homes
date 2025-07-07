@@ -13,6 +13,7 @@ import newRoadImage from "../../public/blog-posts/new-roads2.jpg";
 import landOwnerImage from "../../public/blog-posts/land-owner.jpg";
 import smartHomeImage from "../../public/blog-posts/smarthome2.jpg";
 import walkableImage from "../../public/blog-posts/walkable-city.jpg";
+import techTransformImage from "../../public/blog-posts/tech-transform.jpg"
 
 function SinglePost() {
   const { slug } = useParams();
@@ -101,10 +102,17 @@ function SinglePost() {
   }
 
  let postImage;
- post.title.includes("New Road") ? postImage = newRoadImage :
- post.title.includes("Ownership") ? postImage = landOwnerImage :
- post.title.includes("Smart Home") ? postImage = smartHomeImage :
-  post.title.includes("Walkable") ? postImage = walkableImage : postImage = null;
+ post.title.includes("New Road")
+   ? (postImage = newRoadImage)
+   : post.title.includes("Ownership")
+   ? (postImage = landOwnerImage)
+   : post.title.includes("Smart Home")
+   ? (postImage = smartHomeImage)
+   : post.title.includes("Technology")
+   ? (postImage = techTransformImage)
+   : post.title.includes("Walkable")
+   ? (postImage = walkableImage)
+   : (postImage = null);
 
 
   return (

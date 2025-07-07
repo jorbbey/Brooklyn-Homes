@@ -13,6 +13,7 @@ import newRoadImage from "../../public/blog-posts/new-roads2.jpg";
 import landOwnerImage from "../../public/blog-posts/land-owner.jpg";
 import smartHomeImage from "../../public/blog-posts/smarthome2.jpg";
 import walkableImage from "../../public/blog-posts/walkable-city.jpg";
+import techTransformImage from "../../public/blog-posts/tech-transform.jpg"
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
@@ -92,6 +93,8 @@ const BlogPage = () => {
     postImage = walkableImage;
   } else if (post.title.includes("Smart Home")) {
     postImage = smartHomeImage;
+  } else if (post.title.includes("Technology")) {
+    postImage = techTransformImage;
   } else {
     postImage = null;
   }

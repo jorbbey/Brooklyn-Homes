@@ -119,10 +119,10 @@ const BlogPage = () => {
         <SlideIn>
           <SubHero text="Brooklyn Homes Blog – Insights, Trends, and Tips" />
         </SlideIn>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between my-5">
           <SlideIn>
-            <div className="px-4 py-8 max-w-7xl mx-auto">
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+            <div className="px-4 py-8 mx-auto">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr w-full">
                 {postsWithImages.map((post) => (
                   <div
                     key={post.id}

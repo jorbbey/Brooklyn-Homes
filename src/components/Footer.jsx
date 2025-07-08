@@ -58,15 +58,15 @@ const Footer = () => {
             Follow Us
           </h1>
           <div className="m-auto w-1/2 md:w-[90%] my-4 text-white flex justify-center items-center mt-5 md:mb-48 lg:mb-38">
-            <i className="bg-[#cf9a1e] p-3 rounded-full mx-2">
+            <Link to='https://www.facebook.com/profile.php?id=61569917495572&mibextid=ZbWKwL' className="bg-[#cf9a1e] p-3 rounded-full mx-2">
               <FaFacebook />
-            </i>
-            <i className="bg-[#cf9a1e] p-3 rounded-full mx-2">
+            </Link>
+            <Link to='https://www.tiktok.com/@brooklynhomes_?_t=ZM-8xpb44ZFGwq&_r=1' className="bg-[#cf9a1e] p-3 rounded-full mx-2">
               <FaInstagram />
-            </i>
-            <i className="bg-[#cf9a1e] p-3 rounded-full mx-2">
+            </Link>
+            <Link to='https://www.tiktok.com/@brooklynhomes_?_t=ZM-8xpb44ZFGwq&_r=1' className="bg-[#cf9a1e] p-3 rounded-full mx-2">
               <FaLinkedinIn />
-            </i>
+            </Link>
           </div>
         </div>
       </section>

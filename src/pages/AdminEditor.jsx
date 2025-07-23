@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { BackgroundContext } from "../components/BackgroundContext";
 import { Editor } from "@tinymce/tinymce-react";
 import {
   collection,
@@ -11,6 +12,8 @@ import {
 import { db } from "../firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { slugify } from "../utils/slugify";
+import whiteLogo from "../assets/logo2.jpg";
+import blackLogo from "../assets/logo3.png";
 
 const storage = getStorage();
 
@@ -21,6 +24,10 @@ export default function AdminEditor() {
   const [editingId, setEditingId] = useState(null);
   const [posts, setPosts] = useState([]);
   const [editorContent, setEditorContent] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
+  const [featuredImage, setFeaturedImage] = useState(null);
+
+  const { isDark } = useContext(BackgroundContext);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -40,6 +47,7 @@ export default function AdminEditor() {
     setAuthor("");
     setEditorContent("");
     setEditingId(null);
+    setFeaturedImage(null);
   };
 
   const handleSave = async () => {
@@ -48,15 +56,15 @@ export default function AdminEditor() {
       return;
     }
 
-    const contentHTML = editorContent;
-    const imageUrlMatch = contentHTML.match(/<img [^>]*src=\"([^\"]+)\"[^>]*>/);
-    const imageSrc = imageUrlMatch ? imageUrlMatch[1] : null;
+    // Use the featuredImage state if available, otherwise extract from content
+    const imageSrc =
+      featuredImage || extractFirstImageFromContent(editorContent);
 
     const newPost = {
       title,
       slug: slugify(title),
       summary,
-      content: contentHTML,
+      content: editorContent,
       author,
       date: new Date().toLocaleDateString("en-US", {
         year: "numeric",
@@ -64,7 +72,7 @@ export default function AdminEditor() {
         day: "numeric",
       }),
       replies: [],
-      image: imageSrc,
+      image: imageSrc, // Now properly sets the image URL (or null if none)
     };
 
     try {
@@ -73,17 +81,21 @@ export default function AdminEditor() {
       } else {
         await addDoc(collection(db, "posts"), newPost);
       }
-      const snapshot = await getDocs(collection(db, "posts"));
-      const allPosts = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setPosts(allPosts);
       resetForm();
+      // Refresh posts list
+      const snapshot = await getDocs(collection(db, "posts"));
+      setPosts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     } catch (err) {
       console.error("Failed to save post:", err);
-      alert("Failed to save post. Check the console for details.");
+      alert("Failed to save post. Check console for details.");
     }
+  };
+
+  // Helper function to extract the first image URL from HTML content
+  const extractFirstImageFromContent = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    const img = doc.querySelector("img");
+    return img ? img.getAttribute("src") : null;
   };
 
   const handleEdit = (post) => {
@@ -92,6 +104,7 @@ export default function AdminEditor() {
     setAuthor(post.author);
     setEditorContent(post.content);
     setEditingId(post.id);
+    setFeaturedImage(post.image || null);
   };
 
   const handleDelete = async (id) => {
@@ -105,26 +118,67 @@ export default function AdminEditor() {
     const storageRef = ref(storage, `images/${fileName}`);
     try {
       const snapshot = await uploadBytes(storageRef, file);
-      return await getDownloadURL(snapshot.ref);
+      const url = await getDownloadURL(snapshot.ref);
+      return url; // Returns the public URL of the uploaded image
     } catch (error) {
-      console.error("Image upload error:", error);
+      console.error("Upload error:", error);
       return null;
     }
   };
 
-  const handleImageUpload = async (e) => {
+  const handleFeaturedImageUpload = async (e) => {
     const file = e.target.files[0];
-    const imageUrl = await uploadImageToFirebase(file);
-    if (imageUrl) {
-      setEditorContent(
-        (prev) => `${prev}<img src=\"${imageUrl}\" alt=\"Uploaded Image\" />`
-      );
+    if (!file) return;
+
+    setIsUploading(true);
+    try {
+      const imageUrl = await uploadImageToFirebase(file);
+      if (imageUrl) {
+        setFeaturedImage(imageUrl); // This will be used in handleSave
+      }
+    } catch (error) {
+      console.error("Upload failed:", error);
+      alert("Image upload failed");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const handleEditorImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setIsUploading(true);
+    try {
+      const imageUrl = await uploadImageToFirebase(file);
+      if (imageUrl) {
+        setEditorContent(
+          (prev) =>
+            `${prev}<img src="${imageUrl}" alt="Uploaded Image" style="max-width: 100%; height: auto;" />`
+        );
+      }
+    } catch (error) {
+      console.error("Error uploading editor image:", error);
+      alert("Failed to upload image");
+    } finally {
+      setIsUploading(false);
     }
   };
 
   return (
-    <div className="p-6 max-w-4xl mx-auto text-black">
-      <h1 className="text-2xl font-bold mb-4">📝 Blog Editor</h1>
+    <div
+      className={
+        isDark
+          ? "bg-black text-white p-5 md:p-10 lg:p-20"
+          : "bg-white text-black p-5 md:p-10 lg:p-20"
+      }
+    >
+      <div className="flex justify-center items-center mb-10">
+        <img src={isDark ? blackLogo : whiteLogo} alt="brooklynhomes-logo" className="w-32 md:w-36 lg:w-40" />
+      </div>
+      <h1 className="text-2xl font-bold mb-10 m-auto text-center">
+        Brooklyn Homes Blog Editor 📝{" "}
+      </h1>
       <input
         className="w-full p-2 border mb-3 rounded"
         placeholder="Post Title"
@@ -144,15 +198,47 @@ export default function AdminEditor() {
         onChange={(e) => setAuthor(e.target.value)}
       />
 
-      <label className="btn cursor-pointer mb-3 block">
-        📷 Upload Image
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageUpload}
-          hidden
-        />
-      </label>
+      <div className="mb-4">
+        <label className="block mb-2 font-semibold">Featured Image</label>
+        {featuredImage && (
+          <div className="mb-2">
+            <img
+              src={featuredImage}
+              alt="Featured"
+              className="max-w-xs max-h-40 object-contain border rounded"
+            />
+            <button
+              onClick={() => setFeaturedImage(null)}
+              className="ml-2 text-red-500"
+            >
+              Remove
+            </button>
+          </div>
+        )}
+        <label className="btn cursor-pointer mb-3 block">
+          {isUploading ? "Uploading..." : "📷 Upload Featured Image"}
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFeaturedImageUpload}
+            disabled={isUploading}
+            hidden
+          />
+        </label>
+      </div>
+
+      <div className="mb-4">
+        <label className="btn cursor-pointer mb-3 block">
+          {isUploading ? "Uploading..." : "📷 Insert Image in Content"}
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleEditorImageUpload}
+            disabled={isUploading}
+            hidden
+          />
+        </label>
+      </div>
 
       <Editor
         apiKey="xzeym30ltxk21e61m38lor51lvnq4ocxa2y0np4wwyddskeg"
@@ -166,45 +252,71 @@ export default function AdminEditor() {
             "insertdatetime media table paste code help wordcount",
           ],
           toolbar:
-            "undo redo | bold italic underline | link image | bullist numlist | removeformat",
+            "undo redo | formatselect | bold italic underline | link image | bullist numlist | removeformat",
           images_upload_handler: async (blobInfo, success, failure) => {
-            const file = blobInfo.blob();
-            const url = await uploadImageToFirebase(file);
-            if (url) success(url);
-            else failure("Upload failed");
+            try {
+              setIsUploading(true);
+              const file = blobInfo.blob();
+              const url = await uploadImageToFirebase(file);
+              if (url) {
+                success(url);
+              } else {
+                failure("Upload failed");
+              }
+            } catch (error) {
+              console.error("Upload error:", error);
+              failure("Image upload failed");
+            } finally {
+              setIsUploading(false);
+            }
           },
+          content_style:
+            "body { font-family: Arial, sans-serif; font-size: 14px }",
         }}
         onEditorChange={(newContent) => setEditorContent(newContent)}
       />
 
       <button
         onClick={handleSave}
-        className="bg-[#cf9a1e] px-4 py-2 my-5 rounded hover:bg-yellow-600"
+        disabled={isUploading}
+        className={`px-4 py-2 my-5 rounded ${
+          isUploading ? "bg-gray-400" : "bg-[#cf9a1e] hover:bg-yellow-600"
+        }`}
       >
         {editingId ? "Update" : "Save"} Post
       </button>
 
       <h2 className="text-xl font-semibold mb-2">All Posts</h2>
-      {posts.map((post) => (
-        <div key={post.id} className="border p-3 rounded mb-3">
-          <h3 className="font-bold">{post.title}</h3>
-          <p className="text-sm text-gray-400">{post.summary}</p>
-          <div className="mt-2 flex gap-2">
-            <button
-              onClick={() => handleEdit(post)}
-              className="bg-yellow-500 text-black px-2 py-1 rounded"
-            >
-              Edit
-            </button>
-            <button
-              onClick={() => handleDelete(post.id)}
-              className="bg-red-600 text-black px-2 py-1 rounded"
-            >
-              Delete
-            </button>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {posts.map((post) => (
+          <div key={post.id} className="border p-3 rounded mb-3">
+            {post.image && (
+              <img
+                src={post.image}
+                alt="Post thumbnail"
+                className="max-w-2xl max-h-58 md:max-h-68 mt-2 object-contain"
+              />
+            )}
+            <h3 className="font-bold mt-5">{post.title}</h3>
+            <p className="text-sm text-gray-400 my-2">{post.summary}</p>
+
+            <div className="mt-5 flex gap-2">
+              <button
+                onClick={() => handleEdit(post)}
+                className="bg-yellow-500 text-black px-2 py-1 rounded"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDelete(post.id)}
+                className="bg-red-600 text-black px-2 py-1 rounded"
+              >
+                Delete
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

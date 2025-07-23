@@ -129,7 +129,7 @@ function SinglePost() {
         url={`https://brooklynhomesltd.com/blog/${slug}`}
       />
 
-      <BlogHero text={post.title} image={postImage} />
+      <BlogHero text={post.title} image={post.image} />
       <div
         className={
           isDark
@@ -149,14 +149,14 @@ function SinglePost() {
             </p>
           </div>
           <h1 className="text-xl md:text-3xl font-bold my-10">{post.title}</h1>
-          {post.image && (
+          {/* {post.image && (
             <img
               src={post.image}
               alt={post.title}
               className="w-full h-auto mb-4 rounded"
               loading="lazy"
             />
-          )}
+          )} */}
           <div
             className={
               isDark

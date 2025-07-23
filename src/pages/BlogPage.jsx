@@ -123,7 +123,7 @@ const BlogPage = () => {
           <SlideIn>
             <div className="px-4 py-8 mx-auto">
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr w-full">
-                {postsWithImages.map((post) => (
+                {posts.map((post) => (
                   <div
                     key={post.id}
                     className={`border rounded-xl shadow-lg overflow-hidden flex flex-col transition-all duration-300 ${
@@ -132,9 +132,9 @@ const BlogPage = () => {
                         : "bg-white text-black border-gray-200"
                     }`}
                   >
-                    {post.postImage && (
+                    {post.image && (
                       <img
-                        src={post.postImage}
+                        src={post.image}
                         alt={post.title}
                         className="w-full h-48 object-cover"
                       />

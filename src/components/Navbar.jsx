@@ -151,7 +151,7 @@ const FloatingNavbar = () => {
 
   return (
     <nav
-      className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex justify-around items-center px-6 py-3 w-[90%] max-w-3xl rounded-full backdrop-blur-md shadow-xl ${
+      className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex justify-around items-center px-2 md:px-6 py-3 w-[90%] max-w-3xl rounded-xl backdrop-blur-md shadow-xl ${
         isDark ? "bg-black/50 text-white" : "bg-white/60 text-black"
       }`}
     >

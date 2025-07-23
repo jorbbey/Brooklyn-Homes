@@ -294,7 +294,7 @@ export default function AdminEditor() {
               <img
                 src={post.image}
                 alt="Post thumbnail"
-                className="max-w-2xl max-h-58 md:max-h-68 mt-2 object-contain"
+                className="max-w-2xl max-h-58 md:max-h-60 mt-2 object-contain"
               />
             )}
             <h3 className="font-bold mt-5">{post.title}</h3>

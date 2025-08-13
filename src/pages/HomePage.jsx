@@ -72,7 +72,7 @@ const HomePage = () => {
                     <img
                       src={baseImg}
                       alt="durumisiteII_base_image"
-                      className="w-full lg:h-[75vh] object-cover"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>

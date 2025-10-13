@@ -72,7 +72,7 @@ const HomePage = () => {
                     <img
                       src={baseImg}
                       alt="durumisiteII_base_image"
-                      className="w-full lg:h-[80vh] object-cover"
+                      className="w-full lg:h-[550px] object-cover"
                       loading="lazy"
                     />
                   </div>
@@ -100,35 +100,6 @@ const HomePage = () => {
                       We’re not just building structures — we’re building trust,
                       wealth, and spaces people love to call home
                     </p>
-                    {/* <div className="flex justify-around items-center mt-16 lg:mt-5 w-[85%] lg:w-full m-auto">
-                      {status.map((stat, index) => (
-                        <div className="w-24 md:w-39 mx-4" key={index}>
-                          <div className="relative flex flex-col justify-around items-center md:items-start">
-                            <i className="flex justify-center items-center">
-                              <stat.icon
-                                className={
-                                  isDark
-                                    ? "text-3xl md:text-4xl lg:text-4xl text-[#333333]"
-                                    : "text-3xl md:text-4xl lg:text-4xl text-[#cf9a1e]"
-                                }
-                              />
-                            </i>
-                            <p className="text-4xl md:text-5xl my-2">
-                              {stat.num}
-                            </p>
-                          </div>
-                          <p
-                            className={
-                              isDark
-                                ? "my-2 text-xs md:text-sm text-[#6d6969] text-center md:text-left"
-                                : "my-2 text-xs md:text-sm  text-gray-900 text-center md:text-left"
-                            }
-                          >
-                            {stat.text}
-                          </p>
-                        </div>
-                      ))}
-                    </div> */}
                   </div>
                 </div>
               </div>

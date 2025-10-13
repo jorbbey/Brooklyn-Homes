@@ -27,11 +27,12 @@ const Hero = () => {
        arrows: false,
        dots: false,
        infinite: true,
-       speed: 700,
+       speed: 1100,
        slidesToShow: 1,
        slidesToScroll: 1,
        autoplay: true,
-       autoplaySpeed: 4000,
+       autoplaySpeed: 5000,
+       fade: true
      };
 
      const images = [

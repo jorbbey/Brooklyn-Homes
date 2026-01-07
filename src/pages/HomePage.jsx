@@ -36,6 +36,7 @@ const HomePage = () => {
         keywords="Brooklyn Homes, real estate, construction, property development, investment, facility management, property management"
         image="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com"
+        disabled={true}
       />
 
       <div className={isDark ? "bg-black text-white" : "bg-white text-black"}>

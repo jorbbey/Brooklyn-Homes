@@ -9,6 +9,7 @@ import { db } from "../firebase";
 import SEO from "../components/SEO";
 import SlideIn from "../components/SlideIn";
 import BlogSidebar from "../components/BlogSidebar";
+import NotFound from "./NotFoundPage";
 import newRoadImage from "../../public/blog-posts/new-roads2.jpg";
 import landOwnerImage from "../../public/blog-posts/land-owner.jpg";
 import smartHomeImage from "../../public/blog-posts/smarthome2.jpg";
@@ -17,6 +18,7 @@ import techTransformImage from "../../public/blog-posts/tech-transform.jpg"
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
+  const showNotFoundPage = true
 
   const {isDark} = useContext(BackgroundContext)
 
@@ -31,7 +33,7 @@ const BlogPage = () => {
         setPosts(fetchedPosts);
       } catch (error) {
         console.error("Error fetching posts:", error);
-        setPosts([]); 
+        setPosts([]);
       }
     };
 
@@ -100,19 +102,22 @@ const BlogPage = () => {
   }
   return {...post, postImage}
   })
-  
-
 
 
   return (
-    <>
-      {/* SEO for Blog Page */}
+
+  <>
+
+      {showNotFoundPage ? (<NotFound />) : (
+     <>
+        {/* SEO for Blog Page */}
       <SEO
         title="Brooklyn Homes Blog | Real Estate News & Property Tips"
         description="Stay informed with the Brooklyn Homes Blog – your go-to source for property insights, real estate trends, homeowner tips, investment advice, and news from across Nigeria's housing sector."
         keywords="Brooklyn Homes blog, real estate news Nigeria, Abuja property insights, home buying tips, housing market trends, real estate investment Nigeria, Brooklyn Homes articles"
         image="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/blog"
+        disabled={true}
       />
 
       <div className={isDark ? "bg-black text-white" : "bg-white text-black"}>
@@ -190,6 +195,7 @@ const BlogPage = () => {
           {/* <BlogSidebar /> */}
         </div>
       </div>
+     </>)}
     </>
   );
 };

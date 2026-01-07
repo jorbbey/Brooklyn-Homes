@@ -127,6 +127,7 @@ function SinglePost() {
           post.image || "https://brooklynhomesltd.com/homepage_seo_img.webp"
         }
         url={`https://brooklynhomesltd.com/blog/${slug}`}
+        disabled={true}
       />
 
       <BlogHero text={post.title} image={post.image} />

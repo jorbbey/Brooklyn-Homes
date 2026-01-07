@@ -69,6 +69,7 @@ const {isDark} = useContext(BackgroundContext)
         keywords="Contact Brooklyn Homes, real estate contact, property management contact, Abuja real estate, call Brooklyn Homes, email Brooklyn Homes, real estate support"
         iimage="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/contact"
+        disabled={true}
       />
       <div className={isDark ? "text-white bg-black" : "text-black bg-white"}>
         <SlideIn>

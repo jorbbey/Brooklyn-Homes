@@ -64,6 +64,7 @@ const DurumiSite2 = () => {
         keywords="Durumi Site II, Brooklyn Homes Abuja, 3-bedroom flats Abuja, energy-efficient homes Nigeria, real estate Durumi, Abuja rental investment, new development Abuja"
         image="https://brooklynhomesltd.com/DurumiSite2_seo_img.webp"
         url="https://brooklynhomesltd.com/durumisite2"
+        disabled={true}
       />
 
       <div className={isDark ? "text-white bg-black" : "text-black bg-white"}>

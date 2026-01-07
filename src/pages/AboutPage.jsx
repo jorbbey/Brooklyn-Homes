@@ -125,6 +125,7 @@ const AboutPage = () => {
         keywords="About Brooklyn Homes, real estate company, construction experts, property management team, company mission, real estate development"
         image="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/about"
+        disabled={true}
       />
       <section
         className={isDark ? "bg-black text-white" : "bg-white text-black"}

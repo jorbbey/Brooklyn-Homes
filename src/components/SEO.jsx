@@ -9,7 +9,9 @@ const SEO = ({
   url,
   author = "Brooklyn Homes Ltd",
   robots = "index, follow",
+    disabled = false,
 }) => {
+   if (disabled) return null; 
   return (
     <Helmet>
       <title>{title}</title>

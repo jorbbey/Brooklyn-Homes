@@ -64,7 +64,7 @@ const DurumiSite1 = () => {
         keywords="Durumi Site I, Brooklyn Homes Durumi, 3-bedroom flats Abuja, Abuja family homes, real estate Durumi, completed housing project Abuja, homes for sale in Durumi"
         image="https://brooklynhomesltd.com/DurumiSite1_seo_img.webp"
         url="https://brooklynhomesltd.com/durumisite1"
-        disabled={true}
+        disabled={false}
       />
 
       <div className={isDark ? "text-white bg-black" : "text-black bg-white"}>

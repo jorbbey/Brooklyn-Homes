@@ -18,7 +18,7 @@ import techTransformImage from "../../public/blog-posts/tech-transform.jpg"
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
-  const showNotFoundPage = true
+  const showNotFoundPage = false
 
   const {isDark} = useContext(BackgroundContext)
 
@@ -117,7 +117,7 @@ const BlogPage = () => {
         keywords="Brooklyn Homes blog, real estate news Nigeria, Abuja property insights, home buying tips, housing market trends, real estate investment Nigeria, Brooklyn Homes articles"
         image="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/blog"
-        disabled={true}
+        disabled={false}
       />
 
       <div className={isDark ? "bg-black text-white" : "bg-white text-black"}>

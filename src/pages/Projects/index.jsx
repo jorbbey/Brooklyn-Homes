@@ -42,7 +42,7 @@ const Index = () => {
         keywords="Brooklyn Homes projects, Abuja real estate development, property construction, Durumi site, home design Abuja, real estate architecture, building projects Nigeria"
         image="https://brooklynhomesltd.com/homepage_seo_img.webp"
         url="https://brooklynhomesltd.com/projects"
-        disabled={true}
+        disabled={false}
       />
 
       <div
